@@ -29,16 +29,12 @@ class K8sHelper(object):
     def get_all_deploy(self):
         return self.appApi.list_deployment_for_all_namespaces(watch=False)
 
-    def create_deployment(self, file):
-        with open(path.join(path.dirname(__file__), file)) as f:
-            dep = yaml.safe_load(f)
-            resp = self.appApi.create_namespaced_deployment(
-                body=dep, namespace="default")
-            print("Deployment created. status='%s'" % resp.metadata.name)
+    def create_deployment(self, dep):
+        resp = self.appApi.create_namespaced_deployment(
+            body=dep, namespace="default")
+        print("Deployment created. status='%s'" % resp.metadata.name)
 
-    def update_deployment(self, file, name):
-        with open(path.join(path.dirname(__file__), file)) as f:
-            dep = yaml.safe_load(f)
+    def update_deployment(self, dep, name):
             resp = self.appApi.patch_namespaced_deployment(
                 name=name,
                 namespace="default",

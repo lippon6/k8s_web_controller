@@ -25,6 +25,7 @@ from message_parse_manage.message_parse_manage import MessageParseManage
 from client_manage.user_client_manage.user_account_manage import UserAccountManage
 from module.mysql_help_module import sqlHelper
 from module.k8s_help_module import K8sHelper
+from module.openwrt_help_module import OpenWrtHelper
 
 from server_config import ServerConfig
 
@@ -62,6 +63,9 @@ sql_util.connect_mysql()
 k8s_config_file = server_config.get_k8s_config_file()
 k8sHelper = K8sHelper(k8s_config_file)
 k8sHelper.get_all_namespace()
+
+# openwrt helper
+openwrt_helper = OpenWrtHelper(k8sHelper)
 
 # user manage init
 user_account_manage = UserAccountManage(sql_util,join_room,leave_room,emit)
