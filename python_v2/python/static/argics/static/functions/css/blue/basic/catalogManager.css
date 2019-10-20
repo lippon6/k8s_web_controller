@@ -1,0 +1,22 @@
+#Ltoolbar #Fsave{background: url(../images/toolbar-save-bg.gif) no-repeat;}
+#Ltoolbar #Fdelete{background: url(../images/toolbar-delete-bg.gif) no-repeat;}
+#Ltoolbar #Fclose{background: url(../images/toolbar-close-bg.gif) no-repeat;}
+#LdataArea{width:100%; font-size:1.2em;}
+#LleftPanel{
+	height:100%;
+	float:left;
+	overflow:auto;
+	width:250px;
+}
+#LrightPanel{
+	float:left;
+	overflow:auto;
+}
+#LhSplitBar{
+	width:3px;
+	background:#C3DAF9;
+	border-left:1px solid #99BBE8; border-right:1px solid #99BBE8;
+	float:left;
+}
+
+

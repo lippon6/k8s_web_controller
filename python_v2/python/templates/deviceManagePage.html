@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>设备管理界面</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/vue.min.js"></script>
+    <script type="text/javascript" src="../static/js/deviceManagePage.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+
+
+    <link rel="stylesheet" href="../static/css/pdfh5.css" />
+
+    <style>
+            .pdfContent {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: #fff;
+                position: relative;
+            }
+        </style>
+    
+        <script src="../static/js/pdf.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="deviceManageTable">
+        <legend>基础设置-设备管理</legend>
+        <div class="deviceManageMsgContent">
+            <div class="">
+                <button id="deviceManageTableRemove" class="btn btn-danger col-md-1">批量删除</button>
+                <div class="btn-group  " style="padding-left:5px">
+                    <button type="button" class="btn btn-primary dropdown-toggle" style="float:right" data-toggle="dropdown">选择机型
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy')">全部</a></li>
+                        <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 1})">1</a></li>
+                        <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 2})">2</a></li>
+                        <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 3})">3</a></li>
+                        <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 4})">4</a></li>
+                        <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 5})">5</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group " style="padding-left: 0px">
+                        <button type="button" class="btn btn-primary dropdown-toggle" style="float:right" data-toggle="dropdown">选择经销商
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                                <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy')">全部</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 1})">1</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 2})">2</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 3})">3</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 4})">4</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#deviceManageMsgTable').bootstrapTable('filterBy', {class: 5})">5</a></li>
+                        </ul>
+                    </div>
+                <div class="col-md-1" style="float:right">
+                    <button id="deviceManageMsgAddBtn" class="btn btn-secondary" >新增</button>
+                </div>
+            </div>
+                
+            <div class="row bootstrap-table">
+                <div class="col-md-12">
+                    <table
+                            id="deviceManageMsgTable"
+                            data-toggle="table"
+                            data-pagination="true"
+                            data-page-list="[5, 20, 50]"
+                            data-page-size="5"
+                            data-search="true"
+                            data-search-align="left"
+                            data-search-time-out="1000"
+                            data-click-to-select="true"
+                            data-maintain-selected="true"
+                            data-toolbar="#toolbar2"
+                            data-height="460"
+                    >
+                        <thead>
+                            <tr>
+                                <th data-field="state" data-checkbox="true"></th>
+                                <th data-field="productContent" data-sortable="true">产品目录</th>
+                                <th data-field="model" data-sortable="true">机型</th>
+                                <th data-field="id" data-sortable="true">设备编号</th>
+                                <th data-field="userName" data-sortable="true">用户名称</th>
+                                <th data-field="phone" data-sortable="true">手机</th>
+                                <th data-field="region" data-sortable="true">地区</th>
+                                <th data-field="purchaseDate" data-sortable="true">购买日期</th>
+                                <th data-field="distributor" data-sortable="true">经销商</th>
+                                <th data-field="brand" data-sortable="true">品牌</th>
+                                <th data-field="producer" data-sortable="true">生产厂家</th>
+                                <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">操作</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="pdfContent"></div>
+            </div>
+        </div>
+    </div>   
+    
+    <div id='deviceEdit'>
+        <div id="legend" class="">
+            <legend class="">基础设置-设备管理-添加</legend>
+            <div id="addModelChangeBtnFather" class="controls">
+                <button id="addModelChangeBtn"  class="btn btn-success" onclick="addModelChange()">批量添加</button>
+            </div>
+        </div>
+        <form id="singlePushForm" class="form-horizontal">
+            <fieldset>
+                <div class = "row">
+                    <div class="col-lg-4">
+                        <div class="control-group">
+            
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">产品目录</label>
+                            <div class="controls">
+                            <input id="productContent" type="text" placeholder="" class="input-xlarge">
+                            <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">终端编号</label>
+                            <div id="idInputFather" class="controls">
+                                <input id="id" type="text" class="input-xlarge" oninput = "value=value.replace(/[^\d]/g,'')">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">出厂编号</label>
+                            <div id="productIDInputFather" class="controls">
+                                <input id="productID" type="text" class="input-xlarge" oninput = "value=value.replace(/[^\d]/g,'')">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">车架号</label>
+                            <div class="controls">
+                                <input id="frameNum" type="text" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">机型</label>
+                            <div class="controls">
+                            <input id="model" type="text" placeholder="" class="input-xlarge">
+                            <p class="help-block"></p>
+                            </div>
+                        </div>
+                
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">发动机型号</label>
+                            <div class="controls">
+                                <input id="engineModel" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">出厂日期</label>
+                            <div class="controls">
+                                <input id="productDate" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">购买日期</label>
+                            <div class="controls">
+                                <input id="purchaseDate" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">三包期</label>
+                            <div class="controls">
+                                <input id="threeGuaranteeDate" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">安装方式</label>
+                            <div class="controls">
+                                <input id="installWay" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">经销商</label>
+                            <div class="controls">
+                                <input id="distributor" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">用户名称</label>
+                            <div class="controls">
+                                <input id="userName" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">所在地区</label>
+                            <div class="controls">
+                                <input id="region" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">手机</label>
+                            <div class="controls">
+                                <input id="phone" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">地址</label>
+                            <div class="controls">
+                                <input id="address" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">QQ</label>
+                            <div class="controls">
+                                <input id="qq" type="text" placeholder="" class="input-xlarge" oninput = "value=value.replace(/[^\d]/g,'')">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">微信</label>
+                            <div class="controls">
+                                <input id="wechat" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">品牌</label>
+                            <div class="controls">
+                                <input id="brand" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">省份名称</label>
+                            <div class="controls">
+                                <input id="provinceName" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">省份大小</label>
+                            <div class="controls">
+                                <input id="provinceZoom" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">省份编号</label>
+                            <div class="controls">
+                                <input id="provinceID" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">省会经度</label>
+                            <div class="controls">
+                                <input id="provinceLongitude" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">省会纬度</label>
+                            <div class="controls">
+                                <input id="provinceLatitude" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">城市名称</label>
+                            <div class="controls">
+                                <input id="cityName" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">城市大小</label>
+                            <div class="controls">
+                                <input id="cityZoom" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">城市编号</label>
+                            <div class="controls">
+                                <input id="cityID" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">城市经度</label>
+                            <div class="controls">
+                                <input id="cityLongitude" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">城市纬度</label>
+                            <div class="controls">
+                                <input id="cityLatitude" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">所在地经度</label>
+                            <div class="controls">
+                                <input id="longitude" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">所在地纬度</label>
+                            <div class="controls">
+                                <input id="latitude" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">服务商</label>
+                            <div class="controls">
+                                <input id="servicer" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">生产厂家</label>
+                            <div class="controls">
+                                <input id="producer" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </fieldset>
+        </form>
+        <div class="row" id="singlePushButton">
+            <div class="col-md-1">
+                <label class="control-label"></label>
+    
+                <!-- Button -->
+                <div class="controls">
+                    <button id="deviceManageSave" class="btn btn-success" onclick="deviceMsgSave()">保存</button>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <label class="control-label"></label>
+    
+                <!-- Button -->
+                <div class="controls">
+                    <button id="deviceManageTableReturn" class="btn btn-success">返回</button>
+                </div>
+            </div>
+        </div>
+        <form id="bulkPushForm" action="" method="post" enctype="multipart/form-data">
+            <p>
+                <input type="file" id="fileInput" name="file" onchange="checkFile(this.value)" style="margin-top:10px; margin-bottom:10px">
+                <input class="btn btn-success" type =submit value="上传">
+            </p>
+        </form>
+
+    </div> 
+    
+</div>
+</body>
+</html>
+
+

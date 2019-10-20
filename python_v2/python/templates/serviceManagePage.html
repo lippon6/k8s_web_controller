@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>服务商管理界面</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+{#     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">#}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+
+
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/vue.min.js"></script>
+    <script type="text/javascript" src="../static/js/serviceManagePage.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+
+
+    <link rel="stylesheet" href="../static/css/pdfh5.css" />
+
+    <style>
+            .pdfContent {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: #fff;
+                position: relative;
+            }
+        </style>
+    
+        <script src="../static/js/pdf.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="serviceManageTable">
+        <legend>基础设置-服务商管理</legend>
+        <div class="serviceManageMsgContent">
+            <div class="">
+                <button id="serviceManageTableRemove" class="btn btn-danger col-md-1">批量删除</button>
+                <div class="col-md-1" style="float:right">
+                    <button id="serviceManageMsgAddBtn" class="btn btn-secondary" >新增</button>
+                </div>
+            </div>
+                
+            <div class="row bootstrap-table">
+                <div class="col-md-12">
+                    <table
+                            id="serviceManageMsgTable"
+                            data-toggle="table"
+                            data-pagination="true"
+                            data-page-list="[5, 20, 50]"
+                            data-page-size="5"
+                            data-search="true"
+                            data-search-align="left"
+                            data-search-time-out="1000"
+                            data-click-to-select="true"
+                            data-maintain-selected="true"
+                            data-toolbar="#toolbar2"
+                            data-height="460"
+                    >
+                        <thead>
+                            <tr>
+                                <th data-field="state" data-checkbox="true"></th>
+                                <th data-field="region" data-sortable="true">所在区域</th>
+                                <th data-field="serviceName" data-sortable="true">服务商名称</th>
+                                <th data-field="type" data-sortable="true">类型</th>
+                                <th data-field="address" data-sortable="true">地址</th>
+                                <th data-field="contact" data-sortable="true">联系人</th>
+                                <th data-field="phone" data-sortable="true">联系电话</th>
+                                <th data-field="useState" data-sortable="true">状态</th>
+                                <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">操作</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="pdfContent"></div>
+            </div>
+        </div>
+        
+    </div>     
+    <div id='serviceEditTable'>
+        <form class="form-horizontal">
+            <fieldset>
+                <div id="legend" class="">
+                    <legend class="">基础设置-服务商管理-编辑</legend>
+                </div>
+
+                <div class = "row">
+                    <div class="col-lg-4">
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">所在区域</label>
+                            <div class="controls">
+                            <input id="region" type="text" placeholder="" class="input-xlarge">
+                            <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">服务商名称</label>
+                            <div class="controls">
+                            <input id="serviceName" type="text" placeholder="" class="input-xlarge">
+                            <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">服务商编码</label>
+                            <div class="controls">
+                            <input id="serviceId" type="text" placeholder="" class="input-xlarge">
+                            <p class="help-block"></p>
+                            </div>
+                        </div>
+                
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">类型</label>
+                            <div class="controls">
+                                <input id="type" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">地址</label>
+                            <div class="controls">
+                                <input id="address" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+    
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">联系人</label>
+                            <div class="controls">
+                                <input id="contact" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">联系电话</label>
+                            <div class="controls">
+                                <input id="phone" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">状态</label>
+                            <div class="controls">
+                                <input id="useState" type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        
+            </fieldset>
+        </form>
+        <div class="row">
+            <div class="col-md-1">
+                <label class="control-label"></label>
+
+                <!-- Button -->
+                <div class="controls">
+                    <button id="serviceManageSave" class="btn btn-success">保存</button>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <label class="control-label"></label>
+
+                <!-- Button -->
+                <div class="controls">
+                    <button id="serviceManageTableReturn" class="btn btn-success">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <div id='passwordEditTable'>
+        <form class="form-horizontal">
+            <fieldset>
+                <div id="legend" class="">
+                    <legend class="">基础设置-服务商管理-编辑</legend>
+                </div>
+
+                <div class = "row">
+                    <div class="col-lg-4">
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">用户名</label>
+                            <div class="controls">
+                            <input type="text" placeholder="" class="input-xlarge">
+                            <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">手机号</label>
+                            <div class="controls">
+                            <input type="text" placeholder="" class="input-xlarge">
+                            <p class="help-block"></p>
+                            </div>
+                        </div>
+                
+                        <div class="control-group">
+                
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">账号</label>
+                            <div class="controls">
+                                <input type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+            
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">密码</label>
+                            <div class="controls">
+                                <input type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+        
+                            <!-- Text input-->
+                            <label class="control-label" for="input01">重新输入密码</label>
+                            <div class="controls">
+                                <input type="text" placeholder="" class="input-xlarge">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        
+            </fieldset>
+        </form>
+        <div class="row">
+            <div class="col-md-1">
+                <label class="control-label"></label>
+    
+                <!-- Button -->
+                <div class="controls">
+                    <button id="passwordManageSave" class="btn btn-success">保存</button>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <label class="control-label"></label>
+    
+                <!-- Button -->
+                <div class="controls">
+                    <button id="passwordManageTableReturn" class="btn btn-success">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
+
+

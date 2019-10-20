@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>统计界面</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+{#     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">#}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/vue.min.js"></script>
+    <script type="text/javascript" src="../static/js/statisticalPage.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+
+    <link rel="stylesheet" href="../static/css/pdfh5.css" />
+
+    <style>
+            .pdfContent {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: #fff;
+                position: relative;
+            }
+        </style>
+    
+        <script src="../static/js/pdf.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+        <!--<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>-->
+        <script src="../static/js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row col-md-12" style="padding-bottom:10px">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">选择统计报表
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="javascript:void(0)" onclick ="changeDeviceDistrubeTable()">设备分布表</a></li>
+            <li><a href="javascript:void(0)" onclick ="changeWorkingTable()">工作月报表</a></li>
+            <li><a href="javascript:void(0)" onclick ="changeWorkingRatioTable()">开工率月报表</a></li>
+            <li><a href="javascript:void(0)" onclick ="changeWarningTable()">预警情况表</a></li>
+            <li><a href="javascript:void(0)" onclick ="changeRepairTable()">维修情况表</a></li>
+        </ul>
+    </div>   
+    <br>
+    <div id="tableContainer">
+        <div id="workingTable">
+            <div class="statisticalMsgContent">
+                <div class="">
+                    <button id="statisticalTableRemove" class="btn btn-danger col-md-1">批量删除</button>
+                    <div class="btn-group col-md-1">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">选择地区
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0)" onclick ="$('#statisticalMsgTable').bootstrapTable('filterBy')">全部</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#statisticalMsgTable').bootstrapTable('filterBy', {place: '西华'})">西华</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#statisticalMsgTable').bootstrapTable('filterBy', {place: '南华'})">南华</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#statisticalMsgTable').bootstrapTable('filterBy', {place: '东华'})">东华</a></li>
+                            <li><a href="javascript:void(0)" onclick ="$('#statisticalMsgTable').bootstrapTable('filterBy', {place: '北华'})">北华</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    
+                <div class="row bootstrap-table">
+                    <div class="col-md-12">
+                        <table
+                                id="statisticalMsgTable"
+                                data-toggle="table"
+                                data-pagination="true"
+                                data-page-list="[5, 20, 50]"
+                                data-page-size="5"
+                                data-search="true"
+                                data-search-align="left"
+                                data-search-time-out="1000"
+                                data-click-to-select="true"
+                                data-maintain-selected="true"
+                                data-toolbar="#toolbar2"
+                                data-height="460"
+                        >
+                            <thead>
+                                <tr>
+                                    <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="tractorNum" data-sortable="true">拖拉机编号</th>
+                                    <th data-field="time" data-sortable="true">使用时间/H</th>
+                                    <th data-field="usingFrequnce" data-sortable="true">使用次数</th>
+                                    <th data-field="place" data-sortable="true">地区</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="pdfContent"></div>
+                </div>
+            </div>
+        </div>   
+        <div id="workingRatioTable">
+            <div class="workingRatioMsgContent">
+                <div class="row bootstrap-table">
+                    <div class="col-md-12">
+                        <table
+                                id="workingRatioMsgTable"
+                                data-toggle="table"
+                                data-pagination="true"
+                                data-page-list="[5, 20, 50]"
+                                data-page-size="5"
+                                data-search="true"
+                                data-search-align="left"
+                                data-search-time-out="1000"
+                                data-click-to-select="true"
+                                data-maintain-selected="true"
+                                data-toolbar="#toolbar2"
+                                data-height="460"
+                        >
+                            <thead>
+                                <tr>
+                                    <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="province" data-sortable="true">省份</th>
+                                    <th data-field="ratio" data-sortable="true">使用率(%)</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="pdfContent"></div>
+                </div>
+            </div>
+        </div>    
+        <div id="repairTable">
+            <div class="repairMsgContent">
+                <div class="row bootstrap-table">
+                    <div class="col-md-12">
+                        <table
+                                id="repairMsgTable"
+                                data-toggle="table"
+                                data-pagination="true"
+                                data-page-list="[5, 20, 50]"
+                                data-page-size="5"
+                                data-search="true"
+                                data-search-align="left"
+                                data-search-time-out="1000"
+                                data-click-to-select="true"
+                                data-maintain-selected="true"
+                                data-toolbar="#toolbar2"
+                                data-height="460"
+                        >
+                            <thead>
+                                <tr>
+                                    <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="sendTime" data-sortable="true">派工时间</th>
+                                    <th data-field="sendNum" data-sortable="true">派工单号</th>
+                                    <th data-field="deviceType" data-sortable="true">机型</th>
+                                    <th data-field="deviceNum" data-sortable="true">设备编号</th>
+                                    <th data-field="customerName" data-sortable="true">客户名称</th>
+                                    <th data-field="describe" data-sortable="true">故障描述</th>
+                                    <th data-field="repairConmpany" data-sortable="true">维修单位</th>
+                                    <th data-field="fee" data-sortable="true">费用</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="pdfContent"></div>
+                </div>
+            </div>
+        </div>   
+        <div id='warningTable'> 
+            <div class='row col-md-12'> 
+                <button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown'>选择拖拉机编号 
+                    <span class='caret'></span> 
+                </button> 
+                <ul class='dropdown-menu' role='menu'> 
+                        <li><a href='javascript:void(0)'>全部</a></li> 
+                    <li><a href='javascript:void(0)' onclick =''>4</a></li> 
+                    <li><a href='javascript:void(0)' onclick =''>8</a></li> 
+                    <li><a href='javascript:void(0)' onclick =''>9</a></li> 
+                    <li><a href='javascript:void(0)' onclick =''>10</a></li> 
+                </ul> 
+            </div>    
+            <div class='row'> 
+                    <div class='col-sm-4'></div> 
+                    <div class='col-sm-4'> 
+                        <div calss='text-center'> 
+                            <ul class='pagination' id='statisticalPagination'></ul> 
+                        </div> 
+                    </div> 
+                    <div class='col-sm-4'></div> 
+            </div> 
+            <div class='row'> 
+                <div class='col-sm-3'></div> 
+                <div id = 'waringBar' class='col-sm-5' style='position: relative; 
+                overflow: hidden; width: 800px; height: 500px; padding: 0px; margin: 
+                0px; border-width: 0px; cursor: default;'> 
+                    <canvas  data-zr-dom-id='zr_0' width='1920' height='920' 
+                        style='position: absolute; left: 0px; top: 0px; width: 1920px; 
+                        height: 920px; user-select: none; -webkit-tap-highlight-color: 
+                        rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;'> 
+                    </canvas> 
+                </div> 
+                <div class='col-sm-3'></div> 
+            </div> 
+        </div>
+        <div id='distrubeTable'> 
+            <div class='row'> 
+                    <div class='col-sm-4'></div> 
+                    <div class='col-sm-4'> 
+                        <div calss='text-center'> 
+                            <ul class='pagination' id='statisticalPagination'></ul> 
+                        </div> 
+                    </div> 
+                    <div class='col-sm-4'></div> 
+            </div> 
+            <div class='row'> 
+                <div class='col-sm-3'></div> 
+                <div id = 'distrableBar' class='col-sm-5' style='position: relative; 
+                overflow: hidden; width: 800px; height: 500px; padding: 0px; margin: 
+                0px; border-width: 0px; cursor: default;'> 
+                    <canvas  data-zr-dom-id='zr_0' width='1920' height='920' 
+                        style='position: absolute; left: 0px; top: 0px; width: 1920px; 
+                        height: 920px; user-select: none; -webkit-tap-highlight-color: 
+                        rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;'> 
+                    </canvas> 
+                </div> 
+                <div class='col-sm-3'></div> 
+            </div> 
+        </div>
+    </div>
+    <br>
+</div>
+
+
+</body>
+</html>

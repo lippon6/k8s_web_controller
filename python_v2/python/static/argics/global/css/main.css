@@ -1,0 +1,54 @@
+ .navigate{
+	height:40px;
+	border-bottom:1px solid #bbb7ae;
+	padding:10px 0 0 0;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+	font-size:18px;
+	margin-left:20px;
+}
+  #hend{
+     width:100%;
+     height:100%;
+     margin-left:2px
+ } 
+
+.ifbar{
+	text-align: right; 
+	margin:10px;
+	font-family: '黑体',Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei';
+	font-size:16px;
+}
+.ibutton{
+	width:121px;
+	height:34px;
+	background:url(../images/tongji.png) no-repeat;
+	border:0;
+	outline: none;
+}
+.ibutton:active{
+	border-top:1px solid #6ab6d2;
+}
+
+.navigate  input {
+    width: 12 em;
+    border: 1px solid #bbb7ae;
+    border-radius: 3px;
+}
+.navigate  input {
+    margin: 0em .5em .2em 0;
+    padding: .3em .4em;
+    color: #000;
+    box-shadow: 1px 1px 3px #ccc;
+    font-size: .8em;
+    font-family: inherit;
+    outline: none; 
+}
+ 
+
+
+
+
+
+
+
+

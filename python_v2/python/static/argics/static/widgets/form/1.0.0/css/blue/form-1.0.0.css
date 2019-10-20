@@ -1,0 +1,28 @@
+ul{display:block;height:auto;clear:both;list-style-type: none;font-size:12px;padding-top:6px;}
+ul label{text-align:right;width:70px;display:block;float:left;line-height:23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; word-break: break-all;word-wrap: break-word;}
+ul input.text,ul select,ul textarea{width:170px;border: 1px solid #B5B8C8;outline:0;}
+ul li input.submit{border:1px solid #646464;background-color: #F8EEB5; COLOR: #000000; height: 21px; width: 50px;font-size:1.1em;}
+ul li input.submit:hover{border:1px solid #000000;background-color: #F7BD47;}
+input.readonly{background:#EBEBE4;}
+#Lforminfo ul li{float:left;width:305px;line-height:23px;margin-top:5px;}
+#Lforminfo{font-size:1.2em;/*background:#E5F5FF;*/border-bottom:0px solid #bbb7ae;height:46px;}
+#LdataArea .f-row{font-size:12px;padding-top:6px;}
+#Lfooter .f-row{font-size:12px;padding-top:3px;}
+.noempty{color:#0066CC;line-height:23px;font-weight:bold;}
+input.text{height:21px;line-height:18px;text-indent:3px;}
+input.fcheckbox{height:23px;}
+ul select{height:23px;width:170px;}
+textarea{text-indent:3px;resize: none;height:50px;}
+label.empty{margin-right:3px}
+.input-trigger{float:left;_margin-left:3px;}
+.button-trigger {background-image: url("images/search-trigger.gif");border-bottom: 1px solid #B5B8C8;cursor: pointer;float: left;height: 22px;width: 17px;display: block;}
+.clear-trigger{background-image: url("images/clear-trigger.gif");border-bottom: 1px solid #B5B8C8;cursor: pointer;float: left;height: 22px;width: 17px;display: block;}
+.f-row{display:block;width:800px;height:28px;clear:both;}
+.f-row label{text-align:right;width:100px;display:block;float:left;line-height:23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; word-break: break-all;word-wrap: break-word;}
+.f-row input.text,.f-row select,.f-row textarea{width:200px;height:35px;border: 1px solid #B5B8C8;outline:0;}
+input.readonly{background:#EBEBE4;}
+.f-row .f-cell{float:left;width:360px;line-height:23px;}
+.f-row select{height:35px;width:200px;}
+.f-row input.submit{border:1px solid #646464;background-color: #F8EEB5; COLOR: #000000; height: 21px; width: 50px;font-size:1.1em;}
+.f-row input.submit:hover{border:1px solid #000000;background-color: #F7BD47;}
+

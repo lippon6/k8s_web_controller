@@ -1,0 +1,58 @@
+form {
+	margin: 10px 0;
+}
+/*设备搜索栏样式*/
+.meter-header {
+	border: 1px solid #dfdfdf;
+	border-radius: 5px 5px 0 0;
+}
+.meter-header .form-group {
+	margin: 0;
+}
+/*设备信息栏样式*/
+.meter-msg {
+	padding-top: 5px;
+	background-color: #f6f6f6;
+}
+.meter-msg ul {
+	padding-left: 30px;
+}
+.meter-msg li {
+	border: none;
+	padding: 5px;
+}
+.meter-msg b {
+	font-weight: 500;
+	color: #888;
+}
+.meter-msg #image_tractor {
+	width: 80px ;
+	height: 80px;
+}
+/*仪表栏样式*/
+.meter-content {
+	background-color: #1b1b1b;
+	border: 1px solid #dfdfdf;
+}
+/*警示栏样式*/
+.meter-warning {
+	background-color: #f6f6f6;
+	padding: 10px 40px;
+}
+.meter-warning img {
+	width: 60px;
+}
+/*自定义响应式*/
+.meter-height {
+	height: 380px;
+}
+.meter-xs-height {
+	height: 220px;
+	margin-top: -30px;
+}
+@media (min-width: 768px) {
+	.meter-sm-height {
+		height: 380px;
+		margin-top: 0;
+	}
+}

@@ -1,0 +1,24 @@
+tr td{
+	text-align:center;
+}
+#LdataArea{width:100%; font-size:1.2em;}
+#Ltoolbar #Fdoit{background: url(../images/toolbar-doit-bg.gif) no-repeat;}
+#Ltoolbar #Fsave{background: url(../images/toolbar-save-bg.gif) no-repeat;}
+#Ltoolbar #Fexport{background: url(../images/toolbar-export-bg.gif) no-repeat;}
+#Ltoolbar #Fprint{background: url(../images/toolbar-print-bg.gif) no-repeat;}
+#Ltoolbar #Fdelete{background: url(../images/toolbar-delete-bg.gif) no-repeat;}
+#Ltoolbar #Fautonumber{background: url(../images/toolbar-autonumber-bg.gif) no-repeat;}
+#Ltoolbar #Fclose{background: url(../images/toolbar-close-bg.gif) no-repeat;}
+#Ltoolbar #Frefer{background: url(../images/toolbar-refer-bg.gif) no-repeat;}
+#Ltoolbar #Fok{background: url(../images/toolbar-ok-bg.gif) no-repeat;}
+#Lforminfo ul li{width:300px;}
+#Lforminfo ul li select{width:190px;}
+#Lforminfo ul li input.text{width:190px;}
+.f-row{width:1100px;font-size:12px;padding-top:6px;display:block;height:34px;clear:both;}
+.f-row .f-col{width:300px;float:left;}
+#runInfo{width:1400px;overflow:auto;height:180px;}
+#runInfo-left{float:left;width:200px;overflow:auto;height:180px;}
+#runInfo-left .picture{clear:both;width:150px;height:150px;border:1px solid #E6E6FA;text-align:center;margin-top:10px;margin-left:30px;}
+#runInfo-right{float:left;width:1200px;overflow:auto;height:180px;}
+.f-row label{text-align:right;width:100px;display:block;float:left;line-height:23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; word-break: break-all;word-wrap: break-word;}
+.f-row input[type=text],.f-row select,.f-row textarea{height:23px;width:180px;border: 1px solid #B5B8C8;outline:0;}

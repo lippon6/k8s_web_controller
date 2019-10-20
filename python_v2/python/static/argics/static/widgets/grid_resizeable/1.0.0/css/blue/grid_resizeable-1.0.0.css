@@ -1,0 +1,79 @@
+.grid-resizeable-container {
+    overflow: auto;
+    position: relative;
+}
+
+.grid-resizeable-container table {
+	table-layout: fixed;
+   /* width: 1px;  	4��19��������עaaaa��  ��������-����Χ�� �б��ص� */ 
+	/* border: 0px solid #ccc; */
+	border-collapse: collapse;
+	/* border-bottom:1px solid #ccc; */
+}
+
+.grid-resizeable-container table th {
+/* 	background: #EBEBEC;  4��22������ע�� ����Ԥ��-Ԥ����Ϣ  �г�����λ�±ߵ��б���ͷ�������ϻ���Ӱ��*/
+	height: 50px;
+	padding-left: 3px;padding-right: 3px;padding-top: 4px;
+	border-bottom: 1px solid #ccc; 
+/* 	border-left: 1px solid #ccc; 
+	border-right: 1px solid #ccc; */
+	font-weight: normal;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	word-wrap: break-word;
+	box-sizing: border-box;    
+}
+
+.grid-resizeable-container table td {
+    height: 35px;
+    padding-left: 3px;padding-right: 3px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	/* border:1px solid #ccc; */
+	border-bottom: 1px solid #ccc;
+  /*   border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc; */
+}
+.grid-resizeable-container table td input.text{text-indent:0px;height:19px;line-height:18px;width:100%;border: 0px solid #B5B8C8;}
+.grid-resizeable-container table td select{width:100%;_width:101%;height:auto;border: 0px solid #B5B8C8;}
+*+html .grid-resizeable-container table td select{width:101%;}
+.grid-resizeable-container table td input.checkbox{height:21px;}
+.grid-resizeable-container table td.data-center{text-align:center;}
+.input-grid{float:left;_margin-left:3px;border:1px solid #B5B8C8;height:18px;text-indent:0;}
+.button-grid {background-image: url("images/search-trigger.gif");border-bottom: 1px solid #B5B8C8;cursor: pointer;float: left;height: 19px;width: 17px;display: block;}
+.clear-grid {background-image: url("images/clear-trigger.gif");border-bottom: 1px solid #B5B8C8;cursor: pointer;float: left;height: 19px;width: 17px;display: block;}
+.grid-resizeable-container table tr.templet {
+    display: none;
+}
+
+.grid-resizeable-container table tr.hover {
+	background-color:#cae9e7;
+}
+
+.grid-resizeable-container table tr.selected {
+	background-color:#3399cc;
+	color:white;
+}
+
+.grid-resizeable-container .grid-h-split-holder {
+    cursor: col-resize;
+   height: 18px;
+    position: relative;
+   width: 3px;
+    margin-top:1px;
+    float: right;
+    margin-right: -5px;
+}
+
+.grid-resizeable-container .grid-h-move-line {
+    background-color: #777777;
+    cursor: col-resize;
+    display: none;
+    position: absolute;
+    width: 1px;
+}

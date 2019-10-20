@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Login Page</title>
+
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/my-login.css">
+</head>
+
+<script type="text/javascript">
+</script>
+
+<body class="my-login-page">
+<section class="h-100">
+	<div class="container h-100">
+		<div class="row justify-content-md-center h-100">
+			<div class="card-wrapper">
+				<div class="brand">
+					<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2959708265,3856768320&fm=58&bpow=705&bpoh=675" alt="logo">
+				</div>
+				<div class="card fat">
+					<div class="card-body">
+						<h4 class="card-title">用户登陆</h4>
+						<form method="POST" class="my-login-validation" novalidate="" id="form1">
+							<div class="form-group">
+								<label for="account">账号</label>
+								<input id="account" type="text" class="form-control" name="account" value="" required autofocus>
+								<div class="invalid-feedback">
+									账号不能为空
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="password">密码
+									<a href="forgot.html" class="float-right">
+										忘记密码?
+									</a>
+								</label>
+								<input id="password" type="password" class="form-control" name="password" required data-eye>
+								<div class="invalid-feedback">
+									密码不能为空
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="custom-checkbox custom-control">
+									<input type="checkbox" name="remember" id="remember" class="custom-control-input">
+									<label for="remember" class="custom-control-label">记住我</label>
+								</div>
+							</div>
+
+							<div class="form-group m-0">
+								<button type="button" onclick="login()" class="btn btn-primary">登陆</button>
+							</div>
+
+							<div class="mt-4 text-center">
+								没有账号? <a href="register.html">创建账号</a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="footer">
+					Copyright &copy; 2019 &mdash; UESTC
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="../static/js/my-login.js"></script>
+<script>
+
+    function login() {
+        var data = {};
+        // 如果页面有表单，那么可以利用jquery的serialize()方法获取表单的全部数据
+        data = $('#form1').serialize();
+        console.log(data);
+        $.ajax({
+            type: 'POST',
+            url: '/login',
+            data: data,
+            dataType: 'json',
+            success: function(data) {
+                console.log(data)
+                window.location.href="index.html"
+            },
+            error: function(xhr, type) {
+                console.log('错误')
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

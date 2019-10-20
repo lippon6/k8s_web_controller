@@ -1,0 +1,84 @@
+.widget-dialog-overlay{
+	position: absolute;
+	height: 100%; width: 100%;
+	left:0px; top:0px;
+	display: block;
+	background-color: #898888;
+	cursor: not-allowed;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.widget-dialog{
+	position: absolute;
+	border: 0px solid #8EA4C1;
+
+	/* background: #CDD9E8; */
+	padding:0px 5px 4px 5px;
+}
+.widget-dialog .titlebar{
+	background-color: #6AB6D2;
+	padding: 0px;
+	height: 50px;
+
+}
+.widget-dialog .titlebar .title {
+	padding-top: 6px; padding-left: 4px;
+	float: left;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-left:10px;
+    margin-top:10px;
+    font-size:16px;
+}
+.widget-dialog .titlebar .buttons-area {
+	padding-top: 4px; padding-right: 4px;
+	float: right;
+}
+.widget-dialog .titlebar .buttons-area button {
+	float: left;
+	width: 16px; height: 16px;
+	border: 0px;
+}
+.widget-dialog .titlebar .buttons-area .maximize {
+	background: url(images/maximize.gif) no-repeat;
+}
+.widget-dialog .titlebar .buttons-area .maximize:hover {
+	background: url(images/maximize-hover.gif) no-repeat;
+}
+.widget-dialog .titlebar .buttons-area .restore {
+	background: url(images/restore.gif) no-repeat;
+}
+.widget-dialog .titlebar .buttons-area .restore:hover {
+	background: url(images/restore-hover.gif) no-repeat;
+}
+.widget-dialog .titlebar .buttons-area .close {
+	background: url(images/close.gif) no-repeat;
+}
+.widget-dialog .titlebar .buttons-area .close:hover {
+	background: url(images/close-hover.gif) no-repeat;
+}
+
+.widget-dialog-drag-overlay {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.widget-dialog-drag-box {
+	border: 1px solid #777777;
+	cursor: move;
+    display: none;
+    position: absolute;
+}
+.repair-select {
+    background-color:#CDD9E8;
+    height: 96%;
+    left: 5px;
+    position: absolute;
+    top:5px;
+    width: 100%;
+    z-index: -1;
+}

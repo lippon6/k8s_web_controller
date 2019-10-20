@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 基本表单</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+<link href="../static/videojs/video-js.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+<!--视频界面 start-->
+<div class="container">
+    <!--状态栏-->
+    <div class="row">
+        <div class="col-md-4">
+            <form role="form">
+                <div class="form-group">
+                    <label>账号</label>
+                    <input type="text" class="form-control" id="input_user_name">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <form role="form">
+                <div class="form-group">
+                    <label >密码</label>
+                    <input type="text" class="form-control" id="input_user_passwd">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <button id="btn_login" type="button" class="btn btn-success">登陆</button>
+            <h3> <span id="login_msg">等待数据</span></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <button id="btn_get_account_tractor" type="button" class="btn btn-success">获得本账号分配的拖拉机</button>
+            <h3> <span id="get_account_tractor_msg">等待数据</span></h3>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4">
+            <button id="btn_sub_tractor" type="button" class="btn btn-success">订阅拖拉机</button>
+            <input type="text" class="form-control" id="input_sub_tractor" placeholder="输入拖拉机号:如 29">
+            <h3> <span id="sub_tractor_msg">等待数据</span></h3>
+        </div>
+        <div class="col-md-4">
+            <button id="btn_unsub_tractor" type="button" class="btn btn-success">取消订阅拖拉机</button>
+            <input type="text" class="form-control" id="input_unsub_tractor" placeholder="输入拖拉机号:如 29">
+            <h3> <span id="unsub_tractor_msg">等待数据</span></h3>
+        </div>
+        <div class="col-md-4">
+            <button id="btn_control" type="button" class="btn btn-success">遥控拖拉机</button>
+            <input type="text" class="form-control" id="input_btn_control_cmd" placeholder="输入遥控指令">
+            <input type="text" class="form-control" id="input_btn_control_data" placeholder="输入遥控数据">
+            <h3> <span id="btn_control_msg">等待数据</span></h3>
+        </div>
+
+    </div>
+    <h3> <span id="msg">等待数据</span></h3>
+
+        <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay preload="auto"
+           poster="../static/image/video-background.jpg"
+           data-setup='{"example_option":true}'>
+        poster="image/video-background.jpg" data-setup='{"example_option":true}'>
+        <source src="rtmp://120.79.27.122:1935/live/test" type="application/x-mpegURL">
+    </video>
+
+    <div class="m">
+</div>
+</div>
+
+<script src="../static/videojs/video.js"></script>
+<script>
+    var options = {
+        width: 1080,
+        height: 520
+    }
+    var player = videojs('live-stream', options);
+    player.addClass('vjs-matrix');
+    player.on(['loadstart', 'play', 'playing', 'firstplay', 'pause', 'ended', 'adplay', 'adplaying', 'adfirstplay', 'adpause', 'adended', 'contentplay', 'contentplaying', 'contentfirstplay', 'contentpause', 'contentended', 'contentupdate'], function (e) {
+//        console.warn('VIDEOJS player event: ', e.type);
+        if (e.type == "play") {
+            console.log('开始播放');
+        } else if (e.type == "playing") {
+            console.log('正在播放...');
+        } else if (e.type == "pause") {
+            console.log('暂停视频播放');
+        } else if (e.type == "firstplay") {
+            console.log('firstplay播放');
+        } else {
+            console.log('1111111111111');
+        }
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        var socket = io.connect('http://120.79.27.122:5000/dashboard');
+        socket.on('disconnect', function(data){
+            //失去连接的事件
+            console.log('断开连接');
+        });
+        socket.on('connect', function(data){
+            //连接正常的事件
+            console.log( '连接成功');
+            socket.emit('login', {user_name:'kotlin',user_passwd:'guojin'});
+            socket.emit('sub_tractor', {device_id:37});
+
+        });
+        socket.on('response', function(msg) {
+            console.log(msg);
+            switch (msg.cmdName){
+                case 'login':
+                    var data = msg.data;
+                    console.log(data);
+                    $("#login_msg").text('登陆'+data);
+                    break;
+                case 'get_account_tractor':
+                    var data = msg.data;
+                    console.log(data);
+                    $("#get_account_tractor_msg").text('设备'+data);
+                    break;
+                case 'sub_tractor':
+                    var data = msg.data;
+                    console.log(data);
+                    $("#sub_tractor_msg").text('订阅OK'+data);
+                    break;
+
+                case 'unsub_tractor':
+                    var data = msg.data;
+                    console.log(data);
+                    $("#unsub_tractor_msg").text('取消订阅OK'+data);
+                    break;
+                default:
+
+                    $("#msg").text('数据'+msg);
+            }
+
+        });
+
+
+        $("#btn_login").click(function(){
+            var input_user_name = $("#input_user_name").val();
+            var input_user_passwd = $("#input_user_passwd").val();
+            socket.emit('login', {user_name:'kotlin',user_passwd:'guojin'});
+            $("#login_msg").text('正在登陆')
+        });
+        $("#btn_get_account_tractor").click(function(){
+            socket.emit('get_usable_tractor_device', {user_name:'get_tractor',user_passwd:'guojin'});
+            $("#get_account_tractor_msg").text('正在查询')
+        });
+
+
+        $("#btn_sub_tractor").click(function(){
+            var input_sub_tractor = $("#input_sub_tractor").val();
+            socket.emit('sub_tractor', {device_id:parseInt(input_sub_tractor)});
+            $("#sub_tractor_msg").text('正在订阅...')
+        });
+
+
+        $("#btn_unsub_tractor").click(function(){
+            var  input_unsub_tractor = $("#input_unsub_tractor").val();
+            socket.emit('unsub_tractor', {device_id:input_unsub_tractor});
+            $("#unsub_tractor_msg").text('取消订阅中..')
+        });
+
+
+        $("#btn_control").click(function(){
+            var  input_unsub_tractor_cmd = $("#input_btn_control_cmd").val();
+            var  input_unsub_tractor_data = $("#input_btn_control_data").val();
+            socket.emit('control_tractor', {device_num:37,device_control_msg:{cmdName:input_unsub_tractor_cmd,cmdData:input_unsub_tractor_data}});
+            $("#btn_control_msg").text('取消订阅中..')
+        });
+
+
+    });
+</script>
+</body>
+</html>

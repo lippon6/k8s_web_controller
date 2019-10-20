@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html  style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 实例 - 响应式的导航栏</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--作业界面 start-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <!--<link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />-->
+    <script src="https://webapi.amap.com/maps?v=1.4.13&key=df87fc6e1012b1f8b680820b5c1e553c&plugin=AMap.PolyEditor"></script>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+    <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+    <!--作业界面 end-->
+</head>
+<body style="height: 100%; margin: 0">
+
+<!--视频界面 start-->
+<div class="container">
+    <!--状态栏-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">×
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    提交情况
+                                </h4>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary"
+                                        data-dismiss="modal">确认
+                                </button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            <button id="btn_show_list" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#work_path_list">
+                显示/隐藏表格
+            </button>
+            <div id="work_path_list" class="collapse in">
+                <div class="msg_content">
+                <button id="msg_show_tool_btn_find_today" class="btn btn-info">查看今天消息</button>
+                <button id="msg_show_tool_btn_show_all_msg" class="btn btn-primary">显示全部消息</button>
+                <table
+                        id="msg_show_table"
+                        data-toggle="table"
+                        data-pagination="true"
+                        data-page-list="[5, 20, 50]"
+                        data-page-size="5"
+                        data-search="true"
+                        data-search-align="left"
+                        data-search-time-out="1000"
+                        data-click-to-select="true"
+                        data-maintain-selected="true"
+                        data-toolbar="#toolbar2"
+                        data-height="460"
+                >
+                    <thead>
+                    <tr>
+                        <th data-field="tractor_num" >拖拉机编号</th>
+                        <th data-field="work_path_num" >作业编号</th>
+                        <th data-field="work_path_name" >作业名字</th>
+                        <th data-field="submite_time" >发布时间</th>
+                        <th data-field="edit_time" >编辑时间</th>
+                        <th data-field="is_receive" >是否接收</th>
+                        <th data-field="is_edit" >是否编辑</th>
+                        <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin:10px">
+
+
+        <div class="col-md-1 pull-right">
+            <h3><span class="label label-success" id="show_tractor_num">拖拉机号:未选择</span></h3>
+        </div>
+        <div class="col-md-3 pull-right">
+             <h3> <span class="label label-success" id="show_work_path_id">路径号:未选择</span></h3>
+        </div>
+        <div class="col-md-3 pull-right">
+             <h3> <span class="label label-success" id="show_work_path_name">路径名字:未选择</span></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="container" style=""></div>
+            <div id="container_3d" style=""></div>
+        </div>
+        <div class="col-md-6">
+            <div id="main" ></div>
+        </div>
+    </div>
+    <div class="row" style="margin:10px">
+        <div class="col-md-4">
+            <div id="map_tool">
+                <div class="row">
+                    <button type="button"  onclick="show_3d_map()" class="btn btn-danger">切换为3D地图</button>
+                </div>
+            </div>
+            <div id="3dmap_tool">
+                <div class="row">
+                    <button type="button" onclick="show_2d_map()" class="btn btn-danger">切换为2D地图</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 pull-right" >
+            <button id="routeSave" type="button" onclick="push_route_data()" class="btn btn-success  pull-right">保存</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    // echarts 3d地图
+    function Kmap_3d(dom) {
+        var data2=[];
+        var map3d_obj = new Object();
+        map3d_obj.myChart = echarts.init(dom);
+        map3d_obj.data = [];
+        map3d_obj.init = function () {
+            option = {
+                tooltip: {},
+                backgroundColor: '#fff',
+                visualMap: {
+                    show: false,
+                    dimension: 2,
+                    min: 0,
+                    max: 30,
+                    inRange: {
+                        color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                    }
+                },
+                xAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                yAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                zAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                grid3D: {
+                    viewControl: {
+                        projection: 'orthographic'
+                    }
+                },
+                series: [{
+                    type: 'line3D',
+                    data: this.data,
+                    lineStyle: {
+                        width: 4
+                    }
+                }]
+            };
+            this.myChart.setOption(option, true);
+            console.log('init')
+        };
+        // 推数据并显示
+        map3d_obj.push_data = function (x,y,z) {
+            this.data.push([x, y, z]);
+            this.myChart.setOption(option, true);
+        };
+        // clear数据
+        map3d_obj.clear_data = function () {
+            this.data.splice(0,this.data.length);
+            this.myChart.setOption(option, true);
+        };
+        // 重新绘制数据显示
+        map3d_obj.re_data_show = function (data_list,keep_data,obstruct_data) {
+            data2.splice(0,data2.length);
+            // 深度拷贝数据
+            data2 = data_list.slice(0);
+
+            var keep_out_line_data = [];
+            // 拷贝边框
+            keep_out_line_data.splice(0,keep_out_line_data);
+            keep_out_line_data = keep_data.slice(0);
+
+            var all_data = [];
+            all_data.splice(0,all_data.length);
+            all_data = obstruct_data.slice(0);
+
+
+            var m_series = [];
+            var edit_line_series =  {
+                type: 'line3D',
+                data:  data2,
+                lineStyle: {
+                width: 4
+                 },
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#ff1921'
+                        }
+                    }
+                }
+            };
+            var keep_out_line = {
+                type: 'line3D',
+                data:  keep_out_line_data,
+                lineStyle: {
+                    width: 4
+                },
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#4654ff'
+                        }
+                    }
+                }
+            };
+            m_series.push(edit_line_series);
+            m_series.push(keep_out_line);
+            set_series(all_data);
+            function set_series(all_data) {
+                var len = all_data.length;
+                for(var i = 0; i< len;i++){
+                    m_series.push(add_new_item(i))
+                }
+            }
+            function add_new_item(index) {
+                var new_s = {
+                    type: 'line3D',
+                    data:  all_data[index],
+                    lineStyle: {
+                        width: 4
+                    },
+                    itemStyle : {
+                        normal : {
+                            lineStyle:{
+                                color:'#00ff15'
+                            }
+                        }
+                    }
+                };
+                return new_s;
+            }
+            option2 = {
+                tooltip: {},
+                backgroundColor: '#fff',
+                xAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                yAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                zAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                grid3D: {
+                    viewControl: {
+                        projection: 'orthographic'
+                    }
+                },
+                series: m_series
+            };
+            this.myChart.setOption(option2, true);
+        };
+
+        // 重新绘制数据显示
+        map3d_obj.re_data = function (data_list) {
+            data2.splice(0,data2.length);
+            // 深度拷贝数据
+            data2 = data_list.slice(0);
+            option2 = {
+                tooltip: {},
+                backgroundColor: '#fff',
+                visualMap: {
+                    show: false,
+                    dimension: 2,
+                    min: 0,
+                    max: 30,
+                    inRange: {
+                        color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                    }
+                },
+                xAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                yAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                zAxis3D: {
+                    min:'dataMin',
+                    max:'dataMax',
+                    type: 'value'
+                },
+                grid3D: {
+                    viewControl: {
+                        projection: 'orthographic'
+                    }
+                },
+                series: [{
+                    type: 'line3D',
+                    data:  data2,
+                    lineStyle: {
+                        width: 4
+                    }
+                }]
+            };
+            this.myChart.setOption(option2, true);
+        };
+        return map3d_obj;
+    }
+
+    // echarts 2d地图
+    function KmapMain(dom,arg_callback) {
+        var callback = arg_callback;
+        // 添加
+        function map_add_touch(map_data) {
+            myChart.setOption({
+                graphic: echarts.util.map(map_data, function (item, dataIndex) {
+                    return {
+                        type: 'circle',
+                        position: myChart.convertToPixel('grid', item),
+                        shape: {
+                            cx: 0,
+                            cy: 0,
+                            r: symbolSize
+                        },
+                        invisible: true,
+                        draggable: true,
+                        ondrag: echarts.util.curry(onPointDragging, dataIndex),
+                        ondblclick: echarts.util.curry(onPointDblclick, dataIndex),
+                        onmousemove: echarts.util.curry(onMouseMove, dataIndex),
+                        onmousedown: echarts.util.curry(onMap_mouseDown, dataIndex),
+                        onmouseup: echarts.util.curry(onMap_mouseUp, dataIndex),
+                        z: 100
+                    };
+                })
+            });
+        }
+        // 删除touch
+        function map_remove_touch(map_data) {
+            myChart.setOption({
+                graphic: echarts.util.map(map_data, function (item, dataIndex) {
+                    return {
+                        type: 'circle',
+                        $action: 'remove',
+                        position: myChart.convertToPixel('grid', item),
+                        shape: {
+                            cx: 0,
+                            cy: 0,
+                            r: symbolSize
+                        },
+                        invisible: true,
+                        draggable: true,
+                        ondrag: echarts.util.curry(onPointDragging, dataIndex),
+                        ondblclick: echarts.util.curry(onPointDblclick, dataIndex),
+                        z: 100
+                    };
+                })
+            });
+        }
+        // 重新划线
+        function map_draw_point_line(map_data) {
+            myChart.setOption({
+                series: [
+                    {
+                        id: 'edit_line',
+                        type: 'line',
+                        smooth: false,
+                        symbolSize: symbolSize,
+                        data: map_data
+                    }
+                ]
+            });
+        }
+        function updatePosition() {
+            myChart.setOption({
+                graphic: echarts.util.map(data, function (item, dataIndex) {
+
+                    return {
+                        position: myChart.convertToPixel('grid', item)
+                    };
+                })
+            });
+        }
+        // 点点击事件
+        function onMap_mouseDown(dataIndex) {
+            var timestamp = (new Date()).getTime();
+            last_down_time = timestamp;
+        }
+        var is_control = 0;
+        document.onkeyup=function(event) {
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if (e && e.keyCode == 17) { // ctrl
+                //要做的事情
+                is_control = 0;
+            }
+        };
+        document.onkeydown=function(event) {
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if (e && e.keyCode == 17) { // ctrl
+                //要做的事情
+                is_control = 1;
+            }
+        };
+
+
+        function onMap_mouseUp(dataIndex) {
+            var timestamp = (new Date()).getTime();
+            var press_time = timestamp - last_down_time;
+
+            if (is_control){
+                onPointClick(dataIndex)
+            }
+
+            // 长按就添加数据
+            if (press_time >1000)
+            {
+                // onPointClick(dataIndex)
+            }
+            var data_temp = [].concat(data);
+            callback(data_temp);
+        }
+        // 单击添加点
+        function onPointClick(dataIndex) {
+            var data_after;
+            var data_before;
+            var data_after_x;
+            var data_after_y;
+            var data_before_x;
+            var data_before_y;
+            var data_new_after;
+            var data_new_before;
+
+            // 单击就添加点
+            if (dataIndex+1 >= data.length){
+                data_before = data[dataIndex-1];
+                data_before_x = (data_before[0] + data[dataIndex][0])/2;
+                data_before_y = (data_before[1] + data[dataIndex][1])/2;
+                data_new_before = [data_before_x,data_before_y];
+                data.splice(dataIndex,0,data_new_before);
+
+            }else if (dataIndex - 1>=0){
+                data_after = data[dataIndex+1];
+                data_before = data[dataIndex-1];
+
+                data_after_x = (data_after[0] + data[dataIndex][0])/2;
+                data_after_y = (data_after[1] + data[dataIndex][1])/2;
+
+                data_before_x = (data_before[0] + data[dataIndex][0])/2;
+                data_before_y = (data_before[1] + data[dataIndex][1])/2;
+
+                data_new_after = [data_after_x,data_after_y];
+                data_new_before = [data_before_x,data_before_y];
+                data.splice(dataIndex,0,data_new_before);
+                data.splice(dataIndex+2,0,data_new_after);
+            }else{
+                data_after = data[dataIndex+1];
+                data_after_x = (data_after[0] + data[dataIndex][0])/2;
+                data_after_y = (data_after[1] + data[dataIndex][1])/2;
+                data_new_after = [data_after_x,data_after_y];
+                data.splice(dataIndex+1,0,data_new_after);
+            }
+            map_draw_point_line(data);
+            map_add_touch(data);
+        }
+        // 双击删除点
+        function onPointDblclick(dataIndex) {
+            map_remove_touch(data);
+            data.splice(dataIndex,1);
+            map_draw_point_line(data);
+            map_add_touch(data);
+        }
+        // tooltip
+        function onMouseMove(dataIndex) {
+
+        }
+        // 拖放
+        function onPointDragging(dataIndex, dx, dy) {
+            data[dataIndex] = myChart.convertFromPixel('grid', this.position);
+            data[dataIndex][2] = data_src[dataIndex][2];
+
+            // Update data
+            myChart.setOption({
+                series: [{
+                    id: 'edit_line',
+                    data: data
+                }]
+            });
+        }
+
+
+
+        var keep_out_line = [];
+        var data = [];
+        var data_src = [];
+        var myChart = echarts.init(dom);
+        var symbolSize = 10;
+
+        var keep_symbolSize = 5;
+        var last_down_time  = 0;
+
+
+        var kmapMain_obj = new Object();
+        kmapMain_obj.init = function (data_2d,keep_data,obstruct_data) {
+            // 删除数据
+            data.splice(0,data.length);
+            // 深度拷贝数据
+            data = data_2d.slice(0);
+
+            // 备份数据
+            data_src.splice(0,data_src.length);
+            // 深度拷贝数据
+            data_src = data_2d.slice(0);
+
+            var keep_out_line_data = [];
+
+            // 拷贝边框
+            keep_out_line_data.splice(0,keep_out_line_data);
+            keep_out_line_data = keep_data.slice(0);
+
+            var all_data = [];
+            all_data.splice(0,all_data.length);
+            all_data = obstruct_data.slice(0);
+            // 拷贝障碍
+
+            var location_p_list = [];
+            var location_r_list = [];
+            // 查找p最大和最小
+            for(var i =0;i<keep_out_line_data.length;i++)
+            {
+                location_p_list.push(keep_out_line_data[i][1])
+            }
+            var location_y_list_max = (Math.max.apply(null, location_p_list) + 0.0005);
+            var location_y_list_min = (Math.min.apply(null, location_p_list) - 0.0005);
+
+            // 查找r最大和最小
+            for(var p =0;p<keep_out_line_data.length;p++)
+            {
+                location_r_list.push(keep_out_line_data[p][0])
+            }
+            var location_x_list_max = (Math.max.apply(null, location_r_list) + 0.0005);
+            var location_x_list_min = (Math.min.apply(null, location_r_list) - 0.0005);
+
+
+
+
+            var m_series = [];
+
+            var edit_line_series =  {
+                id: 'edit_line',
+                type: 'line',
+                smooth: false,
+                symbolSize: symbolSize,
+                data: data,
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#ff040b'
+                        }
+                    }
+                }
+            };
+            var keep_out_line = {
+                id: 'keep_out_line',
+                type: 'line',
+                smooth: false,
+                symbolSize: keep_symbolSize,
+                data: keep_out_line_data,
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#4654ff'
+                        }
+                    }
+                }
+            };
+            m_series.push(edit_line_series);
+            m_series.push(keep_out_line);
+
+            set_series(all_data);
+            function set_series(all_data) {
+                var len = all_data.length;
+                for(var i = 0; i< len;i++){
+                    m_series.push(add_new_item(i))
+                }
+            }
+            function add_new_item(index) {
+                var new_s = {type: 'custom',
+                    renderItem:function(params, api) {
+                        if (params.context.rendered) {
+                            return;
+                        }
+                        params.context.rendered = true;
+
+                        var points = [];
+                        for (var i = 0; i < all_data[index].length; i++) {
+                            points.push(api.coord(all_data[index][i]));
+                        }
+                        var color = api.visual('color');
+                        var ss = api.value(0);
+                        return {
+                            type: 'polygon',
+                            shape: {
+                                points: echarts.graphic.clipPointsByRect(points, {
+                                    x: params.coordSys.x,
+                                    y: params.coordSys.y,
+                                    width: params.coordSys.width,
+                                    height: params.coordSys.height
+                                })
+                            },
+                            style: api.style({
+                                fill: color,
+                                stroke: echarts.color.lift(color)
+                            })
+                        };
+                    },
+                    data: all_data[index],
+                    itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#07ff31'
+                        }
+                    }
+                }
+                };
+                return new_s;
+            }
+
+
+            option = {
+                title: {
+                    text: 'Try Dragging these Points'
+                },
+                grid: {
+                },
+                xAxis: {
+                    min: location_x_list_min,
+                    max: location_x_list_max,
+                    type: 'value',
+                    axisLine: {onZero: false}
+                },
+                yAxis: {
+                    min: location_y_list_min,
+                    max: location_y_list_max,
+                    type: 'value',
+                    axisLine: {onZero: false}
+                },
+                dataZoom: [
+
+                    {
+                        type: 'inside',
+                        xAxisIndex: 0,
+                        startValue:location_x_list_min,
+                        //endValue:location_x_list_max,
+                        filterMode: 'none'
+                    },
+                    {
+                        type: 'inside',
+                        yAxisIndex: 0,
+                        startValue:location_y_list_min,
+                        // endValue:location_y_list_max,
+                        filterMode: 'none'
+                    }
+                ],
+                series: m_series
+            };
+
+            // 添加触摸事件和缩放事件
+            setTimeout(function () {
+                map_add_touch(data);
+                window.addEventListener('resize', updatePosition);
+            }, 0);
+            myChart.setOption(option, true);
+            // 缩放
+            myChart.on('dataZoom', updatePosition);
+
+            // myChart.setOption(option, true);
+        };
+        kmapMain_obj.reset = function () {
+            kmapMain_obj.init([],[],[]);
+        };
+        return kmapMain_obj;
+    }
+
+    // 高德地图
+    function Gmap(g_container_id) {
+        var gamp_obj = new Object();
+        gamp_obj.map = new AMap.Map(g_container_id, {
+            center: [103.955536,30.777554],
+            zoom: 20
+        });
+        gamp_obj.polyline = new AMap.Polyline({
+            isOutline: true,
+            outlineColor: '#ffeeff',
+            borderWeight: 1,
+            strokeColor: "#ff0500",
+            strokeOpacity: 1,
+            strokeWeight: 1,
+            // 折线样式还支持 'dashed'
+            strokeStyle: "solid",
+            // strokeStyle是dashed时有效
+            strokeDasharray: [10, 5],
+            lineJoin: 'round',
+            lineCap: 'round',
+            zIndex: 50
+        });
+
+        gamp_obj.out_polyline = new AMap.Polyline({
+            isOutline: true,
+            outlineColor: '#ffeeff',
+            borderWeight: 1,
+            strokeColor: "#000000",
+            strokeOpacity: 1,
+            strokeWeight: 1,
+            // 折线样式还支持 'dashed'
+            strokeStyle: "solid",
+            // strokeStyle是dashed时有效
+            strokeDasharray: [10, 5],
+            lineJoin: 'round',
+            lineCap: 'round',
+            zIndex: 50
+        });
+
+        gamp_obj.out_polyEditor = new AMap.PolyEditor(this.map, this.out_polyline);
+
+        gamp_obj.polyEditor = new AMap.PolyEditor(this.map, this.polyline);
+
+        gamp_obj.set_point = function (route_data_arg,keep_data_arg,obs_data_arg) {
+
+            var route_data = [];
+            route_data.splice(0,route_data.length);
+            // 深度拷贝数据
+            route_data = route_data_arg.slice(0);
+            gamp_obj.polyline.setPath(route_data);
+            gamp_obj.polyline.setMap(gamp_obj.map);
+            gamp_obj.map.setFitView([gamp_obj.polyline ]);
+
+            var keep_data = [];
+            keep_data.splice(0,keep_data.length);
+            // 深度拷贝数据
+            keep_data = keep_data_arg.slice(0);
+
+            gamp_obj.out_polyline.setPath(keep_data);
+            gamp_obj.out_polyline.setMap(gamp_obj.map);
+            gamp_obj.map.setFitView([gamp_obj.out_polyline ]);
+
+
+            var obs_data = [];
+            obs_data.splice(0,obs_data.length);
+            // 深度拷贝数据
+            obs_data = obs_data_arg.slice(0);
+            var len = obs_data.length;
+            console.log(obs_data);
+            for(var i = 0; i< len;i++){
+                console.log('sdf');
+                var m_obs_item = new AMap.Polyline({
+                    isOutline: true,
+                    outlineColor: '#ffeeff',
+                    borderWeight: 1,
+                    strokeColor: "#0dff02",
+                    strokeOpacity: 1,
+                    strokeWeight: 1,
+                    // 折线样式还支持 'dashed'
+                    strokeStyle: "solid",
+                    // strokeStyle是dashed时有效
+                    strokeDasharray: [10, 5],
+                    lineJoin: 'round',
+                    lineCap: 'round',
+                    zIndex: 50
+                });
+                var m_obs_item_editor = new AMap.PolyEditor(gamp_obj.map, m_obs_item);
+                m_obs_item.setPath(obs_data[i]);
+                m_obs_item.setMap(gamp_obj.map);
+                gamp_obj.map.setFitView([m_obs_item ]);
+            }
+        };
+        gamp_obj.set_clear = function () {
+            gamp_obj.map.clearMap( );
+        };
+        return gamp_obj;
+    }
+
+    function merge_point(point_2d, point_3d){
+        var a = [];
+        for(var i = 0; i < point_2d.length; i++){
+            a[i] = new Array();
+            a[i][0] = point_2d[i][0];
+            a[i][1] = point_2d[i][1];
+            a[i][2] = point_3d[i][2];
+        }
+
+        return a;
+    }
+
+    function routeInformationParse(data){
+        routeInformation = data.routeData;
+
+        if(routeInformation.isDeviceExist == false){
+            alert("该设备编号不存在！");
+            return;
+        }
+        else if(routeInformation.isWorkPathExist == false){
+            alert("该路径编号不存在！");
+            return;
+        }
+
+        //row3.work_path_data.work_path_data.route_data = routeInformation.value;
+        //row3.work_path_data.work_path_data.keep_out_data = routeInformation.outline;
+
+        console.log(routeInformation);
+
+        set_new_map_data(routeInformation);
+
+        //m_kmap_3d.re_data_show(routeInformation.value);
+
+
+
+        //k_main_map.init(routeInformation.value);
+        //m_g_2d_map.set_map_point(routeInformation.value);
+        //m_g_2d_map.set_map_out_point(routeInformation.outline);
+
+        $("#routeSave").show();
+    }
+
+    function routePageDataPull(){
+        if(document.getElementById('tractorIdSearch').value == ''){
+            alert("请输入设备编号");
+            return;
+        }
+        else if(document.getElementById('workPathIdSearch').value == ''){
+            alert("请输入路径编号");
+            return;
+        }
+
+        var message = {
+            "state":"OK",
+
+            "abstract":{
+                "senderType": "receiver",
+                "mesType": "cmd",
+                "cmdName": "tractorRouteAsk",
+            },
+
+            "data":{
+                "deviceId":document.getElementById('tractorIdSearch').value,
+                "workId":document.getElementById('workPathIdSearch').value
+            }
+        };
+        doSend(message);
+    }
+
+    function push_route_data(){
+        var message = {
+            "state":"OK",
+
+            "abstract":{
+                "senderType": "receiver",
+                "mesType": "cmd",
+                "cmdName": "tractorRouteSave",
+            },
+            "data":{
+                "routeData":{
+                    "deviceId": G_device_id,
+                    "workId": G_device_work_path_num,
+                    "value": row3.value
+                }
+            }
+        };
+        console.log('this is push');
+        doSend(message);
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    var G_device_id = 0;
+    var G_device_work_path_num = 0;
+
+    var routeInformation;
+
+    var row3 = {pathName:'2', deviceId:999, workId:999, value:[
+        [103.95050406676484,30.7748619686756161,1.8],
+        [103.950464038662,30.774002194644698,2],
+        [103.95132915358545,30.773906462934335,1.9],
+        [103.95135401527693,30.77415357724544,1.7],
+        [103.95073344479516,30.774235652679995,1.8],
+        [103.95076111789018,30.77481594802488,1.9],
+        [103.95054202775577,30.774861594493053,1.8]
+    ]};
+
+
+    $("#container_3d").hide();
+    $("#3dmap_tool").hide();
+    $("#routeSave").hide();
+    // 显示2D地图
+    function show_2d_map() {
+        $("#container_3d").hide();
+        $("#3dmap_tool").hide();
+
+        $("#container").show();
+        $("#map_tool").show();
+    }
+    // 显示3D地图
+    function show_3d_map() {
+        $("#container").hide();
+        $("#map_tool").hide();
+
+        $("#container_3d").show();
+        $("#3dmap_tool").show();
+    }
+    function set_width_height() {
+        // 设置宽度
+        var m_width = $(".col-md-6").width();
+        // 3d地图
+        $("#container_3d").width(m_width);
+        $("#container_3d").height(m_width);
+
+        // 主编辑地图
+        $("#main").width(m_width);
+        $("#main").height(m_width);
+
+        // 高德地图
+        $("#container").width(m_width);
+        $("#container").height(m_width);
+    }
+
+    function init_obj() {
+        // 3d
+        var dom_3d = document.getElementById("container_3d");
+        m_kmap_3d = Kmap_3d(dom_3d);
+        m_kmap_3d.init();
+
+        // 高德2d
+        m_g_2d_map = Gmap("container");
+
+        // 主地图
+        var dom_main = document.getElementById("main");
+        k_main_map = KmapMain(dom_main,m_map_callback);
+    }
+
+    function init() {
+        set_width_height();
+        init_obj();
+        init_table();
+    }
+
+    $('#btn_show_list').click(function(event){
+
+    });
+
+        // 控制事件的回调函数
+    function operateFormatter(value, row, index) {
+        return [
+            '<button type="button" class="look btn btn-success">编辑</button>',
+        ].join('')
+    }
+
+    // 操作栏
+    window.operateEvents = {
+        'click .look': function (e, value, row, index) {
+           look_button_click(row);
+        }
+    };
+    // 点击查看按钮事件
+    function look_button_click(row) {
+        var request_data = {
+            deviceId:row['tractor_num'],
+            workId:row['work_path_num']
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/get_one_tractor_work_path_data',
+            data:request_data,
+            dataType: 'json',
+            success: function(data) {
+                if (data.state === 'ok') {
+                    var m_data = data.data.data.routeData;
+                    console.log(m_data)
+                    if (m_data.isDeviceExist === 1 && m_data.isWorkPathExist === 1) {
+                        console.log('hello world');
+                        var m_device_id = m_data.deviceId;
+                        var m_work_id = m_data.workId;
+                        var m_work_name = m_data.workName;
+                        var m_work_path_data = {work_path_data: m_data.work_path_data};
+
+                         G_device_id = m_device_id;
+                         G_device_work_path_num = m_work_id;
+
+                        $('#show_tractor_num').text("拖拉机号:"+m_device_id);
+                        $('#show_work_path_id').text("路径号:"+m_work_id);
+                        $('#show_work_path_name').text("路径名字:"+m_work_name);
+
+                        // 设置路径
+                        set_new_map_data(m_work_path_data);
+                        $('.collapse').collapse('hide')
+                        $("#routeSave").show();
+
+                    } else {
+                        $('#myModalLabel').text('未登陆，请求失败');
+                        $('#myModal').modal('show')
+                    }
+                }
+            },
+            error: function(xhr, type) {
+                 $('#myModalLabel').text('未知错误');
+                 $('#myModal').modal('show')
+            }
+        });
+    }
+
+    function init_table() {
+        var $table = $('#work_path_list');
+        var request_data = {};
+        $.ajax({
+            type: 'GET',
+            url: '/get_work_path_data',
+            data: request_data,
+            dataType: 'json',
+            success: function(data) {
+                $('#msg_show_table').bootstrapTable('append', data.data);
+            },
+            error: function(xhr, type) {
+                console.log('错误')
+            }
+        });
+
+    }
+    // 绑定数据
+    function bind_data() {
+        set_new_map_data(g_m_work_path);
+    }
+
+    var g_m_work_path = {
+        "work_path_data": {
+            "work_path_data": {
+                "keep_out_data": [
+                    [103.95050406676488, 30.774861968675616, 2],
+                    [103.950464038662, 30.774002194644698, 2],
+                    [103.95132915359545, 30.773906462934335, 2],
+                    [103.95135401527693, 30.77415357724744, 2],
+                    [103.95073344479516, 30.774235652679995, 2],
+                    [103.95076111789018, 30.77481594808488, 2],
+                    [103.95054252775577, 30.774861594493053, 2]
+                ],
+                "obs_data": {
+                    "1": [
+                        [103.95070590622743, 30.773995677547042, 0],
+                        [103.95079082663516, 30.773983879931013, 0],
+                        [103.95077318329339, 30.774041490960713, 0],
+                        [103.95070915084528, 30.77402733125018, 0]
+                    ],
+                    "0": [
+                        [103.95050106126337, 30.774074637342217, 0],
+                        [103.950464038662, 30.774002194644698, 0],
+                        [103.95062819202012, 30.774027847951405, 0],
+                        [103.95058237062791, 30.77408033327775, 0],
+                        [103.95054379013824, 30.774083192084305, 0]
+                    ],
+                    "len": 2
+                },
+                "route_data": [
+                    [103.95053386408749, 30.77459217546976, 0],
+                    [103.95053087703107, 30.774166785045125, 0],
+                    [103.950659849564, 30.774065146344626, 0],
+                    [103.95081408606781, 30.774086325064825, 0],
+                    [103.95086908446152, 30.77401653053526, 0],
+                    [103.95107749575558, 30.773968143615303, 0],
+                    [103.95126462339576, 30.77396022552364, 0]
+                ]
+            },
+            "work_path_edit_time": "null",
+            "work_path_name": "GH",
+            "work_path_create_time": "2019-05-10 16:51:42",
+            "work_path_edit_state": "no"
+        },
+        "work_path_name": "GH"
+    };
+    // 三个全局数据
+    var route_data ;
+    var keep_out_data ;
+    var m_obs_data = [];
+
+    var m_kmap_3d;
+    var m_g_2d_map;
+    var k_main_map;
+    init();
+    bind_data();
+    function m_map_callback(data) {
+        m_kmap_3d.re_data_show(data,keep_out_data,m_obs_data);
+        var data_temp = deepClone(m_obs_data);
+        m_g_2d_map.set_point(data,keep_out_data,data_temp);
+        row3.value = data;
+    }
+
+
+    // 深度拷贝
+    function deepClone(obj){
+        let objClone = Array.isArray(obj)?[]:{};
+        if(obj && typeof obj==="object"){
+            for(key in obj){
+                if(obj.hasOwnProperty(key)){
+                    //判断ojb子元素是否为对象，如果是，递归复制
+                    if(obj[key]&&typeof obj[key] ==="object"){
+                        objClone[key] = deepClone(obj[key]);
+                    }else{
+                        //如果不是，简单复制
+                        objClone[key] = obj[key];
+                    }
+                }
+            }
+        }
+        return objClone;
+    }
+    // 设置地图数据
+    function set_new_map_data(work_path_json_src) {
+        var work_path_json = deepClone(work_path_json_src);
+        route_data =  work_path_json.work_path_data.work_path_data.route_data;
+        keep_out_data = work_path_json.work_path_data.work_path_data.keep_out_data;
+        var obs_data_temp = work_path_json.work_path_data.work_path_data.obs_data;
+        m_obs_data.splice(0,m_obs_data.length);
+        var len = obs_data_temp.len;
+        for(var i = 0;i<len;i++){
+            var data_item = obs_data_temp[i+''];
+            m_obs_data.push(data_item);
+        }
+
+        k_main_map.init(route_data,keep_out_data,m_obs_data);
+        m_kmap_3d.re_data_show(route_data,keep_out_data,m_obs_data);
+        var data_temp = deepClone(m_obs_data);
+
+        m_g_2d_map.set_clear();
+        m_g_2d_map.set_point(route_data,keep_out_data,data_temp);
+        row3.value = work_path_json;
+{#        console.log(route_data)#}
+    }
+
+
+</script>
+
+</body>
+</html>

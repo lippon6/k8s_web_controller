@@ -1,0 +1,460 @@
+<html>
+<head>
+    <title>车况监测0.1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdn.bootcss.com/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+     <link href="../static/videojs/video-js.css" rel="stylesheet">
+     <link rel="stylesheet" href="../static/css/meterPage.css">
+
+
+
+
+
+  <style>
+        .front {
+            width: 20px;
+            height: 20px;
+            background-color: #ff3f3b;
+        }
+        .back {
+            background-image: url('../static/nipple/j.png');
+            background-size: cover;
+        }
+        #joy_tool {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-color: #cecfd4;
+        }
+    </style>
+<body>
+
+    <!--仪表模块 start-->
+    <div class="container">
+        <!--设备搜索栏-->
+        <div class="meter-header row">
+            <div class="col-xs-5 col-sm-3">
+                <form class="form-horizontal" role="form" >
+                    <div class="form-group">
+                        <div class="channel-player-v2">
+
+                        </div>
+                        <label class="col-xs-4 col-sm-5 col-md-3" for="name" style="padding: 8px 0 0 5px; text-align: center">设备</label>
+                        <div class="col-xs-8 col-sm-7 col-md-9" style="padding: 0 0 0 6px;" id="name">
+                            <select class="form-control" >
+                                <option selected>凯沃</option>
+                                <option>时风</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-6 col-xs-offset-1 col-sm-3 col-sm-offset-6">
+                <form class="bs-example bs-example-form" role="form">
+                    <div class="col--6" style="padding-right: 5px">
+                        <div class="input-group">
+                            <input id="tractorIdSearch" type="text" class="form-control" placeholder="请输入拖拉机编号">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" onclick="meterPageDataPull()" >搜索</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--设备信息栏-->
+        <div class="meter-msg row" id="meterMessage">
+            <div class="col-xs-12 col-md-6">
+                <div class="row">
+                    <div class="col-xs-6" style="padding: 0 5px">
+                        <ul class="list-group list-unstyled" style="margin: 0">
+                            <li style="padding-left: 20px">
+{#                                <img id="image_tractor" src="../static/image/tractor.png">#}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6" style="padding: 0 5px">
+                        <ul class="list-group" style="margin: 0; list-style-type: square">
+                            <li>产品：<b id="product">拖拉机</b></li>
+                            <li>机型：<b id="model">CL904型轮式拖拉机</b></li>
+                            <li>编号：<b id="deviceId">28</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="row">
+                    <div class="col-xs-6" style="padding: 0 5px">
+                        <ul class="list-group" style="margin: 0; list-style-type: square">
+                            <li>用户：<b id="userName">赵康</b></li>
+                            <li>电话：<b id="phone">13826154854</b></li>
+                            <li>出厂：<b id="productDate">20170205</b></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6" style="padding: 0 5px">
+                        <ul class="list-group" style="margin: 0; list-style-type: square">
+                            <li>发动机：<b id="engine">Q32435G</b></li>
+                            <li>工作时间(h)：<b id="workTime">5845</b></li>
+                            <li>行驶里程(km)：<b id="useMileage">84548</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--仪表栏-->
+        <div class="meter-content row">
+            <div class="col-xs-12 col-sm-4 col-sm-push-4" style="padding: 0;">
+                <div class="meter-sm-height meter-height" id="speed"></div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-sm-pull-4" style="padding: 0;">
+                <div class="meter-sm-height meter-xs-height" id="r-speed"></div>
+            </div>
+            <div class="col-xs-6 col-sm-4" style="padding: 0;">
+                <div class="meter-sm-height meter-xs-height" id="fuel"></div>
+            </div>
+        </div>
+        <!--警示栏-->
+        <div class="meter-warning row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="row text-center">
+                    <div class="col-xs-3" style="padding: 0"><img id="image_fuelLight" src="../static/image/fuel.png"></div>
+                    <div class="col-xs-3" style="padding: 0"><img id="image_engineCheckLight" src="../static/image/engine.png"></div>
+                    <div class="col-xs-3" style="padding: 0"><img id="image_highBeam" src="../static/image/highBeamOff.png"></div>
+                    <div class="col-xs-3" style="padding: 0"><img id="image_batteryLight" src="../static/image/battery.png"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="row text-center">
+                    <div class="col-xs-3" style="padding: 0"><img id="image_engineOilLight" src="../static/image/oilOff.png"></div>
+                    <div class="col-xs-3" style="padding: 0"><img id="image_stopLight" src="../static/image/stop.png"></div>
+                    <div class="col-xs-3" style="padding: 0"><img id="image_warningLight" src="../static/image/warning.png"></div>
+                    <div class="col-xs-3" style="padding: 0"><img id="image_waterTempLight" src="../static/image/waterTemp.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--视频模块 start-->
+    <div class="container">
+        <!--状态栏-->
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    <span class="label label-default label-success" id="video_state">正在播放</span>
+
+                    <!--<span class="label label-danger">危险标签</span>-->
+                </h2>
+            </div>
+        </div>
+        <!--播放窗口-->
+        <div class="row">
+            <div class="col-md-12">
+                <video id="my-player" class="video-js vjs-default-skin vjs-big-play-centered" ></video>
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    FLAH未运行,请运行FLASH
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <a href="https://get.adobe.com/cn/flashplayer/"; class="flashLoadMsg" target="_blank">安装或者启用FLASH播放器</a>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                </button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+            </div>
+        </div>
+        <!--工具栏-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="video_tool pull-left" >
+                    <div class="btn-group btn-group-lg">
+                        <button type="button" class="btn btn-default " id="video_tool_camera1">摄像头1</button>
+                        <button type="button" class="btn btn-default"  id="video_tool_camera2">摄像头2</button>
+                        <button type="button" class="btn btn-default"  id="video_tool_camera3">摄像头3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--控制模块 start-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    控制
+                </div>
+                <div class="panel-body">
+                    <input id="control_tool_lock" data-handle-width="50" data-size="large" type="checkbox" name="my-checkbox"  data-on-color="success" data-off-color="danger" data-off-text="关闭" data-on-text="开启" >
+                </div>
+            </div>
+            <div id="control_tool">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        发动机
+                    </div>
+                    <div class="panel-body">
+                        <input id="engine_sw" data-handle-width="50" data-size="large" type="checkbox" name="my-checkbox"  data-on-color="success" data-off-color="danger" data-off-text="关闭" data-on-text="开启" >
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        刹车
+                    </div>
+                    <div class="panel-body">
+                        <input id="brake_sw" data-handle-width="50" data-size="large" type="checkbox" name="my-checkbox"  data-on-color="success" data-off-color="danger" data-off-text="关闭" data-on-text="开启" >
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="box">
+                <div id="joy_tool">
+                    <div class="nipple_l">
+                        <div class="front_l"></div>
+                        <div class="back_l"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="https://cdn.bootcss.com/bootstrap-switch/3.3.4/js/bootstrap-switch.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+
+
+    <!--视频界面 start-->
+
+    <script src="../static/videojs/video.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
+    <!--视频界面 end-->
+
+    <script src="../static/js/meterPage.js"></script>
+    <script src="../static/js/main.js"></script>
+
+    <script src="../static/nipple/nipplejs.min.js"></script>
+<script src="../static/nipple/joystick.js"></script>
+<script src="../static/nipple/index.js"></script>
+
+    <script>
+
+function flashChecker() {
+    var hasFlash = 0;　　　　 //是否安装了flash
+    var flashVersion = 0;　　 //flash版本
+    if(document.all) {
+        var swf = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+        if(swf) {
+            hasFlash = 1;
+            VSwf = swf.GetVariable("$version");
+            flashVersion = parseInt(VSwf.split(" ")[1].split(",")[0]);
+        }
+    } else {
+        if(navigator.plugins && navigator.plugins.length > 0) {
+            var swf = navigator.plugins["Shockwave Flash"];
+            if(swf) {
+                hasFlash = 1;
+                var words = swf.description.split(" ");
+                for(var i = 0; i < words.length; ++i) {
+                    if(isNaN(parseInt(words[i]))){
+                        continue;
+                    }
+                    flashVersion = parseInt(words[i]);
+                }
+            }
+        }
+    }
+    return {
+        f: hasFlash,
+        v: flashVersion
+    };
+}
+var fls = flashChecker();
+if(fls.f){
+
+}else {
+    $('#myModal').modal('show');
+}
+
+</script>
+    <script >
+        videojs.options.flash.swf = 'https://cdn.bootcss.com/videojs-swf/5.4.1/video-js.swf';
+        var video_player;
+        var video_tool_now_index = 1;
+        var now_device_num=0;
+        function video_init(url) {
+            var m_width = $(".col-md-12").width();
+            var m_heigh = m_width/1.8;
+            ID = 'my-player';
+            width = m_width+"";
+            height = m_heigh+"";
+            poster = "../static/image/timg.gif";
+            RTMP_URL = url;
+            video_player = videojs(ID,{
+                width:width,
+                height:height,
+                poster:poster
+            }); //my-player为页面video元素的id
+            video_player.src({type: "rtmp/flv", src: RTMP_URL});
+            video_player.play(); //播放
+        }
+
+        function video_gui_update(index) {
+            $('#video_tool_camera1').removeClass('btn-success');
+            $('#video_tool_camera2').removeClass('btn-success');
+            $('#video_tool_camera3').removeClass('btn-success');
+            switch (index){
+                case 1:
+                    $('#video_tool_camera1').addClass('btn-success');
+                    break;
+                case 2:
+                    $('#video_tool_camera2').addClass('btn-success');
+                    break;
+                case 3:
+                    $('#video_tool_camera3').addClass('btn-success');
+                    break
+            }
+            // 更新状态
+            $('#video_state').text('正在播放: 摄像头'+index)
+        }
+        function video_tool_callback(index) {
+            video_gui_update(index);
+            //video_player.src();
+            setTimeout( function(){
+                if (now_device_num !== 0){
+                    doSendWithName('control_tractor',{device_num:now_device_num,device_control_msg:{cmdName:'control_cam',cmdData:index}});
+                }else{
+                    alert("请选择拖拉机");
+                }
+            }, 100);//延迟5000毫米
+
+        }
+        function regist_video_tool_listener() {
+            $('#video_tool_camera1').click(function(){
+                video_tool_now_index = 1;
+                video_tool_callback(video_tool_now_index)
+            });
+            $('#video_tool_camera2').click(function(){
+                video_tool_now_index = 2;
+                video_tool_callback(video_tool_now_index)
+            });
+            $('#video_tool_camera3').click(function(){
+                video_tool_now_index = 3;
+                video_tool_callback(video_tool_now_index)
+            });
+
+        }
+        $(document).ready(function() {
+            regist_video_tool_listener();
+            // video_tool_callback(video_tool_now_index);
+        });
+
+        // 获得rtmp地址回调
+        function video_on_get_rtmp_addr(data) {
+            console.log('video');
+             video_init(data.rtmp);
+        }
+        // 获得指定id的rtmp
+        function video_get_device_rtmp(id) {
+            now_device_num = id;
+            var data_json = {device_num:id};
+            setTimeout( function(){
+                // doSendWithName('sub_tractor', {device_id:37});
+                 doSendWithName('get_rtmp_addr',data_json);
+            }, 500);//延迟5000毫米
+        }
+        // 控制返回函数
+        function control_msg_response(data) {
+            console.log(data);
+        }
+
+    </script>
+<script>
+
+    function select(val) {
+  return document.querySelector(val);
+}
+
+new Joystick({
+  zone: select('#joy_tool')
+})
+.init()
+.onStart = function(distance, angle,m_data) {
+   var y_distance = 0;
+   var x_distance = 0;
+   y_distance = m_data.distance * Math.sin(m_data.angle.degree*Math.PI/180);
+    x_distance = m_data.distance * Math.cos(m_data.angle.degree*Math.PI/180);
+    if(control_state){
+        doSendWithName('control_tractor',{device_num:now_device_num,device_control_msg:{cmdName:'control_xy',cmdData:{x:x_distance,y:y_distance}}});
+    }
+    console.log('x:'+x_distance+'y:'+y_distance);
+}
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var control_state = 0;
+        $('#control_tool').hide();
+        // 锁
+        $('#control_tool_lock').bootstrapSwitch();
+        //点击触发事件，监听按钮状态
+        $('#control_tool_lock').on('switchChange.bootstrapSwitch',function(event,state){
+            //获取状态
+            if (state){
+                // 解锁
+                $('#control_tool').show(200);
+                control_state = 1;
+            }else{
+                // 上锁
+                $('#control_tool').hide(200);
+                control_state = 0;
+            }
+        });
+        //发动机
+        $('#engine_sw').bootstrapSwitch();
+        //点击触发事件，监听按钮状态
+        $('#engine_sw').on('switchChange.bootstrapSwitch',function(event,state){
+            if (state){
+                 doSendWithName('control_tractor',{device_num:now_device_num,device_control_msg:{cmdName:'control_engine',cmdData:'open'}});
+            }else{
+                  doSendWithName('control_tractor',{device_num:now_device_num,device_control_msg:{cmdName:'control_engine',cmdData:'close'}});
+            }
+        });
+
+        //刹车
+        $('#brake_sw').bootstrapSwitch();
+        //点击触发事件，监听按钮状态
+        $('#brake_sw').on('switchChange.bootstrapSwitch',function(event,state){
+            if (state){
+            doSendWithName('control_tractor',{device_num:now_device_num,device_control_msg:{cmdName:'control_breake',cmdData:'open'}});
+            }else{
+            doSendWithName('control_tractor',{device_num:now_device_num,device_control_msg:{cmdName:'control_breake',cmdData:'close'}});
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

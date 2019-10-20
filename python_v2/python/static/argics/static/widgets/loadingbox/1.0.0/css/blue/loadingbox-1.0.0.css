@@ -1,0 +1,70 @@
+.widget-messagebox-overlay{
+	position: absolute;
+	height: 100%; width: 100%;
+	left:0px; top:0px;
+	display: block;
+	background-color: #898888;
+	cursor: not-allowed;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	z-index: 20000;
+}
+
+.widget-messagebox{
+	position: absolute;
+	border-right: 5px solid #99BBE8;
+	border-bottom: 5px solid #99BBE8;
+	border-left: 5px solid #99BBE8;
+	background-color: #FFF;
+	z-index: 20000;
+	font-size: 12px;
+}
+
+.widget-messagebox .titlebar{
+	background-color: #99BBE8;
+	padding: 0px;
+	height: 28px;
+}
+.widget-messagebox .titlebar .title {
+	padding-top: 6px; padding-left: 4px;
+	float: left;
+	font-weight: bold;
+	color: #15428B;
+}
+
+.widget-messagebox .message-pane {
+	margin: 10px 0px;
+}
+
+.widget-messagebox .message-pane .signal {
+	float: left;
+	width: 48px;
+}
+.widget-messagebox .message-pane .signal-loading{
+	background: url(images/loading.gif) no-repeat 12px 0px;
+}
+.widget-messagebox .message-pane .message-wrapper {
+	margin: 5px 10px 0px 0px;
+	float: left;
+	overflow-y: auto;
+}
+.widget-messagebox .message-pane .message-wrapper .message {
+	width: 100%;
+	height: auto;
+}
+
+/* for drag */
+.widget-messagebox-drag-overlay {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.widget-messagebox-drag-box {
+	border: 1px solid #777777;
+	cursor: move;
+    display: none;
+    position: absolute;
+}

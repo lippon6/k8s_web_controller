@@ -1,0 +1,27 @@
+.widget-toolbar {
+	height: 25px;
+	background-color: #D3E1F1;
+    color: #222222;
+    overflow: hidden;
+    border-bottom:1px solid #8DB2E3;
+    margin-top:1px;
+    font-size:1.2em;
+    width:100%;
+}
+
+.widget-toolbar .items-pane{float:left; height:21px; margin-top:2px; margin-bottom:2px; position:relative; overflow:hidden;}
+.widget-toolbar .items-pane .items-wrapper{float:left; height:21px; width:5000px; position:absolute;}
+.widget-toolbar .items-pane .items-wrapper .item{float:left; height:20px;line-height:21px;padding:1px 3px 0px 20px; border:1px solid #D3E1F1; overflow:visible; cursor: pointer;width:auto;}
+.widget-toolbar .items-pane .items-wrapper .item:hover{text-decoration:none;border:1px solid #3399CC;border-radius:3px;}
+@-moz-document url-prefix(){.widget-toolbar .items-pane .items-wrapper .item {line-height:18px;padding-top:0px; }}
+.widget-toolbar .navi-pane {float:right; height:19px; border-left:1px solid #99BBE8; border-bottom:1px solid #99BBE8; margin-top:2px; margin-bottom:2px;}
+.widget-toolbar .navi-pane .prev {float:left; width:10px; height:19px; background:#C3DAF9 url("images/navi-prev.gif") no-repeat center; cursor: pointer;}
+.widget-toolbar .navi-pane .prev-disabled {float:left; width:10px; height:19px; background:#C3DAF9 url("images/navi-prev-disabled.gif") no-repeat center;}
+.widget-toolbar .navi-pane .next {float:left; width:10px; height:19px; background:#C3DAF9 url("images/navi-next.gif") no-repeat center; cursor: pointer;}
+.widget-toolbar .navi-pane .next-disabled {float:left; width:10px; height:19px; background:#C3DAF9 url("images/navi-next-disabled.gif") no-repeat center;}
+.openwin #Ltoolbar{border:1px solid #8DB2E3;}
+.openwin .widget-toolbar{margin:0;}
+.openwin #Lforminfo{border-left:1px solid #8DB2E3;border-right:1px solid #8DB2E3;}
+.openwin #LdataArea{border:1px solid #8DB2E3;border-top:0;}
+
+
