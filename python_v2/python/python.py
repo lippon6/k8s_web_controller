@@ -66,6 +66,7 @@ k8sHelper.get_all_namespace()
 
 # openwrt helper
 openwrt_helper = OpenWrtHelper(k8sHelper)
+openwrt_helper.create_node()
 
 # user manage init
 user_account_manage = UserAccountManage(sql_util,join_room,leave_room,emit)
@@ -78,17 +79,21 @@ message_parse_manage = MessageParseManage(sql_util,emit)
 def index():
     return render_template('login.html')
 
+# 用户登陆
 @app.route('/login.html')
 def login_html():
     return render_template('login.html')
 
+# 注册
 @app.route('/register.html')
 def register():
     return render_template('register.html')
 
+# 首页
 @app.route('/index.html')
 def index_html():
     return render_template('index.html')
+
 # 工程界面
 @app.route('/projectPage.html')
 def mapPage():
@@ -212,3 +217,5 @@ if __name__ == '__main__':
     websocket.init(emit,join_room,leave_room)
     socketio.on_namespace(websocket)
     socketio.run(app,host='0.0.0.0')
+
+

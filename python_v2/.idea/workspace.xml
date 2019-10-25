@@ -21,190 +21,199 @@
       <change afterPath="$PROJECT_DIR$/../../adhoc_controller_panel_by_qt/test_for_web/test_for_web/test_for_web.pro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../adhoc_controller_panel_by_qt/test_for_web/test_for_web/topology_page.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../adhoc_controller_panel_by_qt/test_for_web/test_for_web/topology_page.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/python_v2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/.idea/python.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/client_manage/user_client_manage/user_control_log.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/config/kubeconfig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/message_parse_manage/message_parse_manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/module/convert_to_pdf_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/module/k8s_help_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/module/mysql_help_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/module/openwrt_help_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/page_parser/msg_edit_page/msg_edit_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/page_parser/msg_edit_page/msg_edit_page_pdf_log.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/page_parser/msg_edit_page/msg_edit_page_sql_query.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/page_parser/msg_edit_page/msg_edit_page_user_login_pdf_msg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/page_parser/msg_show_page/msg_show_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/python.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/server_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/Skins/YouTouBe.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/Skins/facebook-player.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/Skins/skin-1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/Skins/tomactor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/global/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/application-context.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap-table/bootstrap-table.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap-table/bootstrap-table.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap/3.3.4/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap/3.3.4/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/bootstrap/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/functions/css/blue/basic/catalogManager.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/functions/css/blue/default.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/functions/css/blue/monitor/tractormonitor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/functions/js/basic/catalogManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/functions/js/monitor/tractormonitor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/ichar/ichart-1.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/ichar/ichart.gauge2d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/utilities/global/1.0.0/js/global-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/utilities/jquery.ex/1.0.0/js/jquery.ex-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/utilities/jquery.ui.mouseinteraction/1.0.0/js/jquery.ui.mouseinteraction-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/utilities/jquery/1.9.1/js/jquery-1.9.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/utilities/json2/1.0.0/js/json2-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/utilities/validate/1.0.0/js/validate-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/dialog/1.0.0/css/blue/dialog-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/dialog/1.0.0/js/dialog-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/form/1.0.0/css/blue/form-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/form/1.0.0/js/form-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/grid_resizeable/1.0.0/css/blue/grid_resizeable-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/grid_resizeable/1.0.0/js/grid_resizeable-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/loadingbox/1.0.0/css/blue/loadingbox-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/loadingbox/1.0.0/js/loadingbox-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/message/1.0.0/css/blue/message-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/message/1.0.0/js/message-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/modelbox/1.0.0/css/blue/modelbox-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/modelbox/1.0.0/js/modelbox-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/pagination/1.0.0/css/blue/pagination-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/pagination/1.0.0/js/pagination-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/paginationed/1.0.0/css/blue/paginationed-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/splitbar/1.0.0/css/blue/splitbar-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/splitbar/1.0.0/js/splitbar-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/toolbar/1.0.0/css/blue/toolbar-1.0.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/toolbar/1.0.0/js/toolbar-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/ztree/3.5.16/css/blue/ztree-3.5.16.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/static/widgets/ztree/3.5.16/js/ztree-3.5.16.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/argics/tracmonitor/main.do" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/css/meterPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/css/my-login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/css/pdfh5.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/battery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/batteryOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/batteryWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/engine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/engineOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/engineWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/fuel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/fuelOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/fuelWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/highBeam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/highBeamOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/highBeamWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/null.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/oil (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/oil (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/oil (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/oil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/oilOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/oilWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/routePicture.jpg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/stop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/stopOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/stopWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/timg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/tractor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/tractor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/video-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/warning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/warningOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/warningOn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/waterTemp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/waterTempOff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/image/waterTempWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/account_check.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/departmentManagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/deviceManagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/echarts.simple.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/jquery-1.11.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/login_page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/mapPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/meterPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/modelManagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/my-login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/pdf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/pdf.worker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/pdfh5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/producerMsgPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/productContentPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/roleManagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/serviceManagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/statisticalPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/userManagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/vue.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/warningPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/js/warningmanagePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/lang/summernote-zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/lang/summernote-zh-CN.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/nipple/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/nipple/j.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/nipple/joystick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/nipple/nipplejs.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/video-js.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/video-js.swf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/video.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/videojs-contrib-hls.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/videojs-contrib-hls.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/videojs-flash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/videojs-flash.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/static/videojs/videojs-ie8.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/departmentManagePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/deviceManagePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/edit_msg_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/edit_work_path_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/forgot.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/k1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/k2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/k3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/k4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/k5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/modelManagePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/msg_show_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/producerMsgPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/productContentPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/projectPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/roleManagePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/serviceManagePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/statisticalPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/userManagePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/usr.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/templates/warningManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/.idea/python_v2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/.idea/python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/client_manage/user_client_manage/user_account_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/client_manage/user_client_manage/user_control_log.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/client_manage/user_client_manage/user_id_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/config/kubeconfig.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/message_parse_manage/message_parse_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/module/convert_to_pdf_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/module/k8s_help_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/module/mysql_help_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/module/openwrt_help_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/page_parser/msg_edit_page/msg_edit_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/page_parser/msg_edit_page/msg_edit_page_pdf_log.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/page_parser/msg_edit_page/msg_edit_page_sql_query.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/page_parser/msg_edit_page/msg_edit_page_user_login_pdf_msg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/page_parser/msg_show_page/msg_show_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/python.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/server_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/Skins/YouTouBe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/Skins/facebook-player.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/Skins/skin-1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/Skins/tomactor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/global/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/application-context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap-table/bootstrap-table.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap-table/bootstrap-table.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap/3.3.4/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap/3.3.4/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/bootstrap/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/functions/css/blue/basic/catalogManager.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/functions/css/blue/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/functions/css/blue/monitor/tractormonitor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/functions/js/basic/catalogManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/functions/js/monitor/tractormonitor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/ichar/ichart-1.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/ichar/ichart.gauge2d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/utilities/global/1.0.0/js/global-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/utilities/jquery.ex/1.0.0/js/jquery.ex-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/utilities/jquery.ui.mouseinteraction/1.0.0/js/jquery.ui.mouseinteraction-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/utilities/jquery/1.9.1/js/jquery-1.9.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/utilities/json2/1.0.0/js/json2-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/utilities/validate/1.0.0/js/validate-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/dialog/1.0.0/css/blue/dialog-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/dialog/1.0.0/js/dialog-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/form/1.0.0/css/blue/form-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/form/1.0.0/js/form-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/grid_resizeable/1.0.0/css/blue/grid_resizeable-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/grid_resizeable/1.0.0/js/grid_resizeable-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/loadingbox/1.0.0/css/blue/loadingbox-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/loadingbox/1.0.0/js/loadingbox-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/message/1.0.0/css/blue/message-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/message/1.0.0/js/message-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/modelbox/1.0.0/css/blue/modelbox-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/modelbox/1.0.0/js/modelbox-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/pagination/1.0.0/css/blue/pagination-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/pagination/1.0.0/js/pagination-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/paginationed/1.0.0/css/blue/paginationed-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/splitbar/1.0.0/css/blue/splitbar-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/splitbar/1.0.0/js/splitbar-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/toolbar/1.0.0/css/blue/toolbar-1.0.0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/toolbar/1.0.0/js/toolbar-1.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/ztree/3.5.16/css/blue/ztree-3.5.16.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/static/widgets/ztree/3.5.16/js/ztree-3.5.16.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/argics/tracmonitor/main.do" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/css/meterPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/css/my-login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/css/pdfh5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/battery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/batteryOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/batteryWarning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/engine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/engineOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/engineWarning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/fuel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/fuelOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/fuelWarning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/highBeam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/highBeamOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/highBeamWarning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/null.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/oil (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/oil (2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/oil (3).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/oil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/oilOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/oilWarning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/routePicture.jpg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/stop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/stopOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/stopWarning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/timg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/tractor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/tractor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/video-background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/warning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/warningOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/warningOn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/waterTemp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/waterTempOff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/image/waterTempWarning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/account_check.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/departmentManagePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/deviceManagePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/echarts.simple.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/jquery-1.11.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/login_page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/mapPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/meterPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/modelManagePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/my-login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/pdf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/pdf.worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/pdfh5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/producerMsgPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/productContentPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/roleManagePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/serviceManagePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/statisticalPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/userManagePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/warningPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/js/warningmanagePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/lang/summernote-zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/lang/summernote-zh-CN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/nipple/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/nipple/j.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/nipple/joystick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/nipple/nipplejs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/video-js.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/video-js.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/videojs-contrib-hls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/videojs-contrib-hls.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/videojs-flash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/videojs-flash.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/static/videojs/videojs-ie8.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/departmentManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/deviceManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/edit_msg_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/edit_work_path_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/forgot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/k1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/k2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/k3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/k4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/k5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/modelManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/msg_show_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/producerMsgPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/productContentPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/projectPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/roleManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/serviceManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/statisticalPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/userManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/usr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/warningManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/module/infiltration_controller_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/module/project_help_module.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/adhoc_controller.pro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/main.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/config/lede_test1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/python/config/lede_test1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/mysql_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/mysql_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/python.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/static/js/mapPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/python/static/js/mapPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/python/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/templates/projectPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/python/templates/projectPage.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -284,6 +293,52 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-752437481">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="37" />
+          <entry key="js" value="147" />
+          <entry key="py" value="347" />
+          <entry key="yml" value="141" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="37" />
+          <entry key="JavaScript" value="147" />
+          <entry key="Python" value="347" />
+          <entry key="YAML" value="141" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="3" />
+          <entry key="js" value="2" />
+          <entry key="py" value="5" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="3" />
+          <entry key="JavaScript" value="2" />
+          <entry key="Python" value="5" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Unnamed">
@@ -296,22 +351,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/k8s_help_module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-              <folding>
-                <element signature="e#53#90#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/module/openwrt_help_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="58" column="75" lean-forward="true" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
+            <state relative-caret-position="343">
+              <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
               <folding>
                 <element signature="e#56#67#0" expanded="true" />
                 <marker date="1571560412939" expanded="true" signature="348:611" ph="..." />
@@ -322,11 +365,43 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python/module/infiltration_controller_module.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/config/lede_test1.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="575">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_control_log.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="32" column="47" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -334,37 +409,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/python.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+            <state relative-caret-position="718">
+              <caret line="220" selection-start-line="220" selection-end-line="220" />
               <folding>
                 <element signature="e#677#686#0" expanded="true" />
-                <marker date="1571560072254" expanded="true" signature="3556:3726" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/apis/core_v1_api.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582325">
-              <caret line="23302" column="28" selection-start-line="23302" selection-start-column="28" selection-end-line="23302" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/config/kubeconfig.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/convert_to_pdf_module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1571839990953" expanded="true" signature="3567:3737" ph="..." />
               </folding>
             </state>
           </provider>
@@ -382,8 +431,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/module/mysql_help_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state relative-caret-position="93">
+              <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -391,7 +440,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/server_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
+            <state relative-caret-position="525">
               <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
             </state>
           </provider>
@@ -415,10 +464,11 @@
       <find>create_namespaced_</find>
       <find>list</find>
       <find>list_de</find>
+      <find>markerInit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -427,18 +477,24 @@
         <option value="$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py" />
         <option value="$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py" />
         <option value="$PROJECT_DIR$/python/server_config.py" />
-        <option value="$PROJECT_DIR$/python/config/lede_test1.yml" />
-        <option value="$PROJECT_DIR$/python/python.py" />
         <option value="$PROJECT_DIR$/python/module/k8s_help_module.py" />
         <option value="$PROJECT_DIR$/python/module/openwrt_help_module.py" />
+        <option value="$PROJECT_DIR$/python/templates/index.html" />
+        <option value="$PROJECT_DIR$/python/templates/projectPage.html" />
+        <option value="$PROJECT_DIR$/python/static/js/mapPage.js" />
+        <option value="$PROJECT_DIR$/python/module/project_help_module.py" />
+        <option value="$PROJECT_DIR$/python/module/mysql_help_module.py" />
+        <option value="$PROJECT_DIR$/python/python.py" />
+        <option value="$PROJECT_DIR$/python/config/lede_test1.yml" />
+        <option value="$PROJECT_DIR$/python/module/infiltration_controller_module.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="164" />
+    <option name="y" value="-21" />
+    <option name="width" value="1551" />
+    <option name="height" value="847" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -446,7 +502,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -469,7 +524,39 @@
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_v2" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="client_manage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="client_manage" type="462c0819:PsiDirectoryNode" />
+              <item name="user_client_manage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="usr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="message_parse_manage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
@@ -481,6 +568,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -558,14 +646,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24635416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24864277" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24708377" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -587,24 +676,10 @@
     <entry file="file://$PROJECT_DIR$/python/message_parse_manage/receiver_message_parse_manage.py" />
     <entry file="file://$PROJECT_DIR$/python/message_parse_manage/device_bulk_add_config.py" />
     <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_tractor_buy_log.py" />
-    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/Python/Python35/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29775">
           <caret line="1220" selection-start-line="1220" selection-end-line="1220" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -615,17 +690,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_control_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/apis/apps_v1_api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55200">
           <caret line="2217" column="42" selection-start-line="2217" selection-start-column="8" selection-end-line="2217" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/k8s_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -636,6 +711,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python/config/kubeconfig.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/convert_to_pdf_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/templates/projectPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/static/js/mapPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6725">
+          <caret line="269" column="65" selection-start-line="269" selection-start-column="65" selection-end-line="269" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/templates/scenePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/static/js/meterPage.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/project_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_control_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="32" column="47" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python/message_parse_manage/message_parse_manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -643,65 +787,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/config/kubeconfig.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/convert_to_pdf_module.py">
+    <entry file="file://$PROJECT_DIR$/python/server_config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="525">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/config/lede_test1.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/server_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state relative-caret-position="575">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/python.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+        <state relative-caret-position="718">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
           <folding>
             <element signature="e#677#686#0" expanded="true" />
-            <marker date="1571560072254" expanded="true" signature="3556:3726" ph="..." />
+            <marker date="1571839990953" expanded="true" signature="3567:3737" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/module/mysql_help_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/k8s_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <element signature="e#53#90#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="93">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/module/openwrt_help_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="58" column="75" lean-forward="true" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
+        <state relative-caret-position="343">
+          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
           <folding>
             <element signature="e#56#67#0" expanded="true" />
             <marker date="1571560412939" expanded="true" signature="348:611" ph="..." />
@@ -710,6 +831,9 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/infiltration_controller_module.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

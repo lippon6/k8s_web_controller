@@ -11,6 +11,7 @@ class sqlHelper(object):
         self.password = passwd
         self.db = db
         self.connect_state = False
+
     # 连接数据库
     def connect_mysql(self):
         try:
@@ -20,6 +21,7 @@ class sqlHelper(object):
             print('connect ok')
         except:
             print('connect error')
+
     # 关闭数据库
     def close_mysql(self):
         self.conn.close()
@@ -43,6 +45,7 @@ class sqlHelper(object):
                 return len[0][0]
             except:
                 print("get failed")
+                
     # 获得一行数据
     def get_one_row(self):
         return self.cursor.fetchone()

@@ -13,6 +13,8 @@ function mapPageInit(){
 
     mapInit();
 
+    markerInit();
+
 
     mapPageDataPull();
 
@@ -250,17 +252,27 @@ function deviceTypeFilter(name){
 
 //标记点绘制
 function markerInit(){
-    
+    var longitude = new Array()
+    var latitude = new Array()
+    var tractorQuantity = 4;
+    longitude[0] = 103.932055;
+    longitude[1] = 103.931201;
+    longitude[2] = 103.931502;
+    longitude[3] = 103.932648;
 
-    for(var i = 0; i < mapInformation.tractorQuantity; i++){
+    latitude[0] = 30.757867;
+    latitude[1] = 30.758426;
+    latitude[2] = 30.758829;
+    latitude[3] = 30.758497;
+
+    for(var i = 0; i < tractorQuantity; i++){
         var marker = new AMap.Marker({
-            position: new AMap.LngLat(mapInformation.longitude[i], mapInformation.latitude[i]),
+            position: new AMap.LngLat(longitude[i], latitude[i]),
               
         }); 
 
         marker.setLabel({
             offset: new AMap.Pixel(20, 20),
-            content: mapInformation.id[i]
         });
         markerArray[i] = marker;    
     }
