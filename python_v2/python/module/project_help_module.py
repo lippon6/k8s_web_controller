@@ -1,4 +1,4 @@
-# openwrt control api
+# project control api
 # created by lippon
 # 2019-10-22
 

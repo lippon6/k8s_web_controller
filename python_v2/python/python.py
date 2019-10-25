@@ -62,11 +62,9 @@ sql_util.connect_mysql()
 # k8s helper
 k8s_config_file = server_config.get_k8s_config_file()
 k8sHelper = K8sHelper(k8s_config_file)
-k8sHelper.get_all_namespace()
 
 # openwrt helper
 openwrt_helper = OpenWrtHelper(k8sHelper)
-openwrt_helper.create_node()
 
 # user manage init
 user_account_manage = UserAccountManage(sql_util,join_room,leave_room,emit)
