@@ -145,6 +145,50 @@ class K8sHelper(object):
         else:
             print("nods is not exist")
 
+    def get_node_capacity(self, node):
+        """
+        :type node: str
+        :rtype    : dict
+        """
+        try:
+            i = self.get_all_nodes_name().index(node)
+            return self.get_all_nodes().items[i].status.allocatable
+
+        except ValueError:
+            return None
+
+    def get_all_nodes_arch(self):
+        """
+        :rtype    : dict
+        """
+        archs = {}
+
+        for item in self.get_all_nodes().items:
+            archs[item.metadata.name] = item.metadata.labels['beta.kubernetes.io/arch']
+
+        return archs
+
+    def get_all_nodes_ip(self):
+        """
+        :rtype    : dict
+        """
+        ips = {}
+        for item in self.get_all_nodes().items:
+            ips[item.metadata.name] = item.status.addresses[0].address
+
+        return ips
+
+    def get_node_ip(self, node):
+        """
+        :type node: str
+        :rtype    : str
+        """
+        return self.get_all_nodes_ip()[node]
+
+
+
+
+
 
 
 

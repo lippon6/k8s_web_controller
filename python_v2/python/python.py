@@ -29,6 +29,7 @@ from module.openwrt_help_module import OpenWrtHelper
 
 from server_config import ServerConfig
 
+from test import Test
 
 # get the system platform
 print(sys.platform)
@@ -64,13 +65,17 @@ k8s_config_file = server_config.get_k8s_config_file()
 k8sHelper = K8sHelper(k8s_config_file)
 
 # openwrt helper
-openwrt_helper = OpenWrtHelper(k8sHelper)
+openwrtHelper = OpenWrtHelper(k8sHelper)
 
 # user manage init
 user_account_manage = UserAccountManage(sql_util,join_room,leave_room,emit)
 
 # web messages parse
 message_parse_manage = MessageParseManage(sql_util,emit)
+
+test = Test(k8sHelper, openwrtHelper)
+
+test.test_for_test()
 
 # web route
 @app.route('/')

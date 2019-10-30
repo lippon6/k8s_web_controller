@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: lede-test
-  replicas: 20
+  replicas: 70
   template:
     metadata:
       labels:
@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: lede
-        image: httpd
-        command:
+        image:  lede-17.01.5:latest
+        command: ["/bin/ash", "-ce", "tail -f /dev/null"]
         imagePullPolicy: Never
       affinity:
         nodeAffinity:
@@ -23,7 +23,7 @@ spec:
             nodeSelectorTerms:
             - matchExpressions:
               - key: concentration
-                operator: Lt
+                operator: Gt
                 values:
                 - "80"
 
