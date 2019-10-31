@@ -24,6 +24,18 @@ class HeapsterHelper:
         except:
             print("bad master name")
 
+    def get_all_nodes(self):
+        """
+        :rtype : list
+        """
+        try:
+            url = ROUTE_HEAD + self.masterIP + ROUTE_PORT + ROUTE_API + ROUTE_NODE
+            response = requests.get(url)
+        except:
+            return None
+
+        return json.loads(response.text)
+
     def get_cpu_cores(self, node):
         """
         :type node: str
@@ -68,21 +80,66 @@ class HeapsterHelper:
         else:
             return None
 
-    def get_memory_capacity(self, node):
+    def get_memory_allocatable(self, node):
         """
         :type node: str
         :rtype : int
         """
+        url = ROUTE_HEAD + self.masterIP + ROUTE_PORT + ROUTE_API + ROUTE_NODE + node + "/metrics/memory/node_allocatable"
+
+        try:
+            response = requests.get(url)
+        except:
+            # bad url
+            return None
+
+        text = json.loads(response.text)
+
+        if len(text["metrics"]) == 0:
+            return None
+
+        return text["metrics"][len(text["metrics"]) - 1]["value"]
 
     def get_memory_usage(self, node):
         """
         :type node: str
         :rtype : int
         """
+        url = ROUTE_HEAD + self.masterIP + ROUTE_PORT + ROUTE_API + ROUTE_NODE + node + "/metrics/memory/usage"
+
+        try:
+            response = requests.get(url)
+        except:
+            # bad url
+            return None
+
+        text = json.loads(response.text)
+
+        if len(text["metrics"]) == 0:
+            return None
+
+        return text["metrics"][len(text["metrics"]) - 1]["value"]
+
     def get_memory_usage_percent(self, node):
         """
         :type node: str
         :rtype : float
+        """
+        usage = self.get_memory_usage(node)
+        allocatable = self.get_memory_allocatable(node)
+
+        if usage is not None and allocatable is not None:
+            return usage/allocatable
+
+    def get_network_tx_rate(self, node):
+        """
+        :type node: str
+        :rtype : int
+        """
+    def get_network_rx_rate(self, node):
+        """
+        :type node: str
+        :rtype : int
         """
 
     def get_disk_capacity(self, node):

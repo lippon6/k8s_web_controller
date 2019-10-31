@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: lede-test
-  replicas: 70
+  replicas: 2
   template:
     metadata:
       labels:
@@ -17,6 +17,10 @@ spec:
         image:  lede-17.01.5:latest
         command: ["/bin/ash", "-ce", "tail -f /dev/null"]
         imagePullPolicy: Never
+        resources:
+          requests:
+            cpu: 200m
+            memory: 50Mi
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
