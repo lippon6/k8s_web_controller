@@ -1,8 +1,12 @@
 # infiltration algorithm control api
 # created by lippon
 # 2019-10-25
+
+from threading import Timer
+
 WEIGHT_MEMORY = "memory"
 WEIGHT_CPU = "cpu"
+UPDATE_INTERVAL = 2
 
 class InfiltrationAlgorithmController:
     def __init__(self, weight, heapster_helper, k8s_helper):
@@ -52,7 +56,23 @@ class InfiltrationAlgorithmController:
         """
         :type node: str
         """
-
         for key in self.weight:
             if self.concentration[node][key] is not None:
                 self.k8s_helper.push_node_label_value(node, key, str(self.concentration[node][key]))
+
+    def infiltration_control_step(self):
+        for node in self.nodes:
+            self.get_features_value(node)
+            self.calculate_concentration(node)
+            self.patch_concentration_label(node)
+
+        self.nodes = self.heapster_helper.get_all_nodes()
+        print(self.concentration)
+
+    def infiltration_control_handle(self):
+        self.infiltration_control_step()
+        t = Timer(UPDATE_INTERVAL, self.infiltration_control_handle)
+        t.start()
+
+
+

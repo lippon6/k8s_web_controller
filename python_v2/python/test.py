@@ -27,7 +27,6 @@ class Test:
         t = Timer(inc, self.print_feature, (inc,))
         t.start()
 
-
     def test_for_test(self):
 
         # url = "http://192.168.0.134:8080/api/v2.1/machinestats"
@@ -38,8 +37,7 @@ class Test:
         # print(self.heapsterHelper.get_cpu_usage_percent("raspberrypi02"))
         # print(self.heapsterHelper.get_all_nodes())
 
-        print(self.infiltraionController.calculate_concentration("node01"))
-        self.infiltraionController.patch_concentration_label("node01")
+        self.infiltraionController.infiltration_control_handle()
         # self.k8sHelper.push_node_label_value("node01", "ai", "1")
         # self.print_feature(0.5)
 
