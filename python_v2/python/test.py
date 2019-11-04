@@ -6,9 +6,10 @@ import requests
 import json
 from module.cadvisor_help_module import  CadvisorHelper
 from module.heapster_help_module import HeapsterHelper
-from datetime import datetime
 from threading import Timer
 from module.infiltration_controller_module import InfiltrationAlgorithmController
+from module.node_networking_check_module import NodeNetworkingCheck
+from module.ssh_help_module import SshHelper
 
 weight = {'ai': {'cpu': 100, 'memory': 50}}
 
@@ -19,6 +20,8 @@ class Test:
         self.openwrtHelper = openwrt
         self.heapsterHelper = HeapsterHelper(self.k8sHelper)
         self.infiltraionController = InfiltrationAlgorithmController(weight, self.heapsterHelper, self.k8sHelper)
+        self.ssh_helper = SshHelper()
+        self.node_networking_check = NodeNetworkingCheck(self.ssh_helper, self.k8sHelper)
 
     def print_feature(self, inc):
         print(self.heapsterHelper.get_cpu_usage_percent("node01"))
@@ -36,8 +39,12 @@ class Test:
         # self.k8sHelper.push_node_label_value("node01", "concentration", "90")
         # print(self.heapsterHelper.get_cpu_usage_percent("raspberrypi02"))
         # print(self.heapsterHelper.get_all_nodes())
+        # for node in self.k8sHelper.get_all_nodes_ip():
+        #     print(node)
+        print(self.node_networking_check.all_nodes_network_list())
 
-        self.infiltraionController.infiltration_control_handle()
+
+        # self.infiltraionController.infiltration_control_handle()
         # self.k8sHelper.push_node_label_value("node01", "ai", "1")
         # self.print_feature(0.5)
 

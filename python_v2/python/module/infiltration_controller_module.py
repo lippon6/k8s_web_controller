@@ -12,6 +12,8 @@ class InfiltrationAlgorithmController:
     def __init__(self, weight, heapster_helper, k8s_helper):
         """
         :type weight: dict
+        :type heapster_helper: HeapsterHelper
+        :type k8s_helper: K8sHelper
         """
         self.heapster_helper = heapster_helper
         self.k8s_helper = k8s_helper

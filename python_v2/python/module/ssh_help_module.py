@@ -3,25 +3,30 @@
 # 2019-11-3
 import paramiko
 
+PORT = 22
+USERNAME = "whf"
+PASSWORD = "123456"
+
 class SshHelper:
     def __init__(self):
         self.ssh = paramiko.SSHClient()
 
-    def connect(self, hostname, port, username, password):
+        know_host = paramiko.AutoAddPolicy()
+        # 加载创建的白名单
+        self.ssh.set_missing_host_key_policy(know_host)
+
+    def connect(self, hostname):
         """
         :type hostname: str
-        :type port: int
-        :type username: str
-        :type password: str
         :rtype : bool
         """
         try:
             self.ssh.close()
             self.ssh.connect(
                 hostname=hostname,
-                port=port,
-                username=username,
-                password=password
+                port=PORT,
+                username=USERNAME,
+                password=PASSWORD
             )
         except:
             return False
