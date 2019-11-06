@@ -200,15 +200,30 @@
       <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/userManagePage.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/usr.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/warningManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/config/deployment_mould.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/module/tools/yaml_dict_operate_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/service/offloading_manage_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/service/weight_manage_service.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/adhoc_controller.pro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/main.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/module/infiltration_controller_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/infiltration_controller_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/module/node_networking_check_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/node_networking_check_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/module/ssh_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/ssh_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/config/lede_test1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/python/config/lede_test1.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/cadvisor_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/k8s/cadvisor_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/convert_to_pdf_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/tools/convert_to_pdf_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/heapster_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/k8s/heapster_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/infiltration_controller_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/infiltration_controller_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/k8s_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/k8s/k8s_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/mysql_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/database/mysql_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/node_networking_check_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/node_networking_check_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/openwrt_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/openwrt_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/project_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/project_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/ssh_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/ssh/ssh_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/python.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/templates/departmentManagePage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/templates/warningManagePage.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/python/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -292,9 +307,10 @@
     <session id="-752437481">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.28" value="1" />
@@ -304,16 +320,20 @@
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.41" value="2" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="deployment_mould" value="11" />
+          <entry key="dummy" value="31" />
           <entry key="html" value="41" />
           <entry key="js" value="147" />
-          <entry key="py" value="8607" />
+          <entry key="py" value="10980" />
+          <entry key="yaml" value="130" />
           <entry key="yml" value="199" />
         </counts>
       </usages-collector>
@@ -321,25 +341,29 @@
         <counts>
           <entry key="HTML" value="41" />
           <entry key="JavaScript" value="147" />
-          <entry key="Python" value="8607" />
-          <entry key="YAML" value="199" />
+          <entry key="PLAIN_TEXT" value="31" />
+          <entry key="Python" value="10980" />
+          <entry key="YAML" value="340" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="deployment_mould" value="2" />
           <entry key="html" value="5" />
           <entry key="js" value="2" />
-          <entry key="py" value="42" />
-          <entry key="yaml" value="1" />
-          <entry key="yml" value="3" />
+          <entry key="py" value="82" />
+          <entry key="ssh" value="1" />
+          <entry key="yaml" value="8" />
+          <entry key="yml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="5" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="42" />
-          <entry key="YAML" value="4" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="82" />
+          <entry key="YAML" value="14" />
         </counts>
       </usages-collector>
     </session>
@@ -355,119 +379,108 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/infiltration_controller_module.py">
+        <entry file="file://$PROJECT_DIR$/python/module/k8s/k8s_help_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275">
-              <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-              <folding>
-                <marker date="1572833977736" expanded="true" signature="1953:2222" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/k8s_help_module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4250">
-              <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
+            <state relative-caret-position="187">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
-                <marker date="1572413269551" expanded="true" signature="4213:4446" ph="..." />
+                <marker date="1573004383470" expanded="true" signature="4213:4446" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/openwrt_help_module.py">
+        <entry file="file://$PROJECT_DIR$/python/service/weight_manage_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="25">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+              <folding>
+                <marker date="1573007889402" expanded="true" signature="140:178" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/project_help_module.py">
+        <entry file="file://$PROJECT_DIR$/python/service/project_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            <state relative-caret-position="225">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/python/module/heapster_help_module.py">
+        <entry file="file://$PROJECT_DIR$/python/service/offloading_manage_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+            <state relative-caret-position="125">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
-                <element signature="e#54#69#0" expanded="true" />
-                <marker date="1572522333267" expanded="true" signature="524:795" ph="..." />
+                <element signature="e#56#137#0" expanded="true" />
+                <marker date="1573011060959" expanded="true" signature="1227:1488" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/ssh_help_module.py">
+        <entry file="file://$PROJECT_DIR$/python/service/openwrt_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="52">
+              <caret line="57" column="19" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="19" />
               <folding>
-                <marker date="1572841843175" expanded="true" signature="155:322" ph="..." />
-                <marker date="1572841843175" expanded="true" signature="467:479" ph="..." />
+                <marker date="1573009852282" expanded="true" signature="1679:2093" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/node_networking_check_module.py">
+        <entry file="file://$PROJECT_DIR$/python/module/tools/yaml_dict_operate_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="125">
+              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding>
-                <marker date="1572842867308" expanded="true" signature="531:629" ph="..." />
-                <marker date="1572842867308" expanded="true" signature="668:756" ph="..." />
-                <marker date="1572842867308" expanded="true" signature="1243:1617" ph="..." />
+                <marker date="1573011061051" expanded="true" signature="79:118" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/module/convert_to_pdf_module.py">
+        <entry file="file://$PROJECT_DIR$/python/module/tools/convert_to_pdf_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="375">
               <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/server_config.py">
+        <entry file="file://$PROJECT_DIR$/python/service/node_networking_check_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+            <state relative-caret-position="500">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/test.py">
+        <entry file="file://$PROJECT_DIR$/python/config/lede_test1.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-              <folding>
-                <element signature="e#46#61#0" expanded="true" />
-                <marker date="1572841860824" expanded="true" signature="968:1251" ph="..." />
-                <marker date="1572841860824" expanded="true" signature="1275:1285" ph="..." />
-              </folding>
+            <state relative-caret-position="200">
+              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/apis/apps_v1_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="289" selection-start-line="289" selection-end-line="289" />
             </state>
           </provider>
         </entry>
@@ -494,11 +507,12 @@
       <find>ras</find>
       <find>rasp</find>
       <find>V1No</find>
-      <find>node01</find>
       <find>node-role.kubernetes.io</find>
       <find>capacity</find>
       <find>cpu</find>
       <find>4000000</find>
+      <find>lede</find>
+      <find>node01</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -517,10 +531,8 @@
         <option value="$PROJECT_DIR$/python/module/project_help_module.py" />
         <option value="$PROJECT_DIR$/python/module/nodes_help_module.py" />
         <option value="$PROJECT_DIR$/python/templates/index.html" />
-        <option value="$PROJECT_DIR$/python/module/openwrt_help_module.py" />
         <option value="$PROJECT_DIR$/python/module/features_parament_helper_module.py" />
         <option value="$PROJECT_DIR$/python/templates/test.py" />
-        <option value="$PROJECT_DIR$/python/python.py" />
         <option value="$PROJECT_DIR$/python/module/cadvisor_help_module.py" />
         <option value="$PROJECT_DIR$/python/module/k8s_help_module.py" />
         <option value="$PROJECT_DIR$/python/config/lede_test1.yml" />
@@ -528,14 +540,29 @@
         <option value="$PROJECT_DIR$/python/module/networking_check_module.py" />
         <option value="$PROJECT_DIR$/python/module/infiltration_controller_module.py" />
         <option value="$PROJECT_DIR$/python/module/ssh_help_module.py" />
-        <option value="$PROJECT_DIR$/python/test.py" />
         <option value="$PROJECT_DIR$/python/module/node_networking_check_module.py" />
+        <option value="$PROJECT_DIR$/python/service/node_networking_check_service.py" />
+        <option value="$PROJECT_DIR$/python/service/project_service.py" />
+        <option value="$PROJECT_DIR$/python/config/deployment_mould" />
+        <option value="$PROJECT_DIR$/python/module/k8s/openwrt_help_module.py" />
+        <option value="$PROJECT_DIR$/python/module/k8s/k8s_help_module.py" />
+        <option value="$PROJECT_DIR$/python/module/openwrt_help_module.py" />
+        <option value="$PROJECT_DIR$/python/service/weight_manage_service.py" />
+        <option value="$PROJECT_DIR$/python/service/openwrt_help_module.py" />
+        <option value="$PROJECT_DIR$/python/python.py" />
+        <option value="$PROJECT_DIR$/python/config/deployment_mould.yaml" />
+        <option value="$PROJECT_DIR$/python/service/infiltration_controller_service.py" />
+        <option value="$PROJECT_DIR$/python/service/openwrt_service.py" />
+        <option value="$PROJECT_DIR$/python/test.py" />
+        <option value="$PROJECT_DIR$/python/config/lede_test1.yaml" />
+        <option value="$PROJECT_DIR$/python/service/offloading_manage_service.py" />
+        <option value="$PROJECT_DIR$/python/module/tools/yaml_dict_operate_module.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-50" />
+    <option name="y" value="26" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -545,7 +572,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -570,15 +596,44 @@
               <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="module" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="page_parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module\tools" />
+      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module\ssh" />
+      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\service" />
+      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module" />
+      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module\database" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -653,12 +708,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24583334" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24583334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35418877" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35100743" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39872748" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -692,13 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11675">
           <caret line="490" selection-start-line="490" selection-end-line="490" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/apis/apps_v1_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55200">
-          <caret line="2217" column="42" selection-start-line="2217" selection-start-column="8" selection-end-line="2217" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -781,9 +829,6 @@
     <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/config/kubeconfig.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://F:/Python/Python35/Lib/site-packages/requests/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -808,20 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/config/lede_test1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/python.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1475">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/Python/Python35/Lib/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6575">
@@ -830,64 +861,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/module/networking_check_module.py" />
-    <entry file="file://$PROJECT_DIR$/python/module/cadvisor_help_module.py">
+    <entry file="file://$PROJECT_DIR$/python/module/k8s/cadvisor_help_module.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="11" />
-          <folding>
-            <element signature="e#53#68#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/mysql_help_module.py">
+    <entry file="file://$PROJECT_DIR$/python/module/database/mysql_help_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="800">
           <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/project_help_module.py">
+    <entry file="file://$PROJECT_DIR$/python/module/ssh/ssh_help_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/server_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-          <folding>
-            <element signature="e#46#61#0" expanded="true" />
-            <marker date="1572841860824" expanded="true" signature="968:1251" ph="..." />
-            <marker date="1572841860824" expanded="true" signature="1275:1285" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/k8s_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4250">
-          <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
-          <folding>
-            <element signature="e#53#90#0" expanded="true" />
-            <marker date="1572413269551" expanded="true" signature="4213:4446" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/ssh_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="650">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
             <marker date="1572841843175" expanded="true" signature="155:322" ph="..." />
             <marker date="1572841843175" expanded="true" signature="467:479" ph="..." />
@@ -895,52 +886,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/openwrt_help_module.py">
+    <entry file="file://$PROJECT_DIR$/python/module/k8s/heapster_help_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/infiltration_controller_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
-          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding>
-            <marker date="1572833977736" expanded="true" signature="1953:2222" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/node_networking_check_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <marker date="1572842867308" expanded="true" signature="531:629" ph="..." />
-            <marker date="1572842867308" expanded="true" signature="668:756" ph="..." />
-            <marker date="1572842867308" expanded="true" signature="1243:1617" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/convert_to_pdf_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/heapster_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        <state relative-caret-position="2075">
+          <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
           <folding>
             <element signature="e#54#69#0" expanded="true" />
             <marker date="1572522333267" expanded="true" signature="524:795" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/rest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/api_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="376" selection-start-line="376" selection-end-line="376" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/ssh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/python.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+          <folding>
+            <element signature="e#677#686#0" expanded="true" />
+            <marker date="1573008411888" expanded="true" signature="3538:3708" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/server_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/config/deployment_mould.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/infiltration_controller_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <marker date="1573009547975" expanded="true" signature="2077:2709" ph="..." />
+            <marker date="1573009547975" expanded="true" signature="2704:2709" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+          <folding>
+            <element signature="e#46#61#0" expanded="true" />
+            <marker date="1573010300118" expanded="true" signature="1680:1690" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/config/kubeconfig.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/apis/apps_v1_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="289" selection-start-line="289" selection-end-line="289" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/k8s/k8s_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#53#90#0" expanded="true" />
+            <marker date="1573004383470" expanded="true" signature="4213:4446" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/config/lede_test1.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/tools/convert_to_pdf_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/node_networking_check_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/tools/yaml_dict_operate_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <marker date="1573011061051" expanded="true" signature="79:118" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/weight_manage_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding>
+            <marker date="1573007889402" expanded="true" signature="140:178" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/project_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/openwrt_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="19" />
+          <folding>
+            <marker date="1573009852282" expanded="true" signature="1679:2093" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/offloading_manage_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#56#137#0" expanded="true" />
+            <marker date="1573011060959" expanded="true" signature="1227:1488" ph="..." />
           </folding>
         </state>
       </provider>

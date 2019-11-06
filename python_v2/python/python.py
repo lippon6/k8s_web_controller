@@ -23,9 +23,9 @@ from datetime import timedelta
 # user module
 from message_parse_manage.message_parse_manage import MessageParseManage
 from client_manage.user_client_manage.user_account_manage import UserAccountManage
-from module.mysql_help_module import sqlHelper
-from module.k8s_help_module import K8sHelper
-from module.openwrt_help_module import OpenWrtHelper
+from module.database.mysql_help_module import sqlHelper
+from module.k8s.k8s_help_module import K8sHelper
+
 
 from server_config import ServerConfig
 
@@ -65,7 +65,7 @@ k8s_config_file = server_config.get_k8s_config_file()
 k8sHelper = K8sHelper(k8s_config_file)
 
 # openwrt helper
-openwrtHelper = OpenWrtHelper(k8sHelper)
+# openwrtHelper = OpenWrtHelper(k8sHelper)
 
 # user manage init
 user_account_manage = UserAccountManage(sql_util,join_room,leave_room,emit)
@@ -73,7 +73,7 @@ user_account_manage = UserAccountManage(sql_util,join_room,leave_room,emit)
 # web messages parse
 message_parse_manage = MessageParseManage(sql_util,emit)
 
-test = Test(k8sHelper, openwrtHelper)
+test = Test(k8sHelper)
 
 test.test_for_test()
 
@@ -219,6 +219,6 @@ if __name__ == '__main__':
     websocket = M_WebSocketNamespace('/dashboard')
     websocket.init(emit,join_room,leave_room)
     socketio.on_namespace(websocket)
-    socketio.run(app,host='0.0.0.0')
+    socketio.run(app, host='0.0.0.0')
 
 

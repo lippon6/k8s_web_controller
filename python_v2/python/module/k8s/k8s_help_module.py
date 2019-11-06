@@ -185,6 +185,16 @@ class K8sHelper(object):
         """
         return self.get_all_nodes_ip()[node]
 
+    def get_all_nodes_ap(self):
+        """
+        :rtype    : dict
+        """
+        aps = {}
+        for item in self.get_all_nodes().items:
+            aps[item.metadata.name] = item.metadata.labels['accessPoint']
+
+        return aps
+
 
 
 

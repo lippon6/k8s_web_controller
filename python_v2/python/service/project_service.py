@@ -2,7 +2,7 @@
 # created by lippon
 # 2019-10-22
 
-class ProjectHelpModule:
+class ProjectService:
     def __init__(self, helper):
         self.mysql_helper = helper
 

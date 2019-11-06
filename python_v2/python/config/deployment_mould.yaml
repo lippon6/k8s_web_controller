@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lede-test1
+spec:
+  selector:
+    matchLabels:
+      app: lede-test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lede-test
+        accessPoint: edge01
+        weight:
+          ai:
+            cpu: 100
+            memory: 50
+            delay: 20
+    spec:
+      containers:
+      - name: lede
+        image:  lede-17.01.5:latest
+        command: ["/bin/ash", "-ce", "tail -f /dev/null"]
+        imagePullPolicy: Never
+        resources:
+          requests:
+            cpu: 200m
+            memory: 50Mi
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: concentration
+                operator: Gt
+                values:
+                - "80"
+

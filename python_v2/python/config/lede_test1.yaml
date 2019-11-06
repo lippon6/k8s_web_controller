@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
         app: lede-test
+        accessPoint: edge02
+        weight: ai
     spec:
       containers:
       - name: lede
@@ -21,6 +23,8 @@ spec:
           requests:
             cpu: 200m
             memory: 50Mi
+      nodeSelector:
+        kubernetes.io/hostname:
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
