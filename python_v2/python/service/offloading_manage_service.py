@@ -2,18 +2,24 @@
 # created by lippon
 # 2019-11-4
 from service.infiltration_controller_service import InfiltrationControllerService
+from service.node_networking_check_service import NodeNetworkingCheckService
 from module.k8s.heapster_help_module import HeapsterHelper
 
-weight = {'ai': {'cpu': 100, 'memory': 50, 'delay': 20}}
+weight = {'ai': {'cpu': 50, 'memory': 50, 'delay': 20}}
 
 class OffloadingManageService:
-    def __init__(self, k8s):
+    def __init__(self, k8s, ssh):
         """
         :type k8s: K8sHelper
         """
         self.k8s_helper = k8s
+        self.ssh_helper = ssh
         self.heapster_helper = HeapsterHelper(self.k8s_helper)
-        self.infiltration_controller_service = InfiltrationControllerService(weight, self.heapster_helper, self.k8s_helper)
+        self.node_networking_check = NodeNetworkingCheckService(self.ssh_helper, self.k8s_helper)
+        self.infiltration_controller_service = InfiltrationControllerService(weight,
+                                                                             self.heapster_helper,
+                                                                             self.k8s_helper,
+                                                                             self.node_networking_check)
 
     def create_deployment(self, yaml):
         """
@@ -31,10 +37,11 @@ class OffloadingManageService:
         :type yaml: dict
         :rtype : str
         """
-        nodes = self.get_edge_nodes_by_ap(self.get_offloading_ap(yaml))
+        ap = self.get_offloading_ap(yaml)
+        nodes = self.get_edge_nodes_by_ap(ap)
         weight_name = self.get_mission_weight_name(yaml)
 
-        return self.infiltration_controller_service.get_optimal_node(nodes, weight_name)
+        return self.infiltration_controller_service.get_optimal_node(nodes, ap, weight_name)
 
     def get_edge_nodes_by_ap(self, ap):
         """

@@ -1,11 +1,18 @@
 # networking check
 # created by lippon
 # 2019-11-3
+from threading import Timer
 
-PING_TIMES = '10'
+PING_TIMES = '2'
 PING_INTERVAL = '0.5'
+UPDATE_INTERVAL = 30
 
-class NodeNetworkingCheck:
+APPROACHING_AP_NETWORK_DELAY = 100
+CORE_AP = "k8s-master"
+
+node_to_nodes_network_delay = {}
+
+class NodeNetworkingCheckService:
     def __init__(self, ssh_helper, k8s_helper):
         """
         :type ssh_helper: SshHelpModule
@@ -14,30 +21,90 @@ class NodeNetworkingCheck:
         self.ssh_helper = ssh_helper
         self.k8s_helper = k8s_helper
         self.nodes_ip = self.k8s_helper.get_all_nodes_ip()
-        self.node_to_nodes_network_delay = {}
+        global node_to_nodes_network_delay
 
-    def all_nodes_network_list(self):
+    def networking_check_handle(self):
+        """
+        :rtype : void
+        """
+        self.check_all_nodes_network_list()
+
+        t = Timer(UPDATE_INTERVAL, self.networking_check_handle)
+        t.start()
+
+    def get_all_nodes_network_list(self):
         """
         :rtype : dict
         """
-        self.check_all_nodes_network_list()
-        return self.node_to_nodes_network_delay
+        return node_to_nodes_network_delay
+
+    def get_approaching_nodes(self, ap):
+        """
+        :type ap: str
+        :rtype : list
+        """
+        approaching_ap = self.get_approaching_ap(ap)
+        approaching_nodes = []
+        for ap in approaching_ap:
+            for node in self.k8s_helper.get_all_ap_nodes()[ap]:
+                approaching_nodes.append(node)
+
+        return approaching_nodes
+
+    def get_approaching_ap(self, ap):
+        """
+        :type ap: str
+        :rtype : list
+        """
+        aps = []
+        ap_to_aps = self.get_all_ap_network_list()
+
+        for target in ap_to_aps[ap]:
+            if target == CORE_AP:
+                continue
+            if ap_to_aps[ap][target] < APPROACHING_AP_NETWORK_DELAY:
+                aps.append(target)
+        return aps
+
+    def get_all_ap_network_list(self):
+        """
+        :rtype : dict
+        """
+        aps = self.k8s_helper.get_all_ap_nodes()
+        ap_to_aps = {}
+        if len(aps) < 2:
+            return None
+
+        for ap_send in aps:
+            ap_to_aps[ap_send] = {}
+            for ap_receive in aps:
+                if ap_receive == ap_send:
+                    continue
+                else:
+                    if len(aps[ap_receive]) > 0:
+                        ap_to_aps[ap_send][ap_receive] = \
+                            node_to_nodes_network_delay[aps[ap_send][0]][aps[ap_receive][0]]
+        return ap_to_aps
 
     def check_all_nodes_network_list(self):
+        """
+        :rtype : void
+        """
         for node in self.nodes_ip:
             self.check_node_network_list(node)
 
     def check_node_network_list(self, node):
         """
         :type node: str
+        :rtype : void
         """
-        self.node_to_nodes_network_delay[node] = {}
+        node_to_nodes_network_delay[node] = {}
 
         for node_other in self.nodes_ip:
             if node == node_other:
                 continue
             else:
-                self.node_to_nodes_network_delay[node][node_other] = \
+                node_to_nodes_network_delay[node][node_other] = \
                     self.check_node_to_node_network(self.nodes_ip[node], self.nodes_ip[node_other])
 
     def check_node_to_node_network(self, node, other):
@@ -102,3 +169,4 @@ class NodeNetworkingCheck:
             return None
         else:
             return float(''.join(time))
+

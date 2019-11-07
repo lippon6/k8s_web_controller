@@ -185,6 +185,22 @@ class K8sHelper(object):
         """
         return self.get_all_nodes_ip()[node]
 
+    # get ap[nodes]
+    def get_all_ap_nodes(self):
+        """
+        :rtype    : dict
+        """
+        aps = {}
+        node_aps = self.get_all_nodes_ap()
+
+        for i in node_aps:
+            if node_aps[i] not in aps:
+                aps[node_aps[i]] = []
+            aps[node_aps[i]].append(i)
+
+        return aps
+
+    # get the nodes[ap]
     def get_all_nodes_ap(self):
         """
         :rtype    : dict
@@ -194,6 +210,8 @@ class K8sHelper(object):
             aps[item.metadata.name] = item.metadata.labels['accessPoint']
 
         return aps
+
+
 
 
 
