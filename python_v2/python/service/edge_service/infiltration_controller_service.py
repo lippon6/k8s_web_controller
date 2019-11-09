@@ -3,7 +3,7 @@
 # 2019-10-25
 
 from threading import Timer
-from service.weight_manage_service import WeightMangeService
+from service.edge_service.weight_manage_service import WeightMangeService
 
 WEIGHT_MEMORY = "memory"
 WEIGHT_CPU = "cpu"

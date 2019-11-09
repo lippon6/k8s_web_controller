@@ -24,7 +24,7 @@
 				<div class="card fat">
 					<div class="card-body">
 						<h4 class="card-title">用户登陆</h4>
-						<form method="POST" class="my-login-validation" novalidate="" id="form1">
+						<form  class="my-login-validation" novalidate="" id="form1">
 							<div class="form-group">
 								<label for="account">账号</label>
 								<input id="account" type="text" class="form-control" name="account" value="" required autofocus>
@@ -53,7 +53,7 @@
 							</div>
 
 							<div class="form-group m-0">
-								<button type="button" onclick="login()" class="btn btn-primary">登陆</button>
+								<button type="submit" class="btn btn-primary btn-block" onclick="login()">登陆</button>
 							</div>
 
 							<div class="mt-4 text-center">
@@ -88,14 +88,20 @@
             data: data,
             dataType: 'json',
             success: function(data) {
-                console.log(data)
-                window.location.href="index.html"
+				console.log(data)
+				if(data.data == "login ok"){
+					window.location.href="index.html"
+				}
+				else{
+					alert("验证信息错误！");
+				}	
             },
             error: function(xhr, type) {
                 console.log('错误')
             }
         });
     }
+
 
 </script>
 </body>

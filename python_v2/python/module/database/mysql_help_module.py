@@ -1,4 +1,6 @@
-#!/usr/bin/python3
+# mysql control api
+# created by lippon
+# 2019-11-8
 import datetime
 import pymysql
 
@@ -28,7 +30,7 @@ class sqlHelper(object):
         self.connect_state = False
 
     # 执行语句
-    def query_cmd(self,sql_cmd):
+    def query_cmd(self, sql_cmd):
         try:
             self.cursor.execute(sql_cmd)
             #print('query ok')
@@ -37,7 +39,7 @@ class sqlHelper(object):
             print("query failed")
             return False
 
-    def get_size(self,table):
+    def get_size(self, table):
         if self.connect_state:
             try:
                 self.cursor.execute("select count(*) from "+table+";")

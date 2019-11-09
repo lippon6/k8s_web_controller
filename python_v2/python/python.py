@@ -68,12 +68,12 @@ k8sHelper = K8sHelper(k8s_config_file)
 # openwrtHelper = OpenWrtHelper(k8sHelper)
 
 # user manage init
-user_account_manage = UserAccountManage(sql_util,join_room,leave_room,emit)
+user_account_manage = UserAccountManage(sql_util, join_room, leave_room, emit)
 
 # web messages parse
-message_parse_manage = MessageParseManage(sql_util,emit)
+message_parse_manage = MessageParseManage(sql_util, emit)
 
-test = Test(k8sHelper)
+test = Test(k8sHelper, sql_util)
 
 test.test_for_test()
 
@@ -117,7 +117,7 @@ def simulationPage():
 def statisticalPage():
     return render_template('statisticalPage.html')
 
-# 用户管理界面
+# 用户管理界面UserIDManage
 @app.route('/userManagePage.html')
 def userManagePage():
     return render_template('userManagePage.html')
@@ -126,7 +126,6 @@ def userManagePage():
 @app.route('/roleManagePage.html')
 def roleManagePage():
     return render_template('roleManagePage.html')
-
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -164,8 +163,6 @@ def get():
     else:
         return jsonify({'data': 'login error'})
 
-
-
 @app.route('/usr')
 def user():
     return render_template('usr.html')
@@ -186,7 +183,7 @@ def download_file(filename):
 class M_WebSocketNamespace(Namespace):
 
     # 注册发送函数,和加入房间函数,离开房间函数
-    def init(self,arg_socket_io_emit,arg_join_room,arg_leave_room):
+    def init(self, arg_socket_io_emit, arg_join_room, arg_leave_room):
         self.m_socke_io_emit = arg_socket_io_emit
         self.m_join_room = arg_join_room
         self.m_leave_room = arg_leave_room
@@ -212,7 +209,6 @@ class M_WebSocketNamespace(Namespace):
     def on_response(self, data):
         if data != None:
             message_parse_manage.message_parse(data, self.usr_name)
-
 
 if __name__ == '__main__':
 

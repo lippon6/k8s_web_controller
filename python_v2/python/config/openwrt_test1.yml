@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lede-test1
+spec:
+  selector:
+    matchLabels:
+      app: lede-test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lede-test
+    spec:
+      containers:
+      - name: lede
+        image:  lede-17.01.5:latest
+        command: ["/bin/ash", "-ce", "tail -f /dev/null"]
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        beta.kubernetes.io/arch: amd64
+

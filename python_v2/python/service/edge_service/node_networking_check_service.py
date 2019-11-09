@@ -93,6 +93,9 @@ class NodeNetworkingCheckService:
         for node in self.nodes_ip:
             self.check_node_network_list(node)
 
+        # for node in node_to_nodes_network_delay:
+        #     print(node, node_to_nodes_network_delay[node])
+
     def check_node_network_list(self, node):
         """
         :type node: str

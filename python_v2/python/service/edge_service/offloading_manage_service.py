@@ -1,8 +1,8 @@
 # offloading manage api
 # created by lippon
 # 2019-11-4
-from service.infiltration_controller_service import InfiltrationControllerService
-from service.node_networking_check_service import NodeNetworkingCheckService
+from service.edge_service.infiltration_controller_service import InfiltrationControllerService
+from service.edge_service.node_networking_check_service import NodeNetworkingCheckService
 from module.k8s.heapster_help_module import HeapsterHelper
 
 weight = {'ai': {'cpu': 50, 'memory': 50, 'delay': 20}}

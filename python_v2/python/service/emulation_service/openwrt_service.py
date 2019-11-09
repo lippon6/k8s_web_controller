@@ -1,21 +1,26 @@
 # openwrt control api
 # created by lippon
-# 2019-10-20
+# 2019-11-7
 
 import yaml
 from os import path
 
-DEPLOYMENT_PATH = "..\config\lede_test1.yaml"
+DEPLOYMENT_PATH = "..\..\config\lede_test1.yml"
 LABEL_APP_NAME = {'app': 'lede-test'}
 MAX_NODE_NUMBER = 100
 
-class OpenWrtHelper:
-    def __init__(self, helper, offloading):
+class OpenWrtService:
+    def __init__(self, helper):
+        """
+        :type helper: K8sHelper
+        """
         self.depFile = DEPLOYMENT_PATH
         self.k8sHelper = helper
-        self.offloadingHelper = offloading
 
     def get_nodes_num(self):
+        """
+        :rtype : list[int]
+        """
         dep = self.k8sHelper.get_all_deploy()
         amount = 0
         num = []
@@ -28,6 +33,9 @@ class OpenWrtHelper:
         return num
 
     def get_all_name(self):
+        """
+        :rtype : list[str]
+        """
         dep = self.k8sHelper.get_all_deploy()
         num = self.get_nodes_num()
         name = []
@@ -38,6 +46,9 @@ class OpenWrtHelper:
         return name
 
     def create_name(self):
+        """
+        :rtype : str
+        """
         named = self.get_all_name()
         name = "lede-test0"
         num = 0
@@ -56,26 +67,22 @@ class OpenWrtHelper:
         return name
 
     def create_node(self):
+        """
+        :rtype : str
+        """
         with open(path.join(path.dirname(__file__), DEPLOYMENT_PATH)) as f:
             dep = yaml.safe_load(f)
             name = self.create_name()
             if name is not None:
                 dep['metadata']['name'] = name
-                # self.k8sHelper.create_deployment(dep)
-                self.offloadingHelper.create_deployment(dep)
+                self.k8sHelper.create_deployment(dep)
                 return name
-
-    def test(self):
-        with open(path.join(path.dirname(__file__), DEPLOYMENT_PATH)) as f:
-            dep = yaml.safe_load(f)
-            name = self.create_name()
-            if name is not None:
-                dep['metadata']['name'] = name
-                # self.offloadingHelper.create_deployment(dep)
-                print("best node", self.offloadingHelper.select_the_optimal_node(dep))
-                return name
+        return None
 
     def delete_node(self, name):
+        """
+        :type name: str
+        """
         self.k8sHelper.delete_deployment(name)
 
 

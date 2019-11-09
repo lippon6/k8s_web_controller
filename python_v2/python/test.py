@@ -7,21 +7,22 @@ import json
 from module.k8s.cadvisor_help_module import  CadvisorHelper
 from module.k8s.heapster_help_module import HeapsterHelper
 from threading import Timer
-from service.infiltration_controller_service import InfiltrationControllerService
-from service.node_networking_check_service import NodeNetworkingCheckService
+from service.edge_service.infiltration_controller_service import InfiltrationControllerService
+from service.edge_service.node_networking_check_service import NodeNetworkingCheckService
 from module.ssh.ssh_help_module import SshHelper
-from service.offloading_manage_service import OffloadingManageService
-from service.openwrt_service import OpenWrtHelper
+from service.edge_service.offloading_manage_service import OffloadingManageService
+from service.edge_service.openwrt_service import OpenWrtHelper
+from service.emulation_service.openwrt_service import OpenWrtService
+from service.emulation_service.project_service import ProjectService
 import time
 
 weight = {'ai': {'cpu': 100, 'memory': 50}}
 
 
 class Test:
-    def __init__(self, k8s):
+    def __init__(self, k8s, sql_helper):
         self.k8sHelper = k8s
         self.cadvisorHelper = CadvisorHelper(self.k8sHelper)
-
         self.heapsterHelper = HeapsterHelper(self.k8sHelper)
 
         self.ssh_helper = SshHelper()
@@ -31,6 +32,10 @@ class Test:
                                                                    self.node_networking_check)
         self.openwrtHelper = OpenWrtHelper(self.k8sHelper, self.offloading_manage_service)
 
+        self.openwrtService = OpenWrtService(self.k8sHelper)
+        self.sql_helper = sql_helper
+        self.project_service = ProjectService(self.sql_helper)
+
     def print_feature(self, inc):
         print(self.heapsterHelper.get_cpu_usage_percent("node01"))
         print(self.heapsterHelper.get_cpu_usage_percent("node02"))
@@ -39,6 +44,10 @@ class Test:
         t.start()
 
     def test_for_test(self):
+
+        print(self.project_service.get_all_project())
+        # self.openwrtService.create_node()
+
         # self.infiltraionController.infiltration_control_handle()
         # self.node_networking_check.networking_check_handle()
         # time.sleep(3)

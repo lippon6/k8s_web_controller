@@ -6,9 +6,9 @@ import datetime
 
 # 用户账户管理
 class UserIDManage(object,):
-    def __init__(self,mysql_obj,table_name):
+    def __init__(self, mysql_obj, table_name):
         self.mysql_obj = mysql_obj
-        self.table_name  = table_name
+        self.table_name = table_name
 
     # 账号是否存在
     def is_exist_account(self,account):
@@ -52,9 +52,8 @@ class UserIDManage(object,):
             return list[0][0]
 
     # 检查用户的账号和密码
-    def check_account_passwd(self,account,passwd):
-        if self.is_exist_account(account) == False:
-            # 创建用户
+    def check_account_passwd(self, account, passwd):
+        if not self.is_exist_account(account):
             return False
 
         sql_cmd = "select * from "+self.table_name+" where user_account=\'"+str(account)+"\' and  user_passwd=\'"+str(passwd)+"\';"
@@ -71,24 +70,24 @@ class UserIDManage(object,):
         else:
             print('check error')
 
-    # 设置网络为在线
-    def set_network_connect(self,account,sid):
-        if self.is_exist_account(account) == False:
-            # 创建用户
+    def get_account_id(self, account):
+        """
+        :type account: str
+        :rtype : int
+        """
+        if not self.is_exist_account(account):
             return False
-        value = 'network_sid=\''+str(sid)+"\',is_online=1"
-        key = 'user_account=\''+str(account)+'\''
-        return self.mysql_obj.update_mysql(self.table_name,value,key)
 
-    # 设置网络为离线
-    def set_network_disconnect(self,sid):
-        account = self.get_network_sid_account(sid)
-        if account:
-            value = "network_sid=null,is_online=0"
-            key = 'user_account=\''+str(account)+"\'"
-            return self.mysql_obj.update_mysql(self.table_name,value,key)
+        sql_cmd = "select * from " + self.table_name + " where user_account=\'" + str(
+            account) + "\';"
+        self.mysql_obj.query_cmd(sql_cmd)
+        # 获得数据
+        row = self.mysql_obj.get_all_row()
+        if row:
+            return row[0]
         else:
-            return False
+            return None
+
 
 
 

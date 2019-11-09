@@ -200,17 +200,32 @@
       <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/userManagePage.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/usr.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../k8s_controller/python_v2/python/templates/warningManagePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/config/openwrt_test1.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/module/database/project_sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/module/database/scenario_sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/service/emulation_service/openwrt_service.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/adhoc_controller.pro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/main.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../qt/adhoc_controller/adhoc_controller/mainwindow.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/module/k8s/k8s_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/k8s/k8s_help_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/service/infiltration_controller_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/infiltration_controller_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/service/node_networking_check_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/node_networking_check_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/service/offloading_manage_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/offloading_manage_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/service/weight_manage_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/weight_manage_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/config/deployment_mould.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/python/config/deployment_mould.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/config/lede_test1.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/python/config/lede_test1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/module/database/mysql_help_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/module/database/mysql_help_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/python.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/service/infiltration_controller_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/edge_service/infiltration_controller_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/service/node_networking_check_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/edge_service/node_networking_check_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/service/offloading_manage_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/edge_service/offloading_manage_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/service/openwrt_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/edge_service/openwrt_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/service/project_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/emulation_service/project_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/service/weight_manage_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/service/edge_service/weight_manage_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/static/js/account_check.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/python/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/static/js/my-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/python/static/js/my-login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/python/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -294,13 +309,14 @@
     <session id="-752437481">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.28" value="2" />
           <entry key="project.open.time.30" value="2" />
           <entry key="project.open.time.33" value="2" />
           <entry key="project.open.time.35" value="1" />
@@ -310,7 +326,7 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -319,9 +335,9 @@
           <entry key="dummy" value="31" />
           <entry key="html" value="41" />
           <entry key="js" value="147" />
-          <entry key="py" value="14093" />
-          <entry key="yaml" value="130" />
-          <entry key="yml" value="199" />
+          <entry key="py" value="16190" />
+          <entry key="yaml" value="222" />
+          <entry key="yml" value="201" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -329,8 +345,8 @@
           <entry key="HTML" value="41" />
           <entry key="JavaScript" value="147" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="14093" />
-          <entry key="YAML" value="340" />
+          <entry key="Python" value="16190" />
+          <entry key="YAML" value="434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -338,9 +354,9 @@
           <entry key="deployment_mould" value="2" />
           <entry key="html" value="5" />
           <entry key="js" value="2" />
-          <entry key="py" value="102" />
+          <entry key="py" value="162" />
           <entry key="ssh" value="1" />
-          <entry key="yaml" value="12" />
+          <entry key="yaml" value="19" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
@@ -349,8 +365,8 @@
           <entry key="HTML" value="5" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="102" />
-          <entry key="YAML" value="18" />
+          <entry key="Python" value="162" />
+          <entry key="YAML" value="25" />
         </counts>
       </usages-collector>
     </session>
@@ -364,7 +380,114 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+              <folding>
+                <element signature="e#46#61#0" expanded="true" />
+                <marker date="1573284854696" expanded="true" signature="2380:2390" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://F:/Python/Python35/Lib/site-packages/pymysql/cursors.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/module/database/mysql_help_module.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="32" />
+              <folding>
+                <element signature="e#34#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_control_log.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/python.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
+              <folding>
+                <element signature="e#677#686#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/service/emulation_service/project_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+              <folding>
+                <marker date="1573284854297" expanded="true" signature="661:1102" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python/module/database/scenario_sql.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <folding>
+                <marker date="1573285371444" expanded="true" signature="69:74" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/module/database/project_sql.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-925">
+              <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/service/emulation_service/openwrt_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -375,8 +498,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>usr_name</find>
-      <find>create</find>
       <find>create_</find>
       <find>create_namespaced_pod</find>
       <find>create_namespaced_</find>
@@ -404,6 +525,9 @@
       <find>networking</find>
       <find>concentration</find>
       <find>networking_check_handle</find>
+      <find>session</find>
+      <find>UserIDManage</find>
+      <find>UserAccountManage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -413,8 +537,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/python/message_parse_manage/message_parse_manage.py" />
-        <option value="$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py" />
-        <option value="$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py" />
         <option value="$PROJECT_DIR$/python/server_config.py" />
         <option value="$PROJECT_DIR$/python/templates/projectPage.html" />
         <option value="$PROJECT_DIR$/python/static/js/mapPage.js" />
@@ -437,23 +559,36 @@
         <option value="$PROJECT_DIR$/python/module/k8s/openwrt_help_module.py" />
         <option value="$PROJECT_DIR$/python/module/openwrt_help_module.py" />
         <option value="$PROJECT_DIR$/python/service/openwrt_help_module.py" />
-        <option value="$PROJECT_DIR$/python/python.py" />
         <option value="$PROJECT_DIR$/python/config/deployment_mould.yaml" />
         <option value="$PROJECT_DIR$/python/service/openwrt_service.py" />
-        <option value="$PROJECT_DIR$/python/config/lede_test1.yaml" />
         <option value="$PROJECT_DIR$/python/module/tools/yaml_dict_operate_module.py" />
         <option value="$PROJECT_DIR$/python/module/k8s/k8s_help_module.py" />
         <option value="$PROJECT_DIR$/python/service/offloading_manage_service.py" />
         <option value="$PROJECT_DIR$/python/service/node_networking_check_service.py" />
         <option value="$PROJECT_DIR$/python/service/weight_manage_service.py" />
-        <option value="$PROJECT_DIR$/python/test.py" />
         <option value="$PROJECT_DIR$/python/service/infiltration_controller_service.py" />
+        <option value="$PROJECT_DIR$/python/service/edge_service/infiltration_controller_service.py" />
+        <option value="$PROJECT_DIR$/python/service/edge_service/offloading_manage_service.py" />
+        <option value="$PROJECT_DIR$/python/config/lede_test1.yaml" />
+        <option value="$PROJECT_DIR$/python/config/openwrt_test1.yaml" />
+        <option value="$PROJECT_DIR$/python/config/openwrt_test1.yml" />
+        <option value="$PROJECT_DIR$/python/service/emulation_service/openwrt_service.py" />
+        <option value="$PROJECT_DIR$/python/service/edge_service/openwrt_service.py" />
+        <option value="$PROJECT_DIR$/python/module/database/mysql_help_module.py" />
+        <option value="$PROJECT_DIR$/python/service/edge_service/node_networking_check_service.py" />
+        <option value="$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py" />
+        <option value="$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py" />
+        <option value="$PROJECT_DIR$/python/python.py" />
+        <option value="$PROJECT_DIR$/python/service/emulation_service/project_service.py" />
+        <option value="$PROJECT_DIR$/python/test.py" />
+        <option value="$PROJECT_DIR$/python/module/database/project_sql.py" />
+        <option value="$PROJECT_DIR$/python/module/database/scenario_sql.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-50" />
-    <option name="y" value="26" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -463,7 +598,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -480,13 +614,46 @@
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_v2" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="client_manage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="client_manage" type="462c0819:PsiDirectoryNode" />
+              <item name="user_client_manage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="usr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="message_parse_manage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_v2" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
@@ -506,14 +673,14 @@
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_v2" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="page_parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_v2" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="page_parser" type="462c0819:PsiDirectoryNode" />
+              <item name="msg_edit_page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
@@ -525,25 +692,34 @@
               <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_v2" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="edge_service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="emulation_service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../tractor_PRJ/server/python_v2/python" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\service\emulation_service" />
+      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\service\edge_service" />
       <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module\tools" />
       <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module\ssh" />
       <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\service" />
-      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module" />
-      <recent name="F:\myCode\adhoc_PRJ\k8s_web_controller\python_v2\python\module\database" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -617,13 +793,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32873806" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35100743" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32555673" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39872748" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -641,11 +818,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/python/message_parse_manage/pusher_message_parse_manage.py" />
-    <entry file="file://$PROJECT_DIR$/python/message_parse_manage/receiver_file_parse_manage.py" />
-    <entry file="file://$PROJECT_DIR$/python/message_parse_manage/receiver_message_parse_manage.py" />
-    <entry file="file://$PROJECT_DIR$/python/message_parse_manage/device_bulk_add_config.py" />
-    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_tractor_buy_log.py" />
     <entry file="file://F:/Python/Python35/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29775">
@@ -690,34 +862,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python/static/js/meterPage.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_control_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="32" column="47" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/message_parse_manage/message_parse_manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/module/nodes_help_module.py" />
     <entry file="file://$PROJECT_DIR$/python/templates/index.html">
@@ -771,20 +915,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/module/networking_check_module.py" />
-    <entry file="file://$PROJECT_DIR$/python/module/database/mysql_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/rest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="265" selection-start-line="265" selection-end-line="265" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/api_client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -809,43 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/config/lede_test1.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/k8s/cadvisor_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/k8s/heapster_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2488">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding>
-            <element signature="e#54#69#0" expanded="true" />
-            <marker date="1572522333267" expanded="true" signature="524:795" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/k8s/k8s_help_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="188" column="24" selection-start-line="188" selection-start-column="8" selection-end-line="188" selection-end-column="24" />
-          <folding>
-            <element signature="e#53#90#0" expanded="true" />
-            <marker date="1573040106650" expanded="true" signature="4213:4446" ph="..." />
-            <marker date="1573040106650" expanded="true" signature="5180:5185" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python/module/tools/yaml_dict_operate_module.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -853,76 +946,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/module/ssh/ssh_help_module.py">
+    <entry file="file://$PROJECT_DIR$/python/config/deployment_mould.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-163">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <marker date="1572841843175" expanded="true" signature="155:322" ph="..." />
-            <marker date="1572841843175" expanded="true" signature="467:479" ph="..." />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/service/openwrt_service.py">
+    <entry file="file://$PROJECT_DIR$/python/service/edge_service/infiltration_controller_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-          <folding>
-            <marker date="1573009852282" expanded="true" signature="1679:2093" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/python.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#677#686#0" expanded="true" />
-            <marker date="1573008411888" expanded="true" signature="3538:3708" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="41" selection-start-line="41" selection-end-line="44" selection-end-column="42" />
-          <folding>
-            <element signature="e#46#61#0" expanded="true" />
-            <marker date="1573128465954" expanded="true" signature="1917:1927" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/service/infiltration_controller_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="110" column="26" lean-forward="true" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
-          <folding>
-            <element signature="e#71#98#0" expanded="true" />
-            <marker date="1573128466039" expanded="true" signature="5216:5222" ph="..." />
-            <marker date="1573128466039" expanded="true" signature="5279:5288" ph="..." />
-            <marker date="1573128466039" expanded="true" signature="5279:5562" ph="..." />
-          </folding>
+        <state relative-caret-position="525">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/config/kubeconfig.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/config/deployment_mould.yaml">
+    <entry file="file://$PROJECT_DIR$/python/config/lede_test1.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="30" />
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/service/weight_manage_service.py">
+    <entry file="file://$PROJECT_DIR$/python/config/openwrt_test1.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        <state relative-caret-position="350">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Python/Python35/Lib/site-packages/kubernetes/client/rest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/k8s/k8s_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/k8s/heapster_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/k8s/cadvisor_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/edge_service/openwrt_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2450">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <marker date="1573191644270" expanded="true" signature="1999:2413" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/edge_service/weight_manage_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="14" selection-end-column="11" />
           <folding>
             <marker date="1573127292533" expanded="true" signature="140:221" ph="..." />
             <marker date="1573127292533" expanded="true" signature="164:173" ph="..." />
@@ -930,35 +1026,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/service/offloading_manage_service.py">
+    <entry file="file://$PROJECT_DIR$/python/service/edge_service/node_networking_check_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="67" column="24" lean-forward="true" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+        <state relative-caret-position="2350">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/edge_service/offloading_manage_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
-            <element signature="e#56#137#0" expanded="true" />
-            <marker date="1573126221305" expanded="true" signature="1715:1976" ph="..." />
+            <element signature="e#56#150#0" expanded="true" />
+            <marker date="1573130784234" expanded="true" signature="1741:2002" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/ssh/ssh_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="36" selection-start-line="36" selection-end-line="39" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/server_config.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_account_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-614">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/message_parse_manage/message_parse_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/emulation_service/openwrt_service.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/service/project_service.py">
+    <entry file="file://F:/Python/Python35/Lib/site-packages/pymysql/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        <state relative-caret-position="195">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/service/node_networking_check_service.py">
+    <entry file="file://$PROJECT_DIR$/python/python.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-573">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+        <state relative-caret-position="185">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="e#677#686#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+          <folding>
+            <element signature="e#46#61#0" expanded="true" />
+            <marker date="1573284854696" expanded="true" signature="2380:2390" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/service/emulation_service/project_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <folding>
+            <marker date="1573284854297" expanded="true" signature="661:1102" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_id_manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#34#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/client_manage/user_client_manage/user_control_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/database/mysql_help_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/database/project_sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-925">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/module/database/scenario_sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <marker date="1573285371444" expanded="true" signature="69:74" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
