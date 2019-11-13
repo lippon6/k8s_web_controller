@@ -37,12 +37,12 @@ system_use_windows = 0
 if sys.platform == 'wind32' or sys.platform == 'wind64':
     system_use_windows = 1
 
-# flask init
-app = Flask(__name__)
+# flask init 配置web文件目录
+app = Flask(__name__, static_folder="../web/static", template_folder='../web/templates')
 #app.config['SECRET_KEY'] = 'secret!'
 app.config['SECRET_KEY']=os.urandom(24)   #设置为24位的字符,每次运行服务器都是不同的，所以服务器启动一次上次的session就清除。
-app.config['PERMANENT_SESSION_LIFETIME']=timedelta(days=7) #设置session的保存时间。
-app.config['ssl_context']='adhoc'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7) #设置session的保存时间。
+app.config['ssl_context'] = 'adhoc'
 socketio = SocketIO(app)
 M_WEBSOCKET_RESPONSE='response'
 

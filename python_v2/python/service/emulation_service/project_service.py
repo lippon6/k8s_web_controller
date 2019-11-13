@@ -23,7 +23,7 @@ class ProjectService:
             self.project_sql.create_project(name, user)
             return "success"
 
-    def get_all_project(self):
+    def get_all_projects(self):
         """
         :rtype : dict
         """
@@ -32,7 +32,7 @@ class ProjectService:
         name = []
         user = []
 
-        projects = self.project_sql.get_all_project()
+        projects = self.project_sql.get_all_projects()
 
         for row in projects:
             pid.append(row[0])

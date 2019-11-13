@@ -70,7 +70,7 @@ class sqlHelper(object):
             return False
 
     # 插入数据库, 无参数匹配的
-    def insert_noarg_mysql(self,table,value):
+    def insert_noarg_mysql(self, table, value):
         try:
             self.cursor.execute("INSERT INTO "+table+" VALUE(" + value + ");")
             self.conn.commit()
@@ -78,6 +78,7 @@ class sqlHelper(object):
         except:
             print("insert failed")
             return False
+
     # 更新数据库
     def update_mysql(self,table,value,key):
         try:
@@ -90,18 +91,7 @@ class sqlHelper(object):
             return False
 
     # 创建数据库
-    def creat_mysql(self):
-
-        sql = """CREATE TABLE tractor (
-        id int auto_increment,
-        tractor_id int ,
-        latitude DOUBLE,
-        altitude DOUBLE ,
-        primary key(id,tractor_id,year,month,day,hour,minute,second,mus))default charset=utf8;"""
-        try:
-            self.cursor.execute(sql)
-            print("creat ok")
-        except:
-            print("creat fail")
+    def create_mysql(self):
+        pass
 
 

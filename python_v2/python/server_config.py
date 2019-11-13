@@ -21,15 +21,18 @@ class ServerConfig(object):
         # k8s相应文件目录
         self.k8s_config_file = "config\kubeconfig.yaml"
 
-
     def get_mysql_server_ip(self):
         return self.mysql_server_ip
+
     def get_mysql_server_port(self):
         return self.mysql_server_port
+
     def get_mysql_server_account(self):
         return self.mysql_server_account
+
     def get_mysql_server_passwd(self):
         return self.mysql_server_passwd
+
     def get_mysql_server_db(self):
         return self.mysql_server_db
 

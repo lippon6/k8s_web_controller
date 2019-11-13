@@ -2,7 +2,10 @@
 # created by lippon
 # 2019-11-8
 PROJECT_TABLE_NAME = "project"
+PROJECT_ID = "p_id"
 PROJECT_NAME = "project_name"
+PROJECT_STATUS = "project_status"
+PROJECT_USER_ID = "user_id"
 
 class ProjectSql:
     def __init__(self, sql_helper):
@@ -33,8 +36,8 @@ class ProjectSql:
         :type user: int
         :rtype : bool
         """
-        sql_data = "null,\'" + str(name) + "\',null,\'"+str(user)+"\'"
-        print(sql_data)
+        sql_data = "null,\'" + str(name) + "\',null,\'" + str(user) + "\'"
+
         if self.mysql_helper.insert_noarg_mysql(PROJECT_TABLE_NAME, sql_data):
             print('create project ok')
             return True
@@ -51,7 +54,7 @@ class ProjectSql:
         self.mysql_helper.query_cmd(sql)
         self.mysql_helper.conn.commit()
 
-    def get_all_project(self):
+    def get_all_projects(self):
         """
         :rtype : tuple
         """

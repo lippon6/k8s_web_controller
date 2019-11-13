@@ -14,6 +14,10 @@ from service.edge_service.offloading_manage_service import OffloadingManageServi
 from service.edge_service.openwrt_service import OpenWrtHelper
 from service.emulation_service.openwrt_service import OpenWrtService
 from service.emulation_service.project_service import ProjectService
+from service.emulation_service.scenario_service import ScenarioService
+from service.emulation_service.node_service import NodeService
+from data_structure.node import Node
+
 import time
 
 weight = {'ai': {'cpu': 100, 'memory': 50}}
@@ -35,6 +39,8 @@ class Test:
         self.openwrtService = OpenWrtService(self.k8sHelper)
         self.sql_helper = sql_helper
         self.project_service = ProjectService(self.sql_helper)
+        self.scenario_service = ScenarioService(self.sql_helper)
+        self.node_service = NodeService(self.sql_helper)
 
     def print_feature(self, inc):
         print(self.heapsterHelper.get_cpu_usage_percent("node01"))
@@ -44,8 +50,10 @@ class Test:
         t.start()
 
     def test_for_test(self):
-
-        print(self.project_service.get_all_project())
+        node = Node()
+        node.set_node_name("node02")
+        for node in self.node_service.get_all_nodes():
+            print(node.to_dict())
         # self.openwrtService.create_node()
 
         # self.infiltraionController.infiltration_control_handle()
