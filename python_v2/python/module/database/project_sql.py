@@ -1,6 +1,8 @@
 # project sql api
 # created by lippon
 # 2019-11-8
+
+# 宏常量分为数据库和返回字典，不要搞混，增减属性的时候需要都修改
 PROJECT_TABLE_NAME = "project"
 PROJECT_ID = "p_id"
 PROJECT_NAME = "project_name"

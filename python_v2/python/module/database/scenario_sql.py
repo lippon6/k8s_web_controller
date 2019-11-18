@@ -1,6 +1,8 @@
 # project sql api
 # created by lippon
 # 2019-11-8
+
+# 宏常量分为数据库和返回字典，不要搞混，增减属性的时候需要都修改
 SCENARIO_TABLE_NAME = "scenario"
 SCENARIO_NAME = "scenario_name"
 NUMBER_NODE = "number_node"
@@ -84,7 +86,7 @@ class ScenarioSql:
         # 获得数据
         return self.mysql_helper.get_all_row()
 
-    def get_scenario_by_project(self, project):
+    def get_scenarios_by_project(self, project):
         """
         :type project: int
         :rtype : tuple

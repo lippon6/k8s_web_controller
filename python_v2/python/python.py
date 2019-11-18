@@ -39,9 +39,9 @@ if sys.platform == 'wind32' or sys.platform == 'wind64':
 
 # flask init 配置web文件目录
 app = Flask(__name__, static_folder="../web/static", template_folder='../web/templates')
-#app.config['SECRET_KEY'] = 'secret!'
-app.config['SECRET_KEY']=os.urandom(24)   #设置为24位的字符,每次运行服务器都是不同的，所以服务器启动一次上次的session就清除。
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7) #设置session的保存时间。
+# app.config['SECRET_KEY'] = 'secret!'
+app.config['SECRET_KEY']=os.urandom(24)   # 设置为24位的字符,每次运行服务器都是不同的，所以服务器启动一次上次的session就清除。
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # 设置session的保存时间。
 app.config['ssl_context'] = 'adhoc'
 socketio = SocketIO(app)
 M_WEBSOCKET_RESPONSE='response'
@@ -63,9 +63,6 @@ sql_util.connect_mysql()
 # k8s helper
 k8s_config_file = server_config.get_k8s_config_file()
 k8sHelper = K8sHelper(k8s_config_file)
-
-# openwrt helper
-# openwrtHelper = OpenWrtHelper(k8sHelper)
 
 # user manage init
 user_account_manage = UserAccountManage(sql_util, join_room, leave_room, emit)
@@ -153,7 +150,7 @@ def register_account():
     else:
         return jsonify({'data': 'register error'})
 
-#获取session
+# 获取session
 @app.route('/get_login')
 def get():
     account = session.get('account')
@@ -167,17 +164,20 @@ def get():
 def user():
     return render_template('usr.html')
 
-@app.route("/download/<filename>", methods=['GET'])
-def download_file(filename):
-    print('download')
-    # 需要知道2个参数, 第1个参数是本地目录的path, 第2个参数是文件名(带扩展名)
-    directory = os.getcwd()  # 假设在当前目录
-    if system_use_windows:
-        directory = directory + "\\home\\usr\\notify_pdf"
+@app.route("/project_get", methods=["POST"])
+def login():
+    account = request.form.get('account', '')
+    password = request.form.get('password', '')
+
+    if user_account_manage.check_account(account, password):
+        new_login = "login_state"
+        session['account'] = account
+        session['passwd'] = password
+        session[new_login] = 'ok'
+        return jsonify({'data': 'login ok'})
     else:
-        directory = directory + "/home/usr/notify_pdf"
-    print(directory)
-    return send_from_directory(directory, filename, as_attachment=True)
+        return jsonify({'data': 'login error'})
+
 
 
 class M_WebSocketNamespace(Namespace):

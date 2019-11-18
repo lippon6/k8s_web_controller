@@ -45,6 +45,23 @@ class NodeService:
         """
         return self.transfor_sql_data(self.node_sql.get_all_nodes())
 
+    def get_nodes_by_scenario(self, scenario):
+        """
+        :type scenario: int
+        :rtype : list[Node]
+        """
+        return self.transfor_sql_data(self.node_sql.get_nodes_by_scenario(scenario))
+
+    def get_node_by_name(self, name):
+        """
+        :type name: str
+        :rtype : Node
+        """
+        if self.node_sql.is_name_exist(name):
+            return self.transfor_sql_data(self.node_sql.get_node_by_name(name))[0]
+        else:
+            return None
+
     def transfor_sql_data(self, data):
         """
         :type data: tuple

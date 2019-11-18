@@ -2,6 +2,7 @@
 # created by lippon
 # 2019-11-11
 
+# 宏常量分为数据库和返回字典，不要搞混，增减属性的时候需要都修改
 PROJECT_ID = "p_id"
 PROJECT_NAME = "project_name"
 PROJECT_STATUS = "project_status"
@@ -41,5 +42,10 @@ class Project:
     def to_dict(self):
         project = dict()
 
-        project[]
+        project[PROJECT_ID] = self.project_id
+        project[PROJECT_NAME] = self.project_name
+        project[PROJECT_STATUS] = self.project_status
+        project[PROJECT_USER_ID] = self.user_id
+
+        return project
 

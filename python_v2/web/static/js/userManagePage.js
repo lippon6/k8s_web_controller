@@ -53,6 +53,7 @@ function userManageInformationParse(data){
     }
 }
 
+
 // 控制事件的回调函数
 function operateFormatter(value, row, index) {
     return [
@@ -71,19 +72,19 @@ function userManagePageTableInit(){
     $("#userManageEdit").hide();
 
     // 返回事件
-    $("#userManageTableReturn").click(function () {
+    $("#userManageTableReturn").ck(function () {
         $("#userManagePageTable").show();
         $("#userManageEdit").hide();
         manageEditDeviceDataRemove();
     });
 
     //保存事件
-    $("#userManageSave").click(function () {
+    $("#userManageSave").ck(function () {
         userMsgSave();
     });
 
     // 移除事件
-    $userManagePageTableRemoveBtn.click(function () {
+    $userManagePageTableRemoveBtn.ck(function () {
         var ids = $.map($userManagePageTable.bootstrapTable('getSelections'), function (row) {
             return row.userName
         });
@@ -95,7 +96,7 @@ function userManagePageTableInit(){
     });
     
     // 添加数据
-    $("#userManagePageMsgAddBtn").click(function () {
+    $("#userManagePageMsgAddBtn").ck(function () {
         manageAddUser();
     });
 

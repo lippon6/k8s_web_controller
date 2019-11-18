@@ -2,6 +2,7 @@
 # created by lippon
 # 2019-10-22
 from module.database.project_sql import ProjectSql
+from data_structure.project import Project
 
 class ProjectService:
     def __init__(self, helper):
@@ -25,25 +26,30 @@ class ProjectService:
 
     def get_all_projects(self):
         """
-        :rtype : dict
+        :rtype : list[Project]
         """
-        information = {}
-        pid = []
-        name = []
-        user = []
 
-        projects = self.project_sql.get_all_projects()
+        return  self.transfer_sql_data(self.project_sql.get_all_projects())
 
-        for row in projects:
-            pid.append(row[0])
-            name.append(row[1])
-            user.append(row[3])
 
-        information['id'] = pid
-        information['name'] = name
-        information['user'] = user
+    def transfer_sql_data(self, data):
+        """
+        :type data: tuple
+        :rtype : list[Project]
+        """
+        projects = []
 
-        return information
+        for row in data:
+            project = Project()
+
+            project.set_project_id(row[0])
+            project.set_project_name(row[1])
+            project.set_project_status(row[2])
+            project.set_user_id(row[3])
+
+            projects.append(project)
+
+        return projects
 
     def delete_project(self, name):
         """

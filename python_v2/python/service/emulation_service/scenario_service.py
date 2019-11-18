@@ -2,6 +2,7 @@
 # created by lippon
 # 2019-11-10
 from module.database.scenario_sql import ScenarioSql
+from data_structure.scenario import Scenario
 
 class ScenarioService:
     def __init__(self, helper):
@@ -24,55 +25,38 @@ class ScenarioService:
 
     def get_all_scenarios(self):
         """
-        :rtype : dict
+        :rtype : list[Scenario]
         """
         return self.transfer_sql_data(self.scenario_sql.get_all_scenarios())
 
-    def get_scenario_by_project(self, project):
+    def get_scenarios_by_project(self, project):
         """
         :type project: int
-        :rtype : str
+        :rtype : list[Scenario]
         """
-        return self.transfer_sql_data(self.scenario_sql.get_scenario_by_project(project))
+        return self.transfer_sql_data(self.scenario_sql.get_scenarios_by_project(project))
 
     def transfer_sql_data(self, data):
         """
         :type data: tuple
-        :rtype : str
+        :rtype : list[Scenario]
         """
-        information = {}
-        sid = []
-        name = []
-        pid = []
-        number_node = []
-        number_simple_node = []
-        number_complex_node = []
-        dynamic_topology_file = []
-        scenario_status = []
-        scenario_type = []
+        scenarios = []
 
         for row in data:
-            sid.append(row[0])
-            name.append(row[1])
-            pid.append(row[2])
-            number_node.append(row[3])
-            number_simple_node.append(row[4])
-            number_complex_node.append(row[5])
-            dynamic_topology_file.append(row[6])
-            scenario_status.append(row[7])
-            scenario_type.append(row[8])
+            scenario = Scenario()
+            scenario.set_scenario_id(row[0])
+            scenario.set_scenario_name(row[1])
+            scenario.set_project_id(row[2])
+            scenario.set_number_node(row[3])
+            scenario.set_number_simple_node(row[4])
+            scenario.set_number_complex_node(row[5])
+            scenario.set_dynamic_topology_file(row[6])
+            scenario.set_scenario_status(row[7])
+            scenario.set_scenario_type(row[8])
+            scenarios.append(scenario)
 
-        information['sid'] = pid
-        information['name'] = name
-        information['pid'] = pid
-        information['number_node'] = number_node
-        information['number_simple_node'] = number_simple_node
-        information['number_complex_node'] = number_complex_node
-        information['dynamic_topology_file'] = dynamic_topology_file
-        information['scenario_status'] = scenario_status
-        information['scenario_type'] = scenario_type
-
-        return information
+        return scenarios
 
     def delete_scenario_by_name(self, name):
         """

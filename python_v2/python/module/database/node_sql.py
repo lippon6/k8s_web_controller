@@ -1,6 +1,8 @@
 # project sql api
 # created by lippon
 # 2019-11-8
+
+# 宏常量分为数据库和返回字典，不要搞混，增减属性的时候需要都修改
 NODE_TABLE_NAME = "node"
 NODE_ID = "node_id"
 NODE_NAME = "node_name"
@@ -86,7 +88,7 @@ class NodeSql:
         # 获得数据
         return self.mysql_helper.get_all_row()
 
-    def get_nodes_by_name(self, name):
+    def get_node_by_name(self, name):
         """
         :type name: str
         :rtype : tuple

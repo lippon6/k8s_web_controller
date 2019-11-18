@@ -2,6 +2,7 @@
 # created by lippon
 # 2019-11-11
 
+# 宏常量分为数据库和返回字典，不要搞混，增减属性的时候需要都修改
 NODE_ID = "node_id"
 NODE_NAME = "node_name"
 NODE_MANAGE_IP = "manage_ip"

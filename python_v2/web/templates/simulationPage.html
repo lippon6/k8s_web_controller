@@ -41,85 +41,25 @@
 <body>
 
 <div class="container">
-    <div id="warningTableBackTool">
-        <button id="warningTableReturn" class="btn btn-info">返回</button>
-        <div id="warningMsgContent">
-            <div class="row" style="margin-left:0px; padding-bottom:15px;">
-                <button id="warningTableRemove" class="btn btn-danger col-md-1">批量删除</button>
-                <div class="btn-group col-md-1">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">选择告警级别
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                            <li><a href="javascript:void(0)" onclick ="$('#warningMsgTable').bootstrapTable('filterBy')">全部</a></li>
-                        <li><a href="javascript:void(0)" onclick ="$('#warningMsgTable').bootstrapTable('filterBy', {level: 1})">1</a></li>
-                        <li><a href="javascript:void(0)" onclick ="$('#warningMsgTable').bootstrapTable('filterBy', {level: 2})">2</a></li>
-                        <li><a href="javascript:void(0)" onclick ="$('#warningMsgTable').bootstrapTable('filterBy', {level: 3})">3</a></li>
-                        <li><a href="javascript:void(0)" onclick ="$('#warningMsgTable').bootstrapTable('filterBy', {level: 4})">4</a></li>
-                        <li><a href="javascript:void(0)" onclick ="$('#warningMsgTable').bootstrapTable('filterBy', {level: 5})">5</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row" style=" padding-bottom:15px;">
-                <div class="col-md-2">
-                    <input type="text" class="form-control" id="serialSearch" placeholder="请输入编号" onchange="serialSearch(this.id)">
-                </div>
-
-                <div class="col-md-2">
-                    <input type="text" class="form-control" id="timeSearch" placeholder="请输入时间" onchange="timeSearch(this.id)">
-                </div>
-
-                <div class="col-md-2">
-                    <input type="text" class="form-control" id="idSearch" placeholder="请输入拖拉机编号" onchange="idSearch(this.id)">
-                </div>
-
-                <div class="col-md-2">
-                    <input type="text" class="form-control" id="modelSearch" placeholder="请输入拖拉机型号" onchange="tableSearch(this.id, 'model')">
-                </div>
-
-                <div class="col-md-2">
-                    <input type="text" class="form-control" id="brandSearch" placeholder="请输入拖拉机品牌" onchange="tableSearch(this.id, 'brand')">
-                </div>
-
-                <div class="col-md-2">
-                    <input type="text" class="form-control" id="producerSearch" placeholder="请输入拖拉机生产厂家" onchange="tableSearch(this.id, 'producer')">
-                </div>
-
-                
-            </div>
-            
-
-            <div class=" bootstrap-table">
-                <table
-                        id="warningMsgTable"
-                        data-toggle="table"
-                        data-pagination="true"
-                        data-page-list="[5, 20, 50]"
-                        data-page-size="5"
-                        data-click-to-select="true"
-                        data-maintain-selected="true"
-                >
-                    <thead>
-                        <tr>
-                            <th data-field="state" data-checkbox="true"></th>
-                            <th data-field="serial" data-sortable="true">编号</th>
-                            <th data-field="time" data-sortable="true">发布时间</th>
-                            <th data-field="id" data-sortable="true">拖拉机编号</th>
-                            <th data-field="level" data-sortable="true">告警级别</th>
-                            <th data-field="model" data-sortable="true">型号</th>
-                            <th data-field="brand" data-sortable="true">品牌</th>
-                            <th data-field="producer" data-sortable="true">生产商</th>
-                            <th data-field="title" >标题</th>
-                            <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">操作</th>
-                        </tr>
-                    </thead>
-                </table>
-                <button id="warningMsgAddBtn" class="btn btn-secondary">添加数据</button>
-            </div>
-        </div>
-        <div id="warningContent"></div>
-    </div>       
+    <div id="cesiumContainer" style="width: 1000px; height:600px"></div>
 </div>
+
+<script>
+Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyZjAzMTU0Mi0wZDBlLTQ0MGMtOTI5OC0xMzkzNGNjZGQwMzYiLCJpZCI6MTg1MjIsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzM5ODA2MjR9.nngDp35Fzy5aEhequE8S-VSl38j2XDDO6t7L_PLjfDo';
+var viewer = new Cesium.Viewer('cesiumContainer', {
+terrainProvider: Cesium.createWorldTerrain()
+});
+var entity = viewer.entities.add({
+position: Cesium.Cartesian3.fromDegrees(120.0, 30.0),
+ellipse : {
+    semiMinorAxis : 2500.0,
+    semiMajorAxis : 4000.0,
+    material : Cesium.Color.BLUE.withAlpha(0.5)
+}
+});
+viewer.zoomTo(viewer.entities);
+var ellipse = entity.ellipse;
+</script>
 </body>
 </html>
 

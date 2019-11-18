@@ -52,37 +52,8 @@ class Test:
     def test_for_test(self):
         node = Node()
         node.set_node_name("node02")
-        for node in self.node_service.get_all_nodes():
-            print(node.to_dict())
+        print(self.node_service.get_node_by_name("node01").to_dict())
+        print(self.project_service.get_all_projects()[0].to_dict())
+        print(self.scenario_service.get_all_scenarios()[0].to_dict())
         # self.openwrtService.create_node()
 
-        # self.infiltraionController.infiltration_control_handle()
-        # self.node_networking_check.networking_check_handle()
-        # time.sleep(3)
-        # self.openwrtHelper.create_node()
-        #
-        # self.openwrtHelper.test()
-
-        # url = "http://192.168.0.134:8080/api/v2.1/machinestats"
-        # P_get = requests.get(url)
-        # print(json.loads(P_get.text)[63])
-
-        # print(self.k8sHelper.get_all_ap_nodes())
-        # self.k8sHelper.push_node_label_value("node01", "concentration", "90")
-        # print(self.heapsterHelper.get_cpu_usage_percent("raspberrypi02"))
-        # print(self.k8sHelper.get_all_nodes_ap())
-        # for node in self.k8sHelper.get_all_nodes_ip():
-        #     print(node)
-        # print(self.node_networking_check.all_nodes_network_list())
-        # print(self.offloading_manage_service.get_edge_nodes_by_ap('edge01'))
-        # self.node_networking_check.check_all_nodes_network_list()
-        #
-        # print(self.node_networking_check.get_all_ap_network_list(self.k8sHelper.get_all_ap_nodes()))
-        # self.infiltraionController.infiltration_control_handle()
-        # self.k8sHelper.push_node_label_value("node01", "ai", "1")
-        # self.print_feature(0.5)
-
-        # print(self.cadvisorHelper.get_node_cpu_now_rate_of_utilization("node01"))
-
-        # print(self.k8sHelper.get_all_nodes())
-        pass
