@@ -25,7 +25,7 @@ from message_parse_manage.message_parse_manage import MessageParseManage
 from client_manage.user_client_manage.user_account_manage import UserAccountManage
 from module.database.mysql_help_module import sqlHelper
 from module.k8s.k8s_help_module import K8sHelper
-
+from service.emulation_service.project_service import ProjectService
 
 from server_config import ServerConfig
 
@@ -70,8 +70,10 @@ user_account_manage = UserAccountManage(sql_util, join_room, leave_room, emit)
 # web messages parse
 message_parse_manage = MessageParseManage(sql_util, emit)
 
-test = Test(k8sHelper, sql_util)
+# project page action
+project_service = ProjectService(sql_util, session)
 
+test = Test(k8sHelper, sql_util)
 test.test_for_test()
 
 # web route
@@ -144,7 +146,7 @@ def register_account():
     account = request.form.get('account', '')
     password = request.form.get('password', '')
     name = request.form.get('name', '')
-    data = user_account_manage.register_account(account,password,name)
+    data = user_account_manage.register_account(account, password, name)
     if data == 'ok':
         return jsonify({'data': 'register ok'})
     else:
@@ -164,21 +166,10 @@ def get():
 def user():
     return render_template('usr.html')
 
-@app.route("/project_get", methods=["POST"])
-def login():
-    account = request.form.get('account', '')
-    password = request.form.get('password', '')
-
-    if user_account_manage.check_account(account, password):
-        new_login = "login_state"
-        session['account'] = account
-        session['passwd'] = password
-        session[new_login] = 'ok'
-        return jsonify({'data': 'login ok'})
-    else:
-        return jsonify({'data': 'login error'})
-
-
+# 工程界面post数据解析
+@app.route("/project", methods=["POST"])
+def project_parser():
+    return jsonify(project_service.parser_web_data(request.form))
 
 class M_WebSocketNamespace(Namespace):
 

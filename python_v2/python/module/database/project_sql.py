@@ -7,7 +7,7 @@ PROJECT_TABLE_NAME = "project"
 PROJECT_ID = "p_id"
 PROJECT_NAME = "project_name"
 PROJECT_STATUS = "project_status"
-PROJECT_USER_ID = "user_id"
+PROJECT_USER_NAME = "user_name"
 
 class ProjectSql:
     def __init__(self, sql_helper):
@@ -32,13 +32,30 @@ class ProjectSql:
         else:
             return False
 
-    def create_project(self, name, user):
+    def is_project_id_exist(self, id):
         """
-        :type name: str
-        :type user: int
+        :type id: int
         :rtype : bool
         """
-        sql_data = "null,\'" + str(name) + "\',null,\'" + str(user) + "\'"
+        sql_cmd = "select * from " + PROJECT_TABLE_NAME + " where " + PROJECT_ID + " = \'" + str(id) + "\';"
+        self.mysql_helper.query_cmd(sql_cmd)
+        # 获得数据
+        row = self.mysql_helper.get_all_row()
+        #print(row)
+        if row:
+            id = row[0][0]
+            return True
+        else:
+            return False
+
+    def create_project(self, name, status, user):
+        """
+        :type name: str
+        :type status: str
+        :type user: str
+        :rtype : bool
+        """
+        sql_data = "null,\'" + str(name) + "\',\'" + str(status) + "\',\'" + str(user) + "\'"
 
         if self.mysql_helper.insert_noarg_mysql(PROJECT_TABLE_NAME, sql_data):
             print('create project ok')
@@ -46,6 +63,20 @@ class ProjectSql:
         else:
             print('create project error')
             return False
+
+    def edit_project(self, id, name, user, status):
+        """
+        :type id: int
+        :type name: str
+        :type user: str
+        :type status: str
+        :rtype : bool
+        """
+        sql = "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s' WHERE %s = %s;" % \
+              (PROJECT_TABLE_NAME, PROJECT_NAME, name, PROJECT_STATUS, status, PROJECT_USER_NAME, user, PROJECT_ID, id)
+        print(sql)
+        self.mysql_helper.query_cmd(sql)
+        self.mysql_helper.conn.commit()
 
     def delete_project(self, name):
         """
@@ -65,4 +96,14 @@ class ProjectSql:
         self.mysql_helper.query_cmd(sql_cmd)
         # 获得数据
         return self.mysql_helper.get_all_row()
+
+    def delete_project_by_id(self, id):
+        """
+        :type id: int
+        :rtype : bool
+        """
+        sql = "DELETE FROM %s WHERE %s = '%s' ;" % (PROJECT_TABLE_NAME, PROJECT_ID, id)
+        self.mysql_helper.query_cmd(sql)
+        self.mysql_helper.conn.commit()
+
 

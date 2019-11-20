@@ -18,8 +18,6 @@
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
-    <script src="https://cesiumjs.org/releases/1.51/Build/Cesium/1Cesium.js"></script>
-    <link href="https://cesiumjs.org/releases/1.51/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -74,28 +72,28 @@
                                     <!-- Text input-->
                                     <label class="control-label" for="input01">编号</label>
                                     <div class="controls">
-                                        <input id="projectID" type="text" placeholder="" class="input-xlarge">
+                                        <input id="projectID" name="projectID" type="text" placeholder="" class="input-xlarge" disabled="disabled">
                                         <p class="help-block"></p>
                                     </div>
     
                                     <!-- Text input-->
-                                    <label class="control-label" for="input01">名称</label>
+                                    <label class="control-label" for="input01">项目名称</label>
                                     <div class="controls">
-                                        <input id="projectName" type="text" placeholder="" class="input-xlarge">
+                                        <input id="projectName" name="projectName" type="text" placeholder="" class="input-xlarge">
                                         <p class="help-block"></p>
                                     </div>
     
                                     <!-- Text input-->
-                                    <label class="control-label" for="input01">状态</label>
+                                    <label class="control-label" for="input01">项目状态</label>
                                     <div class="controls">
-                                        <input id="projectStatus" type="text" placeholder="" class="input-xlarge">
+                                        <input id="projectStatus" name="projectStatus" type="text" placeholder="" class="input-xlarge">
                                         <p class="help-block"></p>
                                     </div>
     
                                     <!-- Text input-->
                                     <label class="control-label" for="input01">所属用户</label>
                                     <div class="controls">
-                                        <input id="projectUser" type="text" placeholder="" class="input-xlarge">
+                                        <input id="projectUser" name="projectUser" type="text" placeholder="" class="input-xlarge">
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -108,7 +106,7 @@
             
                         <!-- Button -->
                         <div class="controls">
-                            <button id="projectSave" class="btn btn-success">保存</button>
+                            <button id="projectSave" type="submit" class="btn btn-success" onclick="projectMsgSave()">保存</button>
                         </div>
                     </div>
             

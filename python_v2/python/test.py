@@ -17,6 +17,8 @@ from service.emulation_service.project_service import ProjectService
 from service.emulation_service.scenario_service import ScenarioService
 from service.emulation_service.node_service import NodeService
 from data_structure.node import Node
+from data_structure.project import Project
+from flask import  session
 
 import time
 
@@ -38,9 +40,10 @@ class Test:
 
         self.openwrtService = OpenWrtService(self.k8sHelper)
         self.sql_helper = sql_helper
-        self.project_service = ProjectService(self.sql_helper)
+        self.project_service = ProjectService(self.sql_helper, session)
         self.scenario_service = ScenarioService(self.sql_helper)
         self.node_service = NodeService(self.sql_helper)
+
 
     def print_feature(self, inc):
         print(self.heapsterHelper.get_cpu_usage_percent("node01"))
@@ -50,10 +53,16 @@ class Test:
         t.start()
 
     def test_for_test(self):
-        node = Node()
-        node.set_node_name("node02")
-        print(self.node_service.get_node_by_name("node01").to_dict())
-        print(self.project_service.get_all_projects()[0].to_dict())
-        print(self.scenario_service.get_all_scenarios()[0].to_dict())
+        project = Project()
+        project.set_project_id(1)
+        project.set_project_name("test1")
+        project.set_project_status("禁用")
+        project.set_user_name("lippon")
+        # node = Node()
+        # node.set_node_name("node02")
+        # print(self.node_service.get_node_by_name("node01").to_dict())
+        # print(self.project_service.create_project(project))
+        # print(self.scenario_service.get_all_scenarios()[0].to_dict())
         # self.openwrtService.create_node()
+        pass
 

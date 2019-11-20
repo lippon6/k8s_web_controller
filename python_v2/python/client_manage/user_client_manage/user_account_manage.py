@@ -51,7 +51,7 @@ class UserAccountManage(object):
     def login_account(self,account,passwd,sid):
         if self.user_id_manage.check_account_passwd(account,passwd):
             print('客户端登陆成功')
-            self.user_id_manage.set_network_connect(account,sid)
+            self.user_id_manage.set_network_connect(account, sid)
             cmdName = "login"
             m_data_json = {"data": "ok"}
             server_data_json = self.msg_packet(cmdName, m_data_json, 200)

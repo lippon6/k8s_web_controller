@@ -6,14 +6,14 @@
 PROJECT_ID = "p_id"
 PROJECT_NAME = "project_name"
 PROJECT_STATUS = "project_status"
-PROJECT_USER_ID = "user_id"
+PROJECT_USER_NAME = "user_name"
 
 class Project:
     def __init__(self):
         self.project_id = 0
         self.project_name = ""
         self.project_status = 0
-        self.user_id = 0
+        self.user_name = 0
 
     def get_project_id(self):
         return self.project_id
@@ -33,11 +33,11 @@ class Project:
     def set_project_status(self, data):
         self.project_status = data
 
-    def get_user_id(self):
-        return self.user_id
+    def get_user_name(self):
+        return self.user_name
 
-    def set_user_id(self, data):
-        self.user_id = data
+    def set_user_name(self, data):
+        self.user_name = data
 
     def to_dict(self):
         project = dict()
@@ -45,7 +45,7 @@ class Project:
         project[PROJECT_ID] = self.project_id
         project[PROJECT_NAME] = self.project_name
         project[PROJECT_STATUS] = self.project_status
-        project[PROJECT_USER_ID] = self.user_id
+        project[PROJECT_USER_NAME] = self.user_name
 
         return project
 
