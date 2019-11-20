@@ -131,3 +131,14 @@ class NodeSql:
         self.mysql_helper.query_cmd(sql_cmd)
         # 获得数据
         return self.mysql_helper.get_all_row()
+
+    def delete_nodes_by_id(self, id):
+        """
+        :type id: int
+        :rtype : tuple
+        """
+        sql_cmd = "delete from " + NODE_TABLE_NAME + " where " + NODE_NAME + "=\'" + str(id)+"\';"
+
+        self.mysql_helper.query_cmd(sql_cmd)
+        # 获得数据
+        return self.mysql_helper.get_all_row()

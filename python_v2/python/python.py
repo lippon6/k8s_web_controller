@@ -73,7 +73,7 @@ message_parse_manage = MessageParseManage(sql_util, emit)
 # project page action
 project_service = ProjectService(sql_util, session)
 
-test = Test(k8sHelper, sql_util)
+test = Test(k8sHelper, sql_util, session)
 test.test_for_test()
 
 # web route

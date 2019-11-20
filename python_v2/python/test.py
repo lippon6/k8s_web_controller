@@ -19,6 +19,7 @@ from service.emulation_service.node_service import NodeService
 from data_structure.node import Node
 from data_structure.project import Project
 from flask import  session
+from data_structure.scenario import Scenario
 
 import time
 
@@ -26,38 +27,49 @@ weight = {'ai': {'cpu': 100, 'memory': 50}}
 
 
 class Test:
-    def __init__(self, k8s, sql_helper):
+    def __init__(self, k8s, sql_helper, session):
         self.k8sHelper = k8s
-        self.cadvisorHelper = CadvisorHelper(self.k8sHelper)
-        self.heapsterHelper = HeapsterHelper(self.k8sHelper)
-
+        # self.cadvisorHelper = CadvisorHelper(self.k8sHelper)
+        # self.heapsterHelper = HeapsterHelper(self.k8sHelper)
+        self.session = session
         self.ssh_helper = SshHelper()
-        self.node_networking_check = NodeNetworkingCheckService(self.ssh_helper, self.k8sHelper)
-        self.offloading_manage_service = OffloadingManageService(self.k8sHelper, self.ssh_helper)
-        self.infiltraionController = InfiltrationControllerService(weight, self.heapsterHelper, self.k8sHelper,
-                                                                   self.node_networking_check)
-        self.openwrtHelper = OpenWrtHelper(self.k8sHelper, self.offloading_manage_service)
-
-        self.openwrtService = OpenWrtService(self.k8sHelper)
+        # self.node_networking_check = NodeNetworkingCheckService(self.ssh_helper, self.k8sHelper)
+        # self.offloading_manage_service = OffloadingManageService(self.k8sHelper, self.ssh_helper)
+        # self.infiltraionController = InfiltrationControllerService(weight, self.heapsterHelper, self.k8sHelper,
+        #                                                            self.node_networking_check)
+        # self.openwrtHelper = OpenWrtHelper(self.k8sHelper, self.offloading_manage_service)
+        #
+        # self.openwrtService = OpenWrtService(self.k8sHelper)
         self.sql_helper = sql_helper
-        self.project_service = ProjectService(self.sql_helper, session)
+        # self.project_service = ProjectService(self.sql_helper, session)
         self.scenario_service = ScenarioService(self.sql_helper)
         self.node_service = NodeService(self.sql_helper)
 
 
+
     def print_feature(self, inc):
-        print(self.heapsterHelper.get_cpu_usage_percent("node01"))
-        print(self.heapsterHelper.get_cpu_usage_percent("node02"))
-        print(self.heapsterHelper.get_cpu_usage_percent("raspberrypi02"))
-        t = Timer(inc, self.print_feature, (inc,))
-        t.start()
+        # print(self.heapsterHelper.get_cpu_usage_percent("node01"))
+        # print(self.heapsterHelper.get_cpu_usage_percent("node02"))
+        # print(self.heapsterHelper.get_cpu_usage_percent("raspberrypi02"))
+        # t = Timer(inc, self.print_feature, (inc,))
+        # t.start()
+        pass
 
     def test_for_test(self):
-        project = Project()
-        project.set_project_id(1)
-        project.set_project_name("test1")
-        project.set_project_status("禁用")
-        project.set_user_name("lippon")
+        # project = Project()
+        # project.set_project_id(1)
+        # project.set_project_name("test1")
+        # project.set_project_status("禁用")
+        # project.set_user_name("lippon")
+        test = Scenario()
+        test.set_scenario_id(4)
+        test.set_scenario_name("test3")
+        test.set_project_id(1)
+        test.set_dynamic_topology_file("sadfasd")
+        test.set_scenario_status("using")
+        test.set_scenario_type("test")
+
+
         # node = Node()
         # node.set_node_name("node02")
         # print(self.node_service.get_node_by_name("node01").to_dict())

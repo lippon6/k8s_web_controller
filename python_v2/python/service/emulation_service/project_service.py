@@ -30,7 +30,6 @@ class ProjectService:
             return self.delete_project_by_id(form.get('id[]'))
         elif func == "choose":
             self.session["nowProject"] = form.get('project')
-            print(self.session.get("nowProject"))
             return "success"
 
     def create_project(self, project):
@@ -132,8 +131,7 @@ class ProjectService:
         :type ids: list[int]
         :rtype : str
         """
-        print(ids)
         # 因为id不由人为修改，因此一般不需查询其是否存在
         for id in ids:
             self.project_sql.delete_project_by_id(id)
-            return "success"
+        return "success"

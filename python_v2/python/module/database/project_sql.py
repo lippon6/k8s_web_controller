@@ -74,7 +74,7 @@ class ProjectSql:
         """
         sql = "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s' WHERE %s = %s;" % \
               (PROJECT_TABLE_NAME, PROJECT_NAME, name, PROJECT_STATUS, status, PROJECT_USER_NAME, user, PROJECT_ID, id)
-        print(sql)
+
         self.mysql_helper.query_cmd(sql)
         self.mysql_helper.conn.commit()
 
