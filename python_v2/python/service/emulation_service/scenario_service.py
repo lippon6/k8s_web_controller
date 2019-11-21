@@ -42,7 +42,7 @@ class ScenarioService:
         # 前端表格数据id
         data = dict()
         data["scenarioID"] = []
-        data["name"] = []
+        data["scenarioName"] = []
         data["projectID"] = []
         data["numberNode"] = []
         data["numberSimpleNode"] = []
@@ -53,7 +53,7 @@ class ScenarioService:
 
         for scenario in scenarios:
             data["scenarioID"].append(scenario.get_scenario_id())
-            data["name"].append(scenario.get_scenario_name())
+            data["scenarioName"].append(scenario.get_scenario_name())
             data["projectID"].append(scenario.get_project_id())
             data["numberNode"].append(scenario.get_number_node())
             data["numberSimpleNode"].append(scenario.get_number_simple_node())
@@ -72,14 +72,14 @@ class ScenarioService:
         scenario = Scenario()
 
         scenario.set_scenario_id(form.get('scenarioID', ''))
-        scenario.set_scenario_name(form.get('name', ''))
+        scenario.set_scenario_name(form.get('scenarioName', ''))
         scenario.set_project_id(form.get('projectID', ''))
         scenario.set_number_node(form.get('numberNode', ''))
         scenario.set_number_simple_node(form.get('numberSimpleNode', ''))
         scenario.set_number_complex_node(form.get('numberComplexNode', ''))
         scenario.set_dynamic_topology_file(form.get('dynamicTopologyFile', ''))
-        scenario.set_number_scenario_status(form.get('scenarioStatus', ''))
-        scenario.set_number_scenario_type(form.get('scenarioType', ''))
+        scenario.set_scenario_status(form.get('scenarioStatus', ''))
+        scenario.set_scenario_type(form.get('scenarioType', ''))
 
         return scenario
 
@@ -92,19 +92,23 @@ class ScenarioService:
         if self.scenario_sql.is_name_exist(scenario.get_scenario_name()):
             return "existed"
         else:
-            self.scenario_sql.create_scenario(scenario.get_scenario_name(), scenario.get_project_id(),
+            if self.scenario_sql.create_scenario(scenario.get_scenario_name(), scenario.get_project_id(),
                                               scenario.get_dynamic_topology_file(),
                                               scenario.get_scenario_status(),
-                                              scenario.get_scenario_type())
+                                              scenario.get_scenario_type()):
+                return "success"
 
     def edit_scenario(self, scenario):
         """
         :type scenario: Scenario
         :rtype : bool
         """
-        self.scenario_sql.edit_scenario(scenario.get_scenario_id(), scenario.get_scenario_name(),
-                                        scenario.get_project_id(), scenario.get_dynamic_topology_file(),
-                                        scenario.get_scenario_status(), scenario.get_scenario_type())
+        if self.scenario_sql.is_name_exist(scenario.get_scenario_name()):
+            return "existed"
+        else:
+            self.scenario_sql.edit_scenario(scenario.get_scenario_id(), scenario.get_scenario_name(),
+                                            scenario.get_project_id(), scenario.get_dynamic_topology_file(),
+                                            scenario.get_scenario_status(), scenario.get_scenario_type())
         return "success"
 
     def get_all_scenarios(self):
@@ -165,7 +169,8 @@ class ScenarioService:
         :type ids: list[int]
         :rtype : bool
         """
+        print(ids)
         for id in ids:
-            return self.scenario_sql.delete_scenario_by_id(id)
+            self.scenario_sql.delete_scenario_by_id(id)
         return "success"
 

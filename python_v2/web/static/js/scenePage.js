@@ -1,37 +1,36 @@
 // 全局信息
-var projectInformation;
+var scenarioInformation;
 // 表格数据
-var projectTableData = [];
+var scenarioTableData = [];
 // 提交类型
 var pushType = ""
 
 // 编辑界面文本ID
-var idArray = ["projectID", "projectName", "projectStatus", "projectUser"];
+var idArray = ["scenarioID", "scenarioName", "projectID", "numberNode",
+ "numberSimpleNode", "numberComplexNode", "dynamicTopologyFile", "scenarioStatus", "scenarioType"];
 
 // 编辑界面输入框标题
-var titleArray = ["编号", "项目名称", "项目状态", "所属用户"];
+var titleArray = ["场景编号", "场景名称", "所属项目", "节点数", "简单节点数", "复杂节点数量", "运动文件", "场景状态", "场景类型"];
 
+// 在创建的时候需要填入初值的序列
+var needinitialIndex = [2, 3, 4, 5];
 
-// projectTableData[0] = {
-//     "id":"01",
-//     "name":"test1",
-//     "status":"启用",
-//     "user":"lippon"
-// }
+// 初始值 其中的所属项目由本身产生
+var initialValue = [0, 0, 0, 0];
 
-function projectTableInit(){
-    var $projectTable = $('#projectTable');
-    var $projectTableRemoveBtn = $('#projectTableRemoveBtn');
+function scenarioTableInit(){
+    var $scenarioTable = $('#scenarioTable');
+    var $scenarioTableRemoveBtn = $('#scenarioTableRemoveBtn');
 
-    $("#projectManageTable").show();
-    $("#projectTableEdit").hide();
+    $("#scenarioManageTable").show();
+    $("#scenarioTableEdit").hide();
 
     // 移除事件
-    $projectTableRemoveBtn.click(function () {
-        var ids = $.map($projectTable.bootstrapTable('getSelections'), function (row) {
+    $scenarioTableRemoveBtn.click(function () {
+        var ids = $.map($scenarioTable.bootstrapTable('getSelections'), function (row) {
             return row.id
         });
-        $('#projectTable').bootstrapTable('remove', {
+        $('#scenarioTable').bootstrapTable('remove', {
             field: 'id',
             values: ids
         })
@@ -44,63 +43,61 @@ function projectTableInit(){
             dataEdit(row.id);
         },
         'click .remove': function (e, value, row, index) {
-            $('#projectTable').bootstrapTable('remove', {
+            $('#scenarioTable').bootstrapTable('remove', {
                 field: 'id',
                 values: [row.id]
             });
             dataRemoveById([row.id]);
         },
         'click .choose': function (e, value, row, index) {
-            enterScenarioPage(row.id);
+            enterSimulationPage(row.id);
         }
 
     }
 
     // 双击表格事件
-    $('#projectTable').on('dbl-click-row.bs.table', function (e,row,$element) {
-        enterScenarioPage(row.id);
+    $('#scenarioTable').on('dbl-click-row.bs.table', function (e,row,$element) {
+        enterSimulationPage(row.id);
     });
 
     // 添加表格数据
     $(document).ready(function() {
-        $('#projectTable').bootstrapTable('append', projectTableData);
+        $('#scenarioTable').bootstrapTable('append', scenarioTableData);
     });
 
     // 添加数据
-    $("#projectTableAddBtn").click(function () {
-        manageAddProject();
+    $("#scenarioTableAddBtn").click(function () {
+        manageAddscenario();
     });
 
     // 返回事件
-    $("#projectReturn").click(function () {
-        $("#projectManageTable").show();
-        $("#projectTableEdit").hide();
+    $("#scenarioReturn").click(function () {
+        $("#scenarioManageTable").show();
+        $("#scenarioTableEdit").hide();
         manageEditDeviceDataRemove();
     });
 }
 
-// 选择工程进入场景界面
-function enterScenarioPage(id){
+// 选择场景进入仿真界面
+function enterSimulationPage(id){
     // 数据组装
     data = {
         "function": "choose",
-        "project": id
+        "scenario": id
     }
 
     $.ajax({
         type: 'POST',
-        url: '/project',
+        url: '/scenario',
         data: data,
         dataType: 'json',
         success: function(data) {
-            window.location.href="scenePage.html"
+            window.location.href="simulationPage.html"
         },
         error: function(xhr, type) {
             alert("网络错误!");
         }
     });
-
-    window.location.href="scenePage.html"
 }
 
 // 依据id删除工程
@@ -115,7 +112,7 @@ function dataRemoveById(ids){
     //采用post方法向后端提交数据
     $.ajax({
         type: 'POST',
-        url: '/project',
+        url: '/scenario',
         data: data,
         dataType: 'json',
         success: function(data) {
@@ -148,29 +145,42 @@ function operateFormatter(value, row, index) {
 function tableInformationTrans(){
 
     // 删除表格原有数据
-    $('#projectTable').bootstrapTable('removeAll');
+    $('#scenarioTable').bootstrapTable('removeAll');
 
-    for(var i = 0; i < projectInformation.id.length; i++){
-        projectTableData[i] = {
-            'id': projectInformation.id[i],
-            'name':projectInformation.name[i],
-            'status': projectInformation.status[i],
-            'user': projectInformation.user[i]
+    for(var i = 0; i < scenarioInformation.scenarioID.length; i++){
+        scenarioTableData[i] = {
+            'id': scenarioInformation.scenarioID[i],
+            'scenarioName':scenarioInformation.scenarioName[i],
+            'projectID': scenarioInformation.projectID[i],
+            'numberNode': scenarioInformation.numberNode[i],
+            'numberSimpleNode': scenarioInformation.numberSimpleNode[i],
+            'numberComplexNode':scenarioInformation.numberComplexNode[i],
+            'dynamicTopologyFile': scenarioInformation.dynamicTopologyFile[i],
+            'scenarioStatus': scenarioInformation.scenarioStatus[i],
+            'scenarioType': scenarioInformation.scenarioType[i]
         }
     }
 
-    projectTableInit();
+    scenarioTableInit();
 }
 
 // 增加数据
-function manageAddProject(){
-    pushType = "create"
-    $("#projectManageTable").hide();
-    $("#projectTableEdit").show();
+function manageAddscenario(){
+    pushType = "create";
+    for(var i= 0; i < needinitialIndex.length; i++){
+        if(i == 0){
+            // 填充当前项目编号
+            document.getElementById(idArray[needinitialIndex[i]]).value = scenarioInformation.projectID[0]
+            continue;
+        }
+        document.getElementById(idArray[needinitialIndex[i]]).value = 0;
+    }
+    $("#scenarioManageTable").hide();
+    $("#scenarioTableEdit").show();
 }
 
 // 工程保存
-function projectMsgSave(){
+function scenarioMsgSave(){
     //遍历输入框检查是否填写完全 其中编号无法修改 所以i从1开始赋值
     for(var i = 1; i < idArray.length; i++){
         if(document.getElementById(idArray[i]).value == ""){
@@ -182,17 +192,22 @@ function projectMsgSave(){
     // 数据组装
     data = {
         "function": pushType,
-        "id": document.getElementById("projectID").value,
-        "name": document.getElementById("projectName").value,
-        "status": document.getElementById("projectStatus").value,
-        "user": document.getElementById("projectUser").value,
+        "scenarioID": document.getElementById("scenarioID").value,
+        "scenarioName": document.getElementById("scenarioName").value,
+        "projectID": document.getElementById("projectID").value,
+        "numberNode": document.getElementById("numberNode").value,
+        "numberSimpleNode": document.getElementById("numberSimpleNode").value,
+        "numberComplexNode": document.getElementById("numberComplexNode").value,
+        "dynamicTopologyFile": document.getElementById("dynamicTopologyFile").value,
+        "scenarioStatus": document.getElementById("scenarioStatus").value,
+        "scenarioType": document.getElementById("scenarioType").value,
         "data": ""
     }
 
     //采用post方法向后端提交数据
     $.ajax({
         type: 'POST',
-        url: '/project',
+        url: '/scenario',
         data: data,
         dataType: 'json',
         success: function(data) {
@@ -203,10 +218,10 @@ function projectMsgSave(){
                 manageEditDeviceDataRemove();
 
                 //重新获取数据
-                projectPageInit();   
+                scenarioPageInit();   
             }
             else if(data == "existed"){
-                alert("项目名称已存在!");
+                alert("场景名称已存在!");
             }
     
         },
@@ -229,16 +244,15 @@ function manageEditDataPush(id){
     var index = 0;
     
     //计算id位置所在的数据
-    for(i = 0; i < projectInformation.id.length; i++){
-        if(id == projectInformation.id[i]){
+    for(i = 0; i < scenarioInformation.scenarioID.length; i++){
+        if(id == scenarioInformation.scenarioID[i]){
             break;
         }
     }
 
     //遍历json数据并赋值
-    for(var x in projectInformation){
-        document.getElementById(idArray[index]).value = projectInformation[x][i];
-        index++;
+    for(var x in scenarioInformation){
+        document.getElementById(x).value = scenarioInformation[x][i];
     }
 }
 
@@ -246,12 +260,12 @@ function manageEditDataPush(id){
 function dataEdit(id){
     pushType = "edit";
     manageEditDataPush(id);
-    $("#projectManageTable").hide();
-    $("#projectTableEdit").show();
+    $("#scenarioManageTable").hide();
+    $("#scenarioTableEdit").show();
 }
 
 //后端数据获取
-function projectPageDataPull(){
+function scenarioPageDataPull(){
     data = {
         "function": "get",
         "data": ""
@@ -259,12 +273,12 @@ function projectPageDataPull(){
     //采用post方法向后端请求数据
     $.ajax({
         type: 'POST',
-        url: '/project',
+        url: '/scenario',
         data: data,
         dataType: 'json',
         success: function(data) {
             console.log(data)
-            projectInformation = data;
+            scenarioInformation = data;
             tableInformationTrans();
             
         },
@@ -275,15 +289,15 @@ function projectPageDataPull(){
 }
 
 //界面初始化
-function projectPageInit()
+function scenarioPageInit()
 {
     //表格初始化
-    projectTableInit();
+    scenarioTableInit();
 
     //数据拉取
-    projectPageDataPull();
+    scenarioPageDataPull();
 }
 
 
-window.addEventListener("load", projectPageInit, false);  
+window.addEventListener("load", scenarioPageInit, false);  
 

@@ -26,6 +26,7 @@ from client_manage.user_client_manage.user_account_manage import UserAccountMana
 from module.database.mysql_help_module import sqlHelper
 from module.k8s.k8s_help_module import K8sHelper
 from service.emulation_service.project_service import ProjectService
+from service.emulation_service.scenario_service import ScenarioService
 
 from server_config import ServerConfig
 
@@ -72,6 +73,9 @@ message_parse_manage = MessageParseManage(sql_util, emit)
 
 # project page action
 project_service = ProjectService(sql_util, session)
+
+# scenario page action
+scenario_service = ScenarioService(sql_util)
 
 test = Test(k8sHelper, sql_util, session)
 test.test_for_test()
@@ -171,6 +175,11 @@ def user():
 def project_parser():
     return jsonify(project_service.parser_web_data(request.form))
 
+# 场景界面post数据解析
+@app.route("/scenario", methods=["POST"])
+def scenario_parser():
+    return jsonify(scenario_service.parser_web_data(request.form))
+
 class M_WebSocketNamespace(Namespace):
 
     # 注册发送函数,和加入房间函数,离开房间函数
@@ -189,7 +198,7 @@ class M_WebSocketNamespace(Namespace):
     # 客服端断开连接
     def on_disconnect(self):
         print('websocekt Client disconnected')
-        user_account_manage.login_out_disconnect_account(flask.request.sid)
+        # user_account_manage.login_out_disconnect_account(flask.request.sid)
 
     def on_login(self, data):
         self.usr_name  = data['user_name']
